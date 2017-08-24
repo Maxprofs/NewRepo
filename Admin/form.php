@@ -1,3 +1,33 @@
+<?php
+ if(isset($_GET['e_id']))
+{
+	include("config.php");
+	$idtoedit=$_GET['e_id'];
+	include("config.php");
+	$stmt=$conn->prepare(" SELECT * FROM new_products_table  WHERE id=?");
+	$stmt->bind_param("s",$idtoedit);
+	$stmt->execute();
+	$stmt->bind_result($id2,$name2,$price2,$quantity2,$image2,$category2);
+
+	while($stmt->fetch()) {
+
+	    $id11= $id2; 
+	    $name11= $name2;
+	    $price11 = $price2;
+	    $quantity11 = $quantity2;
+	    $image11= $image2;
+	    $category11 = $category2;
+	}
+				 $stmt->close();
+   		         $conn->close();
+
+}
+else  
+{
+	
+}
+
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -33,30 +63,30 @@
 								
 								<p >
 									<label>Product Id</label>
-										<input class="text-input small-input" type="text" id="idp" name="p_id" /> <span class="input-notification success png_bg">Successful message</span> <!-- Classes for input-notification: success, error, information, attention -->
+										<input class="text-input small-input" type="text" id="idp" name="p_id" value="<?php if(isset($_GET['e_id'])){echo $id11;}  ?>"/> <span class="input-notification success png_bg">Successful message</span> <!-- Classes for input-notification: success, error, information, attention -->
 										<br /><small>A small description of the field</small>
 								</p>
 								
 								<p>
 									<label>Product Name</label>
-									<input class="text-input medium-input datepicker" type="text" id="namep" name="p_name" /> <span class="input-notification error png_bg">Error message</span>
+									<input class="text-input medium-input datepicker" type="text" id="namep" name="p_name" value="<?php if(isset($_GET['e_id'])){echo $name11;}  ?>"/> <span class="input-notification error png_bg">Error message</span>
 								</p>
 								
 								<p>
 									<label>Product Price</label>
-									<input class="text-input medium-input datepicker" type="text" id="pricep" name="p_price" />
+									<input class="text-input medium-input datepicker" type="text" id="pricep" name="p_price" value="<?php if(isset($_GET['e_id'])){echo $price11;}  ?>"/>
 								</p>
 								<p>
 									<label>Product Quantity</label>
-									<input class="text-input medium-input datepicker" type="text" id="quantityp" name="p_quantity" />
+									<input class="text-input medium-input datepicker" type="text" id="quantityp" name="p_quantity" value="<?php if(isset($_GET['e_id'])){echo $quantity11;}  ?>"/>
 								</p>
 								<p>
 									<label>Product Image</label>
-									<input type="file" id="imagep" name="p_image" />
+									<input type="file" id="imagep" name="p_image" value="<?php if(isset($_GET['e_id'])){echo $image11;}  ?>"/>
 								</p>
 								<p>
 									<label>Select Category</label>              
-									<select name="p_category" class="small-input">
+									<select name="p_category" class="small-input" value="<?php if(isset($_GET['e_id'])){echo $category11;}  ?>">
 										<option value=" ">--Select--</option>
 										<option value="sports">Sports</option>
 										<option value="automobiles">Automobiles</option>
@@ -65,10 +95,24 @@
 									</select> 
 								</p>
 							
+							<?php if(isset($_GET['e_id'])){
+										echo "<input type='hidden' name='hidden_eid' value='".$_GET['e_id']."'>";
+												}
+										?>
+								<?php if(isset($_GET['e_id'])){
+										echo "<p>
+									<input class='button' type='submit' value='UPDATE' name='edit_product'/>
+								</p>";
+
+									} 
+									else{
+										echo "<p>
+
+									<input class='button' type='submit' value='Add Product' name='add_product'/>
+								</p>";
+									} 
 								
-								<p>
-									<input class="button" type="submit" value="Add Product" name="add_product"/>
-								</p>
+								?>
 								
 							</fieldset>
 							

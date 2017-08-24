@@ -1,13 +1,26 @@
 <?php
 global $product;
 $product=array();
+if(isset($_GET['d_id']))
+{
+	$idtodel=$_GET['d_id'];
+	include("config.php");
+	$stmt=$conn->prepare(" DELETE FROM new_products_table WHERE id=?");
+	$stmt->bind_param("s",$idtodel);
+	$stmt->execute();
+	$stmt->close();
+	$conn->close();
+}
+
+
+
 include("config.php");
 $stmt=$conn->prepare("SELECT * FROM new_products_table");
 $stmt->bind_result($id1,$name1,$price1,$quantity1,$image1,$category1);
 $stmt->execute();
 while($stmt->fetch())
 {
-	array_push($product,array("id"=>$id1,"name"=>$name1,"price"=>$price1,"image"=>$image1,"quantity"=>$quantity1));
+	array_push($product,array("id"=>$id1,"name"=>$name1,"price"=>$price1,"image"=>$image1,"quantity"=>$quantity1,"category"=>$category1));
 }
 
 ?>
@@ -49,7 +62,9 @@ while($stmt->fetch())
 						
 						<thead>
 							<tr>
-							   <th><input class="check-all" type="checkbox" /></th>
+							   <th><input class="check-all" type="checkbox" />
+							   </th>
+							   <th>Category</th>
 							   <th>Product Id</th>
 							   <th>Product Name</th>
 							   <th>Product Price</th>
@@ -89,6 +104,7 @@ while($stmt->fetch())
 						<?php foreach($product as $key => $value):?>
 							<tr>
 								<td><input type="checkbox" /></td>
+								<td><strong><?php echo $product[$key]['category'];?></strong></td>
 								<td><strong><?php echo $product[$key]['id'];?></strong></td>
 								<td><strong><?php echo $product[$key]['name'];?></strong></td>
 								<td><strong><?php echo $product[$key]['price'];?></strong></td>
@@ -96,8 +112,8 @@ while($stmt->fetch())
 								<td><img height="70px" width="70px" src='../uploads/<?php echo $product[$key]['image']; ?>'></td>
 								<td>
 									<!-- Icons -->
-									 <a href="#" title="Edit" class="edit_class"><img src="resources/images/icons/pencil.png" alt="Edit" /></a>
-									 <a href="#" title="Delete" class="delete_class"><img src="resources/images/icons/cross.png" alt="Delete" /></a> 
+									 <a href="form.php?e_id=<?php echo $product[$key]['id'];?>" title="Edit" class="edit_class"><img src="resources/images/icons/pencil.png" alt="Edit" /></a>
+									 <a href="manageprod.php?d_id=<?php echo $product[$key]['id'];?>" title="Delete" class="delete_class"><img src="resources/images/icons/cross.png" alt="Delete" /></a> 
 									 <a href="#" title="Edit Meta"><img src="resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
 								</td>
 							</tr>
