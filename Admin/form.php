@@ -8,7 +8,9 @@
 </head>
 <body><div id="body-wrapper">
  <!-- End #sidebar -->
-		
+		<?php
+	$page=basename($_SERVER['PHP_SELF']);
+	?>
 		<?php include("sidebar.php");?>
 		
 		<div id="main-content"> <!-- Main Content Section with everything -->

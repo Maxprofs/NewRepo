@@ -6,8 +6,10 @@
 <title>Simpla Admin</title>
 <?php include("header.php");?>
 </head>
-	<body><div id="body-wrapper"> <!-- Wrapper for the radial gradient background -->
+	<body><div id="body-wrapper">
+	 <!-- Wrapper for the radial gradient background -->
 		<?php
+		$page=basename($_SERVER['PHP_SELF']);
 		include("sidebar.php");
 		?>
 		<div id="main-content"> <!-- Main Content Section with everything -->

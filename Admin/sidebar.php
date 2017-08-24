@@ -19,18 +19,50 @@
 						Dashboard
 					</a>       
 				</li>
-				
+				<?php if($page=="index.php"):?>
 				<li> 
-					<a href="#" class="nav-top-item current"> <!-- Add the class "current" to current menu item -->
-					Articles
+
+					<a href="#" class="nav-top-item "> <!-- Add the class "current" to current menu item -->
+					Products
 					</a>
+
 					<ul>
-						<li><a href="form.php?form_id=1">Add a New Product</a></li>
-						<li><a class="current" href="manageprod.php?table_id=1">Manage Products</a></li> <!-- Add class "current" to sub menu items also -->
-						<li><a href="#">Manage Comments</a></li>
-						<li><a href="#">Manage Categories</a></li>
+						<li><a href="form.php">Add a New Product</a></li>
+						<li><a class="current" href="manageprod.php">Manage Products</a></li> <!-- Add class "current" to sub menu items also -->
+					
 					</ul>
 				</li>
+			<?php endif;?>
+			
+			<?php if($page=="form.php"):?>
+				<li> 
+
+					<a href="#" class="nav-top-item current"> <!-- Add the class "current" to current menu item -->
+					Products
+					</a>
+
+					<ul>
+						<li><a href="form.php" class="current">Add a New Product</a></li>
+						<li><a  href="manageprod.php">Manage Products</a></li> <!-- Add class "current" to sub menu items also -->
+					
+					</ul>
+				</li>
+			<?php endif;?>
+			<?php if($page=="manageprod.php"):?>
+				<li> 
+
+					<a href="#" class="nav-top-item current"> <!-- Add the class "current" to current menu item -->
+					Products
+					</a>
+
+					<ul>
+						<li><a href="form.php" >Add a New Product</a></li>
+						<li><a  href="manageprod.php" class="current">Manage Products</a></li> <!-- Add class "current" to sub menu items also -->
+					
+					</ul>
+				</li>
+			<?php endif;?>
+			
 				
 				<li>
 					<a href="#" class="nav-top-item">
