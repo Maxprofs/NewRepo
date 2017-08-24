@@ -1,12 +1,4 @@
-	<!DOCTYPE html>
-	<html>
-	<head>
-		<title></title>
-	</head>
-	<body>
-	 <!-- Wrapper for the radial gradient background -->
-		
-		<div id="sidebar"><div id="sidebar-wrapper"> <!-- Sidebar with logo and menu -->
+<div id="sidebar"><div id="sidebar-wrapper"> <!-- Sidebar with logo and menu -->
 			
 			<h1 id="sidebar-title"><a href="#">Simpla Admin</a></h1>
 		  
@@ -30,11 +22,11 @@
 				
 				<li> 
 					<a href="#" class="nav-top-item current"> <!-- Add the class "current" to current menu item -->
-					Products
+					Articles
 					</a>
 					<ul>
-						<li><a href="#">Add a new Product</a></li>
-						<li><a class="current" href="#">Manage Products</a></li> <!-- Add class "current" to sub menu items also -->
+						<li><a href="form.php?form_id=1">Add a New Product</a></li>
+						<li><a class="current" href="manageprod.php?table_id=1">Manage Products</a></li> <!-- Add class "current" to sub menu items also -->
 						<li><a href="#">Manage Comments</a></li>
 						<li><a href="#">Manage Categories</a></li>
 					</ul>
@@ -42,7 +34,7 @@
 				
 				<li>
 					<a href="#" class="nav-top-item">
-						Pages
+						Categories
 					</a>
 					<ul>
 						<li><a href="#">Create a new Page</a></li>
@@ -50,28 +42,8 @@
 					</ul>
 				</li>
 				
-				<li>
-					<a href="#" class="nav-top-item">
-						Image Gallery
-					</a>
-					<ul>
-						<li><a href="#">Upload Images</a></li>
-						<li><a href="#">Manage Galleries</a></li>
-						<li><a href="#">Manage Albums</a></li>
-						<li><a href="#">Gallery Settings</a></li>
-					</ul>
-				</li>
 				
-				<li>
-					<a href="#" class="nav-top-item">
-						Events Calendar
-					</a>
-					<ul>
-						<li><a href="#">Calendar Overview</a></li>
-						<li><a href="#">Add a new Event</a></li>
-						<li><a href="#">Calendar Settings</a></li>
-					</ul>
-				</li>
+				
 				
 				<li>
 					<a href="#" class="nav-top-item">
@@ -135,6 +107,3 @@
 			</div> <!-- End #messages -->
 			
 		</div></div>
-	</body>
-	</html>
-	

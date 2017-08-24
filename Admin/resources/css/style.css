@@ -12,9 +12,12 @@ body {
                 color: #555;
                 background: #f0f0f0 url('../images/bg-body.gif') top left repeat-y;
                 font-size: 12px;
+                width:auto;
+                height:100%;
                 }
 
 #body-wrapper {
+                height: 100%;
                 background: url('../images/bg-radial-gradient.gif') fixed 230px top no-repeat;
                 }                
 
@@ -230,6 +233,7 @@ a.remove-link:hover {
                 padding: 40px 0 0 0;
                 }
 
+
 .column-left {
                 width: 48%;
                 float: left;
@@ -248,7 +252,7 @@ a.remove-link:hover {
 				
 #footer {
 				border-top: 1px solid #ccc;
-				margin: 40px 0 0 0;
+				margin: px 0 0 0;
 				padding: 20px 0;
 				font-size: 12px;
                 }
