@@ -1,3 +1,16 @@
+<?php
+global $product;
+$product=array();
+include("config.php");
+$stmt=$conn->prepare("SELECT * FROM new_products_table");
+$stmt->bind_result($id1,$name1,$price1,$quantity1,$image1,$category1);
+$stmt->execute();
+while($stmt->fetch())
+{
+	array_push($product,array("id"=>$id1,"name"=>$name1,"price"=>$price1,"image"=>$image1,"quantity"=>$quantity1));
+}
+
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -41,6 +54,7 @@
 							   <th>Product Name</th>
 							   <th>Product Price</th>
 							   <th>Product Image</th>
+							   <th>Product Quantity</th>
 							   <th>Operation</th>
 							</tr>
 							
@@ -72,117 +86,23 @@
 						</tfoot>
 					 
 						<tbody>
+						<?php foreach($product as $key => $value):?>
 							<tr>
 								<td><input type="checkbox" /></td>
-								<td>Lorem ipsum dolor</td>
-								<td><a href="#" title="title">Sit amet</a></td>
-								<td>Consectetur adipiscing</td>
-								<td>Donec tortor diam</td>
+								<td><strong><?php echo $product[$key]['id'];?></strong></td>
+								<td><strong><?php echo $product[$key]['name'];?></strong></td>
+								<td><strong><?php echo $product[$key]['price'];?></strong></td>
+								<td><strong><?php echo $product[$key]['quantity'];?></strong></td>
+								<td><img height="70px" width="70px" src='../uploads/<?php echo $product[$key]['image']; ?>'></td>
 								<td>
 									<!-- Icons -->
-									 <a href="#" title="Edit"><img src="resources/images/icons/pencil.png" alt="Edit" /></a>
-									 <a href="#" title="Delete"><img src="resources/images/icons/cross.png" alt="Delete" /></a> 
+									 <a href="#" title="Edit" class="edit_class"><img src="resources/images/icons/pencil.png" alt="Edit" /></a>
+									 <a href="#" title="Delete" class="delete_class"><img src="resources/images/icons/cross.png" alt="Delete" /></a> 
 									 <a href="#" title="Edit Meta"><img src="resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
 								</td>
 							</tr>
-							
-							<tr>
-								<td><input type="checkbox" /></td>
-								<td>Lorem ipsum dolor</td>
-								<td><a href="#" title="title">Sit amet</a></td>
-								<td>Consectetur adipiscing</td>
-								<td>Donec tortor diam</td>
-								<td>
-									<!-- Icons -->
-									 <a href="#" title="Edit"><img src="resources/images/icons/pencil.png" alt="Edit" /></a>
-									 <a href="#" title="Delete"><img src="resources/images/icons/cross.png" alt="Delete" /></a> 
-									 <a href="#" title="Edit Meta"><img src="resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
-								</td>
-							</tr>
-							
-							<tr>
-								<td><input type="checkbox" /></td>
-								<td>Lorem ipsum dolor</td>
-								<td><a href="#" title="title">Sit amet</a></td>
-								<td>Consectetur adipiscing</td>
-								<td>Donec tortor diam</td>
-								<td>
-									<!-- Icons -->
-									 <a href="#" title="Edit"><img src="resources/images/icons/pencil.png" alt="Edit" /></a>
-									 <a href="#" title="Delete"><img src="resources/images/icons/cross.png" alt="Delete" /></a> 
-									 <a href="#" title="Edit Meta"><img src="resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
-								</td>
-							</tr>
-							
-							<tr>
-								<td><input type="checkbox" /></td>
-								<td>Lorem ipsum dolor</td>
-								<td><a href="#" title="title">Sit amet</a></td>
-								<td>Consectetur adipiscing</td>
-								<td>Donec tortor diam</td>
-								<td>
-									<!-- Icons -->
-									 <a href="#" title="Edit"><img src="resources/images/icons/pencil.png" alt="Edit" /></a>
-									 <a href="#" title="Delete"><img src="resources/images/icons/cross.png" alt="Delete" /></a> 
-									 <a href="#" title="Edit Meta"><img src="resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
-								</td>
-							</tr>
-							
-							<tr>
-								<td><input type="checkbox" /></td>
-								<td>Lorem ipsum dolor</td>
-								<td><a href="#" title="title">Sit amet</a></td>
-								<td>Consectetur adipiscing</td>
-								<td>Donec tortor diam</td>
-								<td>
-									<!-- Icons -->
-									 <a href="#" title="Edit"><img src="resources/images/icons/pencil.png" alt="Edit" /></a>
-									 <a href="#" title="Delete"><img src="resources/images/icons/cross.png" alt="Delete" /></a> 
-									 <a href="#" title="Edit Meta"><img src="resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
-								</td>
-							</tr>
-							
-							<tr>
-								<td><input type="checkbox" /></td>
-								<td>Lorem ipsum dolor</td>
-								<td><a href="#" title="title">Sit amet</a></td>
-								<td>Consectetur adipiscing</td>
-								<td>Donec tortor diam</td>
-								<td>
-									<!-- Icons -->
-									 <a href="#" title="Edit"><img src="resources/images/icons/pencil.png" alt="Edit" /></a>
-									 <a href="#" title="Delete"><img src="resources/images/icons/cross.png" alt="Delete" /></a> 
-									 <a href="#" title="Edit Meta"><img src="resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
-								</td>
-							</tr>
-							
-							<tr>
-								<td><input type="checkbox" /></td>
-								<td>Lorem ipsum dolor</td>
-								<td><a href="#" title="title">Sit amet</a></td>
-								<td>Consectetur adipiscing</td>
-								<td>Donec tortor diam</td>
-								<td>
-									<!-- Icons -->
-									 <a href="#" title="Edit"><img src="resources/images/icons/pencil.png" alt="Edit" /></a>
-									 <a href="#" title="Delete"><img src="resources/images/icons/cross.png" alt="Delete" /></a> 
-									 <a href="#" title="Edit Meta"><img src="resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
-								</td>
-							</tr>
-							
-							<tr>
-								<td><input type="checkbox" /></td>
-								<td>Lorem ipsum dolor</td>
-								<td><a href="#" title="title">Sit amet</a></td>
-								<td>Consectetur adipiscing</td>
-								<td>Donec tortor diam</td>
-								<td>
-									<!-- Icons -->
-									 <a href="#" title="Edit"><img src="resources/images/icons/pencil.png" alt="Edit" /></a>
-									 <a href="#" title="Delete"><img src="resources/images/icons/cross.png" alt="Delete" /></a> 
-									 <a href="#" title="Edit Meta"><img src="resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
-								</td>
-							</tr>
+						<?php endforeach;?>
+						
 						</tbody>
 						
 					</table>
