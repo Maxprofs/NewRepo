@@ -60,9 +60,9 @@ $stmt->close();
 $conn->close();
 
 }
-
-else{
-	include("config.php");
+?>
+<?php
+include("config.php");
 $stmt=$conn->prepare("SELECT * FROM new_products_table LIMIT ?,?");
 $stmt->bind_param("ii",$start,$limits);
 $stmt->bind_result($id1,$name1,$price1,$quantity1,$image1,$category1);
@@ -73,11 +73,6 @@ while($stmt->fetch())
 }
 $stmt->close();
 $conn->close();
-
-
-}
-
-
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
@@ -206,7 +201,7 @@ $conn->close();
 					{ var htm=" <a href='manageprod.php?page_id=0' title='First Page'>&laquo; First</a><a href='manageprod.php?page_id=<?php  if($page_id==0) {echo $page_id;} else{echo $page_id-1;}?>' title='Previous Page'>&laquo; Previous</a>";
 						for(var i=1;i<='<?php echo $total_pages; ?>';i++)
 						{
-							htm+="<a href='manageprod.php?page_id="+(i-1)+"' class='number' title="+i+">"+i+"</a>";
+							htm+="<a href='manageprod.php?page_id="+(i-1)+"' class='number current' title="+i+">"+i+"</a>";
 						}
 						htm+="<a href='manageprod.php?page_id=<?php  echo $page_id+1;?>' title='Next Page'>Next &raquo;</a><a href='manageprod.php?page_id="+(i-2)+"' title='Last Page'>Last &raquo;</a>";
 						$(".pagination").html(htm);

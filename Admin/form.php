@@ -84,12 +84,13 @@
 								</p>
 								<p>
 									<label>Select Category</label>              
-									<select name="p_category" class="small-input" value="<?php if(isset($_GET['e_id'])){echo $category11;}  ?>">
-										<option value=" ">--Select--</option>
+									<select name="p_category" class="small-input" value=" ">
+										<option value="<?php if(isset($_GET['e_id'])){echo $category11;}  ?>"><?php if(isset($_GET['e_id'])){echo $category11;}  else echo"--Select--";?></option>
 										<option value="sports">Sports</option>
 										<option value="automobiles">Automobiles</option>
 										<option value="electronics">Electronics</option>
 										<option value="cosmetics">Cosmetics</option>
+										<option value="fashion">Fashion</option>
 									</select> 
 								</p>
 							

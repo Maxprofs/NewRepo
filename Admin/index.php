@@ -1,7 +1,10 @@
 <?php
+session_start();
 global $cart;
 $cart=array();
-session_start();
+global $product1;
+$product1=array();
+
 if(isset($_POST['p_id']))
 				{
 					$p=$_POST['p_id'];
@@ -23,18 +26,8 @@ if(isset($_POST['p_id']))
 					//header("loacation:index.php");
 				}
 
-global $product1;
-$product1=array();
-include("config.php");
-$stmt=$conn->prepare("SELECT * FROM new_products_table");
-$stmt->bind_result($id11,$name11,$price11,$quantity11,$image11,$category11);
-$stmt->execute();
-while($stmt->fetch())
-{
-	array_push($product1,array("id"=>$id11,"name"=>$name11,"price"=>$price11,"image"=>$image11,"quantity"=>$quantity11,"category"=>$category11));
-}
-$stmt->close();
-$conn->close();
+
+
 
 function masterFun($id_c,$name_c,$price_c,$image_c,$category_c,$cart)
 {
@@ -87,6 +80,18 @@ function updateProd($id_c,$cart)
 	return $cart;
 
 }
+
+//by default
+include("config.php");
+$stmt=$conn->prepare("SELECT * FROM new_products_table");
+$stmt->bind_result($id11,$name11,$price11,$quantity11,$image11,$category11);
+$stmt->execute();
+while($stmt->fetch())
+{
+	array_push($product1,array("id"=>$id11,"name"=>$name11,"price"=>$price11,"image"=>$image11,"quantity"=>$quantity11,"category"=>$category11));
+}
+$stmt->close();
+$conn->close();
 ?>
 	
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -110,6 +115,19 @@ function updateProd($id_c,$cart)
 		
 		<div id="main-content">
 		 <!-- Main Content Section with everything -->
+		 <div style="float:rigth;">
+		 <p>
+									<label>Select Category</label>              
+									<select name="p_category" class="small-input" value="">
+										<option value=" ">--Select--</option>
+										<option value="sports">Sports</option>
+										<option value="automobiles">Automobiles</option>
+										<option value="electronics">Electronics</option>
+										<option value="fashion">Fashion</option>
+										<option value="cosmetics">Cosmetics</option>
+									</select> 
+								</p>
+								</div>
 		 <ul>
 			<li><a href="checkout.php">Checkout Products</a>
 			</li>
@@ -162,7 +180,7 @@ function updateProd($id_c,$cart)
 						{
 							$(".add-to-cart").click(function()
 								{
-									var pid=$(this).data("productid");
+									var pid= $(this).data("productid"); alert(pid);
 									$.ajax({
 									  method: "POST",
 									  url: "index.php",

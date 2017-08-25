@@ -70,6 +70,7 @@
 						Categories
 					</a>
 					<ul>
+					<li><a href="manageprod.php?ctgry=fashion">Fashion</a></li>
 						<li><a href="manageprod.php?ctgry=sports">Sports</a></li>
 						<li><a href="manageprod.php?ctgry=cosmetics">Cosmetics</a></li>
 						<li><a href="manageprod.php?ctgry=automobiles">Automobiles</a></li>

@@ -1,7 +1,11 @@
 <?php
 session_start();
+global $cart;
 $cart=array();
 $cart=$_SESSION['cart'];
+echo "<pre>";
+print_r($cart);
+echo "</pre>";
 	include("config.php");
 	
 	//$stmt=$conn->prepare("SELECT COUNT(*) FROM new_products_table");
@@ -95,17 +99,16 @@ $cart=$_SESSION['cart'];
 					</table>
 					</div>
 					<script type="text/javascript" src="jQuery.js"></script>
-					<script type="text/javascript">
-					$(document).ready(function()
-						{ 
-							var htm=" <a href='#' title='First Page'>&laquo; First</a><a href='#' title='Previous Page'>&laquo; Previous</a>";
-							for(var i=1;i<='<?php echo $total_pages; ?>';i++)
-							{
-								htm+="<a href='PAGE1.php?page_id="+i+"' class='number' title="+i+">"+i+"</a>";
-							}
-							htm+="<a href='#' title='Next Page'>Next &raquo;</a><a href='#' title='Last Page'>Last &raquo;</a>";
-							$(".pagination").html(htm);
-						});
-					</script>
+				<script type="text/javascript">
+				$(document).ready(function()
+					{ var htm=" <a href='checkout.php?page_id=0' title='First Page'>&laquo; First</a><a href='checkout.php?page_id=<?php  if($page_id==0) {echo $page_id;} else{echo $page_id-1;}?>' title='Previous Page'>&laquo; Previous</a>";
+						for(var i=1;i<='<?php echo $total_pages; ?>';i++)
+						{
+							htm+="<a href='checkout.php?page_id="+(i-1)+"' class='number current' title="+i+">"+i+"</a>";
+						}
+						htm+="<a href='checkout.php?page_id=<?php  echo $page_id+1;?>' title='Next Page'>Next &raquo;</a><a href='checkout.php?page_id="+(i-2)+"' title='Last Page'>Last &raquo;</a>";
+						$(".pagination").html(htm);
+					});
+				</script>
 </body>
 </html>
