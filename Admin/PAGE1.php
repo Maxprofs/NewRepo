@@ -5,15 +5,7 @@ global $cat_product;
 $cat_product=array();
 //
 	include("config.php");
-	if(isset($_GET['page_id']))
-	{
-		$page_id=$_GET['page_id'];
-	}
-	else
-	{
-		$page_id=0;
-	}
-	
+	$page_id=$_GET['page_id'];
 	$stmt=$conn->prepare("SELECT COUNT(*) FROM new_products_table");
 	$stmt->bind_result($numbr);
 	$stmt->execute();
@@ -26,7 +18,7 @@ $cat_product=array();
 	$conn->close();
 	$total_pages=ceil($total_records/4);
 	$limits=4;
-	$start=$page_id*$limits;
+	$start=($page_id)*$limits;
 	echo $total_pages;
 
 //
@@ -62,7 +54,8 @@ $conn->close();
 }
 
 else{
-	include("config.php");
+
+include("config.php");
 $stmt=$conn->prepare("SELECT * FROM new_products_table LIMIT ?,?");
 $stmt->bind_param("ii",$start,$limits);
 $stmt->bind_result($id1,$name1,$price1,$quantity1,$image1,$category1);
@@ -206,7 +199,7 @@ $conn->close();
 					{ var htm=" <a href='#' title='First Page'>&laquo; First</a><a href='#' title='Previous Page'>&laquo; Previous</a>";
 						for(var i=1;i<='<?php echo $total_pages; ?>';i++)
 						{
-							htm+="<a href='manageprod.php?page_id="+(i-1)+"' class='number' title="+i+">"+i+"</a>";
+							htm+="<a href='PAGE1.php?page_id="+i+"' class='number' title="+i+">"+i+"</a>";
 						}
 						htm+="<a href='#' title='Next Page'>Next &raquo;</a><a href='#' title='Last Page'>Last &raquo;</a>";
 						$(".pagination").html(htm);

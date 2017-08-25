@@ -28,7 +28,8 @@
 
 					<ul>
 						<li><a href="form.php">Add a New Product</a></li>
-						<li><a class="current" href="manageprod.php">Manage Products</a></li> <!-- Add class "current" to sub menu items also -->
+						<li><a  href="manageprod.php">Manage Products</a></li>
+						<li><a class="current">showing User page</a></li> <!-- Add class "current" to sub menu items also -->
 					
 					</ul>
 				</li>
@@ -69,8 +70,10 @@
 						Categories
 					</a>
 					<ul>
-						<li><a href="#">Create a new Page</a></li>
-						<li><a href="#">Manage Pages</a></li>
+						<li><a href="manageprod.php?ctgry=sports">Sports</a></li>
+						<li><a href="manageprod.php?ctgry=cosmetics">Cosmetics</a></li>
+						<li><a href="manageprod.php?ctgry=automobiles">Automobiles</a></li>
+						<li><a href="manageprod.php?ctgry=electronics">Electronics</a></li>
 					</ul>
 				</li>
 				

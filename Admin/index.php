@@ -1,9 +1,101 @@
+<?php
+global $cart;
+$cart=array();
+session_start();
+if(isset($_POST['p_id']))
+				{
+					$p=$_POST['p_id'];
+					
+					include("config.php");
+					$stmt=$conn->prepare("SELECT * FROM new_products_table WHERE id=?");
+					$stmt->bind_param("s",$p);
+					$stmt->execute();
+					$stmt->bind_result($id12,$name12,$price12,$quantity12,$image12,$category12);
+					
+					while($stmt->fetch())
+					{
+						masterFun($id12,$name12,$price12,$image12,$category12,$cart);
+					}
+					
+					$stmt->close();
+					$conn->close();
+					echo json_encode($p);
+					//header("loacation:index.php");
+				}
+
+global $product1;
+$product1=array();
+include("config.php");
+$stmt=$conn->prepare("SELECT * FROM new_products_table");
+$stmt->bind_result($id11,$name11,$price11,$quantity11,$image11,$category11);
+$stmt->execute();
+while($stmt->fetch())
+{
+	array_push($product1,array("id"=>$id11,"name"=>$name11,"price"=>$price11,"image"=>$image11,"quantity"=>$quantity11,"category"=>$category11));
+}
+$stmt->close();
+$conn->close();
+
+function masterFun($id_c,$name_c,$price_c,$image_c,$category_c,$cart)
+{
+	if(isset($_SESSION['cart']))
+	{
+		$cart=$_SESSION['cart'];
+		if(isExist($id_c,$cart))
+		{
+			$cart=updateProd($id_c,$cart);
+			$_SESSION['cart']=$cart;
+			$cart=$_SESSION['cart'];
+			echo json_encode(array("arraycart"=>$cart));
+		}
+		else
+		{
+		array_push($cart,array("id"=>$id_c,"name"=>$name_c,"price"=>$price_c,"image"=>$image_c,"category"=>$category_c,"quantity"=>1));
+		$_SESSION['cart']=$cart;
+		$cart=$_SESSION['cart'];
+		echo json_encode(array("arraycart"=>$cart));
+		}
+	}
+	else
+	{
+		array_push($cart,array("id"=>$id_c,"name"=>$name_c,"price"=>$price_c,"image"=>$image_c,"category"=>$category_c,"quantity"=>1));
+		$_SESSION['cart']=$cart;
+		$cart=$_SESSION['cart'];
+		echo json_encode(array("arraycart"=>$cart));
+	}
+}
+function isExist($id_c,$cart)
+{
+	foreach($cart as $key=>$value)
+	{
+		if($id_c==$cart[$key]['id'])
+		{
+			return true;
+		}
+	}
+	return false;
+}
+function updateProd($id_c,$cart)
+{
+	foreach($cart as $key=>$value)
+	{
+		if($id_c==$cart[$key]['id'])
+		{
+			$cart[$key]['quantity']=$cart[$key]['quantity']+1;
+		}
+	}
+	return $cart;
+
+}
+?>
+	
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Simpla Admin</title>
+<link href="style22.css" type="text/css" rel="stylesheet">
 <?php include("header.php");?>
 </head>
 	<body><div id="body-wrapper"> 
@@ -16,8 +108,12 @@
 		?>
 		 <!-- End #sidebar -->
 		
-		<div id="main-content"> <!-- Main Content Section with everything -->
-			
+		<div id="main-content">
+		 <!-- Main Content Section with everything -->
+		 <ul>
+			<li><a href="checkout.php">Checkout Products</a>
+			</li>
+			</ul>
 			
 			
 			<!-- Page Head -->
@@ -28,200 +124,59 @@
 			
 			<div class="clear"></div> <!-- End .clear -->
 			
-			<div class="content-box"><!-- Start Content Box -->
-				
-				<div class="content-box-header">
+			
 					
-					<h3>Total Products</h3>
-					
+					<h3>Add Products to cart</h3>
+					<div id="main">
+		<div id="products">
+		<?php  foreach ($product1 as $key => $value) :?>
+			<div id="<?php echo $product1[$key]['id']; ?>" class="product">
 
-					
+				<img src="../uploads/<?php echo $product1[$key]['image']; ?>" width="64px" height="64px">
+				<h3 class="title"><a href="#"><?php echo $product1[$key]['name']; ?></a></h3>
+				<h3><?php echo $product1[$key]['price']; ?></h3><br>
+				<span><?php echo $product1[$key]['id']; ?></span>
+				<a class="add-to-cart" name="add_to_cart" data-productid="<?php echo $product1[$key]['id']; ?>">Add To Cart</a>
+			</div>
+		<?php endforeach; ?>	
+		</div>
+
+				
 					<div class="clear"></div>
 					
 				</div> <!-- End .content-box-header -->
 				
-				<div class="content-box-content">
-					
-					<div class="tab-content default-tab" id="tab1"> <!-- This is the target div. id must match the href of this div's tab -->
-						
-						
-						
-						<table>
-							
-							<thead>
-								<tr>
-								   <th><input class="check-all" type="checkbox" /></th>
-								   <th>Column 1</th>
-								   <th>Column 2</th>
-								   <th>Column 3</th>
-								   <th>Column 4</th>
-								   <th>Column 5</th>
-								</tr>
-								
-							</thead>
-						 
-							<tfoot>
-								<tr>
-									<td colspan="6">
-										<div class="bulk-actions align-left">
-											<select name="dropdown">
-												<option value="option1">Choose an action...</option>
-												<option value="option2">Edit</option>
-												<option value="option3">Delete</option>
-											</select>
-											<a class="button" href="#">Apply to selected</a>
-										</div>
-										
-										<div class="pagination">
-											<a href="#" title="First Page">&laquo; First</a><a href="#" title="Previous Page">&laquo; Previous</a>
-											<a href="#" class="number" title="1">1</a>
-											<a href="#" class="number" title="2">2</a>
-											<a href="#" class="number current" title="3">3</a>
-											<a href="#" class="number" title="4">4</a>
-											<a href="#" title="Next Page">Next &raquo;</a><a href="#" title="Last Page">Last &raquo;</a>
-										</div> <!-- End .pagination -->
-										<div class="clear"></div>
-									</td>
-								</tr>
-							</tfoot>
-						 
-							<tbody>
-								<tr>
-									<td><input type="checkbox" /></td>
-									<td>Lorem ipsum dolor</td>
-									<td><a href="#" title="title">Sit amet</a></td>
-									<td>Consectetur adipiscing</td>
-									<td>Donec tortor diam</td>
-									<td>
-										<!-- Icons -->
-										 <a href="#" title="Edit"><img src="resources/images/icons/pencil.png" alt="Edit" /></a>
-										 <a href="#" title="Delete"><img src="resources/images/icons/cross.png" alt="Delete" /></a> 
-										 <a href="#" title="Edit Meta"><img src="resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
-									</td>
-								</tr>
-								
-								<tr>
-									<td><input type="checkbox" /></td>
-									<td>Lorem ipsum dolor</td>
-									<td><a href="#" title="title">Sit amet</a></td>
-									<td>Consectetur adipiscing</td>
-									<td>Donec tortor diam</td>
-									<td>
-										<!-- Icons -->
-										 <a href="#" title="Edit"><img src="resources/images/icons/pencil.png" alt="Edit" /></a>
-										 <a href="#" title="Delete"><img src="resources/images/icons/cross.png" alt="Delete" /></a> 
-										 <a href="#" title="Edit Meta"><img src="resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
-									</td>
-								</tr>
-								
-								<tr>
-									<td><input type="checkbox" /></td>
-									<td>Lorem ipsum dolor</td>
-									<td><a href="#" title="title">Sit amet</a></td>
-									<td>Consectetur adipiscing</td>
-									<td>Donec tortor diam</td>
-									<td>
-										<!-- Icons -->
-										 <a href="#" title="Edit"><img src="resources/images/icons/pencil.png" alt="Edit" /></a>
-										 <a href="#" title="Delete"><img src="resources/images/icons/cross.png" alt="Delete" /></a> 
-										 <a href="#" title="Edit Meta"><img src="resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
-									</td>
-								</tr>
-								
-								<tr>
-									<td><input type="checkbox" /></td>
-									<td>Lorem ipsum dolor</td>
-									<td><a href="#" title="title">Sit amet</a></td>
-									<td>Consectetur adipiscing</td>
-									<td>Donec tortor diam</td>
-									<td>
-										<!-- Icons -->
-										 <a href="#" title="Edit"><img src="resources/images/icons/pencil.png" alt="Edit" /></a>
-										 <a href="#" title="Delete"><img src="resources/images/icons/cross.png" alt="Delete" /></a> 
-										 <a href="#" title="Edit Meta"><img src="resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
-									</td>
-								</tr>
-								
-								<tr>
-									<td><input type="checkbox" /></td>
-									<td>Lorem ipsum dolor</td>
-									<td><a href="#" title="title">Sit amet</a></td>
-									<td>Consectetur adipiscing</td>
-									<td>Donec tortor diam</td>
-									<td>
-										<!-- Icons -->
-										 <a href="#" title="Edit"><img src="resources/images/icons/pencil.png" alt="Edit" /></a>
-										 <a href="#" title="Delete"><img src="resources/images/icons/cross.png" alt="Delete" /></a> 
-										 <a href="#" title="Edit Meta"><img src="resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
-									</td>
-								</tr>
-								
-								<tr>
-									<td><input type="checkbox" /></td>
-									<td>Lorem ipsum dolor</td>
-									<td><a href="#" title="title">Sit amet</a></td>
-									<td>Consectetur adipiscing</td>
-									<td>Donec tortor diam</td>
-									<td>
-										<!-- Icons -->
-										 <a href="#" title="Edit"><img src="resources/images/icons/pencil.png" alt="Edit" /></a>
-										 <a href="#" title="Delete"><img src="resources/images/icons/cross.png" alt="Delete" /></a> 
-										 <a href="#" title="Edit Meta"><img src="resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
-									</td>
-								</tr>
-								
-								<tr>
-									<td><input type="checkbox" /></td>
-									<td>Lorem ipsum dolor</td>
-									<td><a href="#" title="title">Sit amet</a></td>
-									<td>Consectetur adipiscing</td>
-									<td>Donec tortor diam</td>
-									<td>
-										<!-- Icons -->
-										 <a href="#" title="Edit"><img src="resources/images/icons/pencil.png" alt="Edit" /></a>
-										 <a href="#" title="Delete"><img src="resources/images/icons/cross.png" alt="Delete" /></a> 
-										 <a href="#" title="Edit Meta"><img src="resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
-									</td>
-								</tr>
-								
-								<tr>
-									<td><input type="checkbox" /></td>
-									<td>Lorem ipsum dolor</td>
-									<td><a href="#" title="title">Sit amet</a></td>
-									<td>Consectetur adipiscing</td>
-									<td>Donec tortor diam</td>
-									<td>
-										<!-- Icons -->
-										 <a href="#" title="Edit"><img src="resources/images/icons/pencil.png" alt="Edit" /></a>
-										 <a href="#" title="Delete"><img src="resources/images/icons/cross.png" alt="Delete" /></a> 
-										 <a href="#" title="Edit Meta"><img src="resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
-									</td>
-								</tr>
-							</tbody>
-							
-						</table>
-						
-					</div> <!-- End #tab1 -->
-					
-					 <!-- End #tab2 -->        
-					
-				</div> <!-- End .content-box-content -->
+				 <!-- End .content-box-content -->
 				
-			</div> <!-- End .content-box -->
+			</div> 
 			
-		<!-- End .content-box -->
-			
-		 <!-- End .content-box -->
+	
 			<div class="clear"></div>
 			
 			
 			<!-- Start Notifications -->
-			
-			
-			
-			
-		
-			
+			<script type="text/javascript" src="jQuery.js"></script>
+				<script type="text/javascript">
+					
+					$(document).ready(function()
+						{
+							$(".add-to-cart").click(function()
+								{
+									var pid=$(this).data("productid");
+									$.ajax({
+									  method: "POST",
+									  url: "index.php",
+									  data: { p_id:pid },
+									  dataType:"json"
+									})
+									  .done(function( msg ) {
+									  	alert(123);
+									    alert( "Data Saved: " + msg.id );
+									  });
+
+								});
+						});
+				</script>
 			
 			<!-- End Notifications -->
 			
