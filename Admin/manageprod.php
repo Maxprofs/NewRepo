@@ -142,10 +142,10 @@ $conn->close();
 									</div>
 									
 									
-										<!-- dynamic pages will be shown here
+										
 										<div class="pagination">
 										</div>
-									  End .pagination -->
+									 
 									<div class="clear"></div>
 								</td>
 							</tr>

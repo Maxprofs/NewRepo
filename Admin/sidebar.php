@@ -34,7 +34,21 @@
 					</ul>
 				</li>
 			<?php endif;?>
-			
+								<?php if($page=="category_form.php"):?>
+								<li> 
+
+									<a href="#" class="nav-top-item "> <!-- Add the class "current" to current menu item -->
+									Products
+									</a>
+
+									<ul>
+										<li><a href="form.php">Add a New Product</a></li>
+										<li><a  href="manageprod.php">Manage Products</a></li>
+										 <!-- Add class "current" to sub menu items also -->
+									
+									</ul>
+								</li>
+							<?php endif;?>
 			<?php if($page=="form.php"):?>
 				<li> 
 
@@ -82,8 +96,15 @@
 					</a>";
 				}
 				?>
-					<ul>
-						<li><a href="category_form.php">Add Category</a></li>
+					<ul><?php if($page=="category_form.php")
+					{
+						 echo "<li><a href='category_form.php' class='current'>Add Category</a></li>";
+					}
+						else
+						{
+							 echo "<li><a href='category_form.php'>Add Category</a></li>";
+						}
+						?><li><a href="managecategory.php">Manage Category</a></li>
 					    <li><a href="manageprod.php?ctgry=fashion">Fashion</a></li>
 						<li><a href="manageprod.php?ctgry=sports">Sports</a></li>
 						<li><a href="manageprod.php?ctgry=cosmetics">Cosmetics</a></li>

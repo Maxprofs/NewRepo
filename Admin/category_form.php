@@ -3,7 +3,7 @@
 	global $conn,$stmt,$category_array;
 	$category_array=array();
 	getCategory();
-	 if(isset($_POST['add_category']))
+	 if(isset($_POST['add_category']) || isset($_POST['edit_category']))
 		{
 
 		if($_POST['dd_category']==" ")
@@ -23,7 +23,45 @@
 			makeSubCategory($category_selected,$c_name1);
 		}
 	}
-	
+	else if(isset($_GET['e_id']))
+	{
+		$idtoedit=$_GET['e_id'];
+		include("config.php");
+		$stmt=$conn->prepare("SELECT * FROM category_table WHERE id=?");
+		$stmt->bind_param("i",$idtoedit);
+		$stmt->execute();
+		$stmt->bind_result($id11,$name11,$parentid11);
+		while ($stmt->fetch()) {
+			$id12=$id11;
+			$name12=$name11;
+			$parentid12=$parentid11;
+		}
+		//echo $parentid12;
+		//$stmt->close();
+		$stmt=$conn->prepare("SELECT * FROM category_table WHERE id=?");
+		$stmt->bind_param("i",$parentid12);
+		$stmt->execute();
+		$stmt->bind_result($parent_id11,$parent_name11,$parent_parentid11);
+		while ($stmt->fetch()) {
+			$id13=$parent_id11;
+			$name13=$parent_name11;
+			$parentid13=$parent_parentid11;
+		}
+		//echo $name13;
+		$stmt->close();
+		$conn->close();
+		//editCategory($idtoedit);
+
+	}
+	else if(isset($_POST['edit_category']))
+	{
+
+	}
+
+	function editCategory($idtoedit)
+	{
+
+	}
 	function getCategory()
 	{
 		global $conn,$stmt,$category_array;
@@ -109,13 +147,13 @@ include("sidebar.php");
 							<fieldset> 
 								<p >
 									<label>Category Name</label>
-										<input class="text-input small-input" type="text"  name="category_name"/> <span class="input-notification success png_bg">Successful message</span> <!-- Classes for input-notification: success, error, information, attention -->
+										<input class="text-input small-input" type="text"  name="category_name" value="<?php if(isset($_GET['e_id'])){echo $name12;}?>" /> <span class="input-notification success png_bg">Successful message</span> <!-- Classes for input-notification: success, error, information, attention -->
 										
 								</p>
 								<p >
 									<label>Select Parent Category</label>
 										<select name="dd_category" id="category-select">
-										<option value=" ">--Select--</option>
+										<option value="<?php if(isset($_GET['e_id'])) echo $name13; ?>"><?php if(isset($_GET['e_id'])) {echo $name13;} else echo "--Select--";?></option>
 											<?php
 											 global $category_array;
 											 foreach ($category_array as $key => $value) :?>
@@ -126,14 +164,25 @@ include("sidebar.php");
 										</select><!-- Classes for input-notification: success, error, information, attention -->
 										
 								</p>
-								<p>
-									<input type="submit" name="add_category" class="button">
-								</p>
+								<?php if(isset($_GET['e_id']))
+								{
+
+								echo "<p>
+									<input type='submit' name='edit_category' class='button'>
+								</p>";
+									} 
+									else{
+										echo "<p>
+									<input type='submit' name='add_category' class='button'>
+								</p>";
+								}
+								?>
+								
 								</fieldset>
 								</form>
 					</div>
 						</div>
 
-	<?php include("footer.php");?>
+	<?php //include("footer.php");?>
 </body>
 </html>

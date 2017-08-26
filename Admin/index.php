@@ -6,6 +6,7 @@ global $product1;
 $product1=array();
 global $c_product;
 $c_product=array();
+global $conn,$stmt,$category_array;
 
 if(isset($_POST['p_id']))
 				{
@@ -69,11 +70,27 @@ if(isset($_POST['p_id']))
 					array_push($product1,array("id"=>$id11,"name"=>$name11,"price"=>$price11,"image"=>$image11,"quantity"=>$quantity11,"category"=>$category11));
 				}
 				$stmt->close();
-				$conn->close();
+				$category_array=array();
+				getCategory();
+				//$conn->close();
 
 				}
 
-
+				function getCategory()
+			{
+				global $conn,$stmt,$category_array;
+				$stmt=$conn->prepare("SELECT * FROM category_table");
+				$stmt->bind_result($id,$name,$parentid);
+				$stmt->execute();
+				while ($stmt->fetch()) 
+				{
+					array_push($category_array,array("id"=>$id,"name"=>$name,"parent_id"=>$parentid));
+				
+				}
+					$stmt->close();
+					$conn->close();
+				//print_r($category_array);
+				}
 function masterFun($id_c,$name_c,$price_c,$image_c,$category_c,$cart)
 {
 	if(isset($_SESSION['cart']))
@@ -161,11 +178,10 @@ function updateProd($id_c,$cart)
 									<select name="p_category" class="small-input">
 										<option class="cat" value="<?php if (isset($_POST['match_category'])) echo $_POST['p_category'];?>" ><?php if (isset($_POST['match_category'])) echo $_POST['p_category'];
 										else echo "--Select--";?></option>
-										<option class="cat" value="sports">Sports</option>
-										<option class="cat" value="automobiles">Automobiles</option>
-										<option class="cat" value="electronics">Electronics</option>
-										<option class="cat" value="fashion">Fashion</option>
-										<option class="cat" value="cosmetics">Cosmetics</option>
+										<?php foreach ($category_array as $key => $value):?> 
+										
+										<option class="cat" value="<?php echo $category_array[$key]['name'];?>"><?php echo $category_array[$key]['name'];?></option>
+									<?php endforeach;?>
 									</select> 
 									<input type="submit" name="match_category" value="SHOW" class="button">
 								</p>
@@ -191,7 +207,7 @@ function updateProd($id_c,$cart)
 		<?php  foreach ($product1 as $key => $value) :?>
 			<div id="<?php echo $product1[$key]['id']; ?>" class="product">
 
-				<img src="../uploads/<?php echo $product1[$key]['image']; ?>" width="64px" height="64px">
+				<img src="../uploads/<?php echo $product1[$key]['image']; ?>" width="90px" height="90px">
 				<h3 class="title"><a href="#"><?php echo $product1[$key]['name']; ?></a></h3>
 				<h3><?php echo $product1[$key]['price']; ?></h3><br>
 				<span><?php echo $product1[$key]['id']; ?></span>
@@ -247,23 +263,3 @@ function updateProd($id_c,$cart)
 		</div> <!-- End #main-content -->
 	</div></body>
 </html>
-<!--
-
-		$(".small-input").change(function(){
-								
-								var s_value=
-									 $(this).val(); 
-									 //alert(s_value);
-									$.ajax({
-									  method: "POST",
-									  url: "index.php",
-									  data: {drop_category:s_value},
-									  dataType:"json"
-									})
-									.done(function(msg)
-									{
-										alert(msg.prod);
-									});
-							});
-
-							-->

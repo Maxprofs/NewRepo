@@ -22,8 +22,27 @@
    		         $conn->close();
 
 }
+	include("config.php");
+	global $conn,$stmt,$category_array;
+	$category_array=array();
+	getCategory();
 
+	function getCategory()
+	{
+		global $conn,$stmt,$category_array;
+		$stmt=$conn->prepare("SELECT * FROM category_table");
+		$stmt->bind_result($id,$name,$parentid);
+		$stmt->execute();
+		while ($stmt->fetch()) 
+		{
+			# code...
 
+			array_push($category_array,array("id"=>$id,"name"=>$name,"parent_id"=>$parentid));
+		}
+		$stmt->close();
+		$conn->close();
+		//print_r($category_array);
+	}
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -86,11 +105,12 @@
 									<label>Select Category</label>              
 									<select name="p_category" class="small-input" value=" ">
 										<option value="<?php if(isset($_GET['e_id'])){echo $category11;}  ?>"><?php if(isset($_GET['e_id'])){echo $category11;}  else echo"--Select--";?></option>
-										<option value="sports">Sports</option>
-										<option value="automobiles">Automobiles</option>
-										<option value="electronics">Electronics</option>
-										<option value="cosmetics">Cosmetics</option>
-										<option value="fashion">Fashion</option>
+										<?php
+											 global $category_array;
+											 foreach ($category_array as $key => $value) :?>
+											 
+											<option value="<?php echo $category_array[$key]['name'];?>" data-optionid="<?php echo $category_array[$key]['id'];?>" data-optionparentid="<?php echo $category_array[$key]['parent_id'];?>" ><?php echo $category_array[$key]['name'];?></option>
+											<?php endforeach;?>
 									</select> 
 								</p>
 							
