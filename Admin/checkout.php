@@ -1,27 +1,24 @@
 <?php
 session_start();
-global $cart;
+global $cart,$price1;
+$price1=0;
 $cart=array();
 $cart=$_SESSION['cart'];
-echo "<pre>";
-print_r($cart);
-echo "</pre>";
+
 	include("config.php");
-	
-	//$stmt=$conn->prepare("SELECT COUNT(*) FROM new_products_table");
-	//$stmt->bind_result($numbr);
-	//$stmt->execute();
-	
-	//while($stmt->fetch()) {
-		//$total_records= $numbr;
-		# code...
-	//}
-	//$stmt->close();
-	//$conn->close();
+	if(isset($_GET['page_id']))
+	{
+		$page_id=$_GET['page_id'];
+	}
+	else
+	{
+		$page_id=0;
+	}
 	$total_records=count($cart);
 	$total_pages=ceil($total_records/4);
 	$limits=4;
 	echo $total_pages;
+	$start=$page_id*$limits;
 	
 //
 ?>
@@ -31,15 +28,25 @@ echo "</pre>";
 	<title>
 
 	</title>
+	<style type="text/css">
+		th,td
+		{
+			font-size: 20px;
+		}
+	</style>
 	<?php include("header.php");
 	?>
 </head>
 <body>
 <div id="main-content">
+<div style="float: right;">
+	<a href="index.php"  class="button"><img src="home.png" height="30px" width="30px" title="Home"></a>
+	<a href="#"  class=""><img src="store.png" height="30px" width="30px" title="Place Order"></a>
+</div>
 
 <table>
 						
-						<thead>
+						<thead >
 							<tr>
 							   <th><input class="check-all" type="checkbox" />
 							   </th>
@@ -78,7 +85,10 @@ echo "</pre>";
 					 
 						<tbody>
 <?php foreach($cart as $key => $value):?>
-	<tr>
+	<tr>					
+						<?php global $price1;
+						$price1+=$cart[$key]['quantity']*$cart[$key]['price'];
+						?>
 						<td><input type="checkbox" /></td>
 						<td><strong><?php echo $cart[$key]['category'];?></strong></td>
 						<td><strong><?php echo $cart[$key]['id'];?></strong></td>
@@ -93,7 +103,7 @@ echo "</pre>";
 							 <a href="#" title="Edit Meta"><img src="resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
 						</td>
 					</tr>
-				<?php endforeach;?>
+				<?php endforeach; $_SESSION['total_price']=$price1;?>
 				</tbody>
 						
 					</table>

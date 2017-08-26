@@ -33,6 +33,7 @@ $cat_product=array();
 if(isset($_GET['d_id']))
 {
 	$idtodel=$_GET['d_id'];
+	//$page_to_return=$_GET['page_id'];
 	include("config.php");
 	$stmt=$conn->prepare(" DELETE FROM new_products_table WHERE id=?");
 	$stmt->bind_param("s",$idtodel);
@@ -61,8 +62,9 @@ $conn->close();
 
 }
 ?>
-<?php
-include("config.php");
+<?php if(!isset($_GET['ctgry']))
+{
+	include("config.php");
 $stmt=$conn->prepare("SELECT * FROM new_products_table LIMIT ?,?");
 $stmt->bind_param("ii",$start,$limits);
 $stmt->bind_result($id1,$name1,$price1,$quantity1,$image1,$category1);
@@ -73,6 +75,8 @@ while($stmt->fetch())
 }
 $stmt->close();
 $conn->close();
+}
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
@@ -137,9 +141,11 @@ $conn->close();
 										<a class="button" href="#">Apply to selected</a>
 									</div>
 									
-									<div class="pagination">
-										<!-- dynamic pages will be shown here-->
-									</div> <!-- End .pagination -->
+									
+										<!-- dynamic pages will be shown here
+										<div class="pagination">
+										</div>
+									  End .pagination -->
 									<div class="clear"></div>
 								</td>
 							</tr>
@@ -155,7 +161,7 @@ $conn->close();
 								<td><strong><?php echo $cat_product[$key]['name'];?></strong></td>
 								<td><strong><?php echo $cat_product[$key]['price'];?></strong></td>
 								<td><strong><?php echo $cat_product[$key]['quantity'];?></strong></td>
-								<td><img height="70px" width="70px" src='../uploads/<?php echo $cat_product[$key]['image']; ?>'></td>
+								<td><img height="90px" width="90px" src='../uploads/<?php echo $cat_product[$key]['image']; ?>'></td>
 								<td>
 									<!-- Icons -->
 									 <a href="form.php?e_id=<?php echo $cat_product[$key]['id'];?>" title="Edit" class="edit_class"><img src="resources/images/icons/pencil.png" alt="Edit" /></a>
@@ -174,11 +180,11 @@ $conn->close();
 								<td><strong><?php echo $product[$key]['name'];?></strong></td>
 								<td><strong><?php echo $product[$key]['price'];?></strong></td>
 								<td><strong><?php echo $product[$key]['quantity'];?></strong></td>
-								<td><img height="70px" width="70px" src='../uploads/<?php echo $product[$key]['image']; ?>'></td>
+								<td><img height="90px" width="90px" src='../uploads/<?php echo $product[$key]['image']; ?>'></td>
 								<td>
 									<!-- Icons -->
 									 <a href="form.php?e_id=<?php echo $product[$key]['id'];?>" title="Edit" class="edit_class"><img src="resources/images/icons/pencil.png" alt="Edit" /></a>
-									 <a href="manageprod.php?d_id=<?php echo $product[$key]['id'];?>" title="Delete" class="delete_class"><img src="resources/images/icons/cross.png" alt="Delete" /></a> 
+									 <a href="manageprod.php?d_id=<?php echo $product[$key]['id'];?>&page_id=<?php echo $page_id;?>" title="Delete" class="delete_class"><img src="resources/images/icons/cross.png" alt="Delete" /></a> 
 									 <a href="#" title="Edit Meta"><img src="resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
 								</td>
 							</tr>

@@ -44,7 +44,8 @@
 
 					<ul>
 						<li><a href="form.php" class="current">Add a New Product</a></li>
-						<li><a  href="manageprod.php">Manage Products</a></li> <!-- Add class "current" to sub menu items also -->
+						<li><a  href="manageprod.php">Manage Products</a></li>
+						<li><a  href="index.php">Go To User Page</a></li> <!-- Add class "current" to sub menu items also -->
 					
 					</ul>
 				</li>
@@ -58,19 +59,32 @@
 
 					<ul>
 						<li><a href="form.php" >Add a New Product</a></li>
-						<li><a  href="manageprod.php" class="current">Manage Products</a></li> <!-- Add class "current" to sub menu items also -->
+						<li><a  href="manageprod.php" class="current">Manage Products</a></li> 
+						<li><a  href="index.php">Go To User Page</a></li> 
+						<!-- Add class "current" to sub menu items also -->
 					
 					</ul>
 				</li>
 			<?php endif;?>
 			
 				
-				<li>
-					<a href="#" class="nav-top-item">
+				<li><?php if(isset($_GET['ctgry']))
+				{
+					echo "<a href='#' class='nav-top-item current'>
 						Categories
-					</a>
+					</a>";
+				}
+					
+				 else {
+					# code...
+					echo "<a href='#' class='nav-top-item'>
+						Categories
+					</a>";
+				}
+				?>
 					<ul>
-					<li><a href="manageprod.php?ctgry=fashion">Fashion</a></li>
+						<li><a href="category_form.php">Add Category</a></li>
+					    <li><a href="manageprod.php?ctgry=fashion">Fashion</a></li>
 						<li><a href="manageprod.php?ctgry=sports">Sports</a></li>
 						<li><a href="manageprod.php?ctgry=cosmetics">Cosmetics</a></li>
 						<li><a href="manageprod.php?ctgry=automobiles">Automobiles</a></li>

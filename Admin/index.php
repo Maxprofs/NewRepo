@@ -4,17 +4,29 @@ global $cart;
 $cart=array();
 global $product1;
 $product1=array();
+global $c_product;
+$c_product=array();
 
 if(isset($_POST['p_id']))
 				{
 					$p=$_POST['p_id'];
-					
 					include("config.php");
 					$stmt=$conn->prepare("SELECT * FROM new_products_table WHERE id=?");
+
+					if ( false === $stmt ) {
+						return false;
+					}
 					$stmt->bind_param("s",$p);
+
+					if ( false === $params) {
+						return false;
+					}
 					$stmt->execute();
+
+					if ( false === $execute) {
+						return false;
+					}
 					$stmt->bind_result($id12,$name12,$price12,$quantity12,$image12,$category12);
-					
 					while($stmt->fetch())
 					{
 						masterFun($id12,$name12,$price12,$image12,$category12,$cart);
@@ -25,8 +37,41 @@ if(isset($_POST['p_id']))
 					echo json_encode($p);
 					//header("loacation:index.php");
 				}
+				else if (isset($_POST['match_category'])) 
+				{
+					$catg_to_show=$_POST['p_category'];
+					echo $catg_to_show;
+					include("config.php");
+					$stmt=$conn->prepare("SELECT * FROM new_products_table WHERE category=?");
+					$stmt->bind_param("s",$catg_to_show);
+					$stmt->bind_result($id14,$name14,$price14,$quantity14,$image14,$category14);
+					$stmt->execute();
+					while($stmt->fetch())
+					{
+						array_push($product1,array("id"=>$id14,"name"=>$name14,"price"=>$price14,"image"=>$image14,"quantity"=>$quantity14,"category"=>$category14));
+					}
+					$stmt->close();
+					$conn->close();
+					//$_SESSION['prod']=$product1;
+					//$product1=$_SESSION['prod'];
+					//header("location:index.php");
+					//echo json_encode(array("prod"=>$product1));
+				}
 
+				else
+				{
+				include("config.php");
+				$stmt=$conn->prepare("SELECT * FROM new_products_table");
+				$stmt->bind_result($id11,$name11,$price11,$quantity11,$image11,$category11);
+				$stmt->execute();
+				while($stmt->fetch())
+				{
+					array_push($product1,array("id"=>$id11,"name"=>$name11,"price"=>$price11,"image"=>$image11,"quantity"=>$quantity11,"category"=>$category11));
+				}
+				$stmt->close();
+				$conn->close();
 
+				}
 
 
 function masterFun($id_c,$name_c,$price_c,$image_c,$category_c,$cart)
@@ -82,16 +127,8 @@ function updateProd($id_c,$cart)
 }
 
 //by default
-include("config.php");
-$stmt=$conn->prepare("SELECT * FROM new_products_table");
-$stmt->bind_result($id11,$name11,$price11,$quantity11,$image11,$category11);
-$stmt->execute();
-while($stmt->fetch())
-{
-	array_push($product1,array("id"=>$id11,"name"=>$name11,"price"=>$price11,"image"=>$image11,"quantity"=>$quantity11,"category"=>$category11));
-}
-$stmt->close();
-$conn->close();
+
+
 ?>
 	
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -116,22 +153,26 @@ $conn->close();
 		<div id="main-content">
 		 <!-- Main Content Section with everything -->
 		 <div style="float:rigth;">
-		 <p>
+		 <a href="checkout.php"  class="small-input"><img src="store.png" height="30px" width="30px" title="Store"></a>
+			
+		 <form action="index.php" method="post">
+		 	 <p>
 									<label>Select Category</label>              
-									<select name="p_category" class="small-input" value="">
-										<option value=" ">--Select--</option>
-										<option value="sports">Sports</option>
-										<option value="automobiles">Automobiles</option>
-										<option value="electronics">Electronics</option>
-										<option value="fashion">Fashion</option>
-										<option value="cosmetics">Cosmetics</option>
+									<select name="p_category" class="small-input">
+										<option class="cat" value="<?php if (isset($_POST['match_category'])) echo $_POST['p_category'];?>" ><?php if (isset($_POST['match_category'])) echo $_POST['p_category'];
+										else echo "--Select--";?></option>
+										<option class="cat" value="sports">Sports</option>
+										<option class="cat" value="automobiles">Automobiles</option>
+										<option class="cat" value="electronics">Electronics</option>
+										<option class="cat" value="fashion">Fashion</option>
+										<option class="cat" value="cosmetics">Cosmetics</option>
 									</select> 
+									<input type="submit" name="match_category" value="SHOW" class="button">
 								</p>
+		 </form>
+		
 								</div>
-		 <ul>
-			<li><a href="checkout.php">Checkout Products</a>
-			</li>
-			</ul>
+		 
 			
 			
 			<!-- Page Head -->
@@ -171,30 +212,33 @@ $conn->close();
 	
 			<div class="clear"></div>
 			
-			
-			<!-- Start Notifications -->
 			<script type="text/javascript" src="jQuery.js"></script>
 				<script type="text/javascript">
 					
 					$(document).ready(function()
 						{
+
 							$(".add-to-cart").click(function()
 								{
-									var pid= $(this).data("productid"); alert(pid);
+									
+									var pid=
+									 $(this).data("productid"); 
+									 //alert(pid);
 									$.ajax({
 									  method: "POST",
 									  url: "index.php",
 									  data: { p_id:pid },
 									  dataType:"json"
 									})
-									  .done(function( msg ) {
-									  	alert(123);
-									    alert( "Data Saved: " + msg.id );
-									  });
+									 
 
 								});
+						
+							
 						});
 				</script>
+			<!-- Start Notifications -->
+			
 			
 			<!-- End Notifications -->
 			
@@ -203,3 +247,23 @@ $conn->close();
 		</div> <!-- End #main-content -->
 	</div></body>
 </html>
+<!--
+
+		$(".small-input").change(function(){
+								
+								var s_value=
+									 $(this).val(); 
+									 //alert(s_value);
+									$.ajax({
+									  method: "POST",
+									  url: "index.php",
+									  data: {drop_category:s_value},
+									  dataType:"json"
+									})
+									.done(function(msg)
+									{
+										alert(msg.prod);
+									});
+							});
+
+							-->
