@@ -1,6 +1,7 @@
 <?php
+session_start();
 if(isset($_POST['add_product']))
-{
+{	
 	include("config.php");
 	$id=$_POST['p_id'];
 	$name=$_POST['p_name'];
@@ -21,7 +22,14 @@ if(isset($_POST['add_product']))
 	}
 $stmt=$conn->prepare("INSERT INTO new_products_table (id ,name,price,qty,image,category) VALUES(?,?,?,?,?,?)");
 	$stmt->bind_param("ssiiss",$id,$name,$price,$quantity,$image,$category);
-	$stmt->execute();
+	$execute=$stmt->execute();
+	if($execute==false)
+		{
+			$_SESSION['error']="gfg";
+		}
+		else{
+			$_SESSION['message']="gfg";
+		}
 	$stmt->close();
 	$conn->close();
 	header("location:form.php");

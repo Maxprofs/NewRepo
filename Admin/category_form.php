@@ -3,9 +3,10 @@
 	global $conn,$stmt,$category_array;
 	$category_array=array();
 	getCategory();
-	 if(isset($_POST['add_category']) || isset($_POST['edit_category']))
+	 if(isset($_POST['add_category'])|| isset($_POST['edit_category']))
 		{
 
+			//echo "nothing is happening";
 		if($_POST['dd_category']==" ")
 		{
 			echo "no category selected";
@@ -147,13 +148,13 @@ include("sidebar.php");
 							<fieldset> 
 								<p >
 									<label>Category Name</label>
-										<input class="text-input small-input" type="text"  name="category_name" value="<?php if(isset($_GET['e_id'])){echo $name12;}?>" /> <span class="input-notification success png_bg">Successful message</span> <!-- Classes for input-notification: success, error, information, attention -->
+										<input class="text-input small-input" type="text"  name="category_name" value="<?php if(isset($_GET['e_id'])){echo $name12;} else echo " ";?>" /> <span class="input-notification success png_bg">Successful message</span> <!-- Classes for input-notification: success, error, information, attention -->
 										
 								</p>
 								<p >
 									<label>Select Parent Category</label>
 										<select name="dd_category" id="category-select">
-										<option value="<?php if(isset($_GET['e_id'])) echo $name13; ?>"><?php if(isset($_GET['e_id'])) {echo $name13;} else echo "--Select--";?></option>
+										<option value="<?php if(isset($_GET['e_id'])) echo $name13; else echo " "?>"><?php if(isset($_GET['e_id'])) {echo $name13;} else echo "--Select--";?></option>
 											<?php
 											 global $category_array;
 											 foreach ($category_array as $key => $value) :?>

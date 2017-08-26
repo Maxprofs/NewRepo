@@ -1,6 +1,7 @@
 <?php
+    //$limits=4;
 	include("config.php");
-	global $conn,$stmt,$category_array;
+	global $conn,$stmt,$category_array,$stats,$limit;
 	if(isset($_GET['page_id']))
 	{
 		$page_id=$_GET['page_id'];
@@ -10,7 +11,23 @@
 		$page_id=0;
 
 	}
+	$stmt=$conn->prepare("SELECT COUNT(*) FROM category_table");
+	$stmt->bind_result($numbr1);
+	$stmt->execute();
 	
+	while($stmt->fetch()) {
+		$total_records= $numbr1;
+		# code...
+	}
+	$stmt->close();
+	$conn->close();
+	$total_pages=ceil($total_records/4);
+	$limit=4;
+	$starts=$page_id*$limit;
+	//echo $total_records;
+	//echo $page_id;
+	//echo $total_pages;
+	echo $starts;
 	
 	if(isset($_GET['d_id']))
 	{
@@ -25,14 +42,21 @@
 	function getCategory()
 	{
 		include("config.php");
-		global $category_array;
-		$stmt=$conn->prepare("SELECT * FROM category_table");
-		$stmt->bind_result($id,$name,$parentid);
-		$stmt->execute();
+		global $category_array,$starts,$limit;
+		$stmt=$conn->prepare("SELECT * FROM category_table LIMIT ?,? ");
+		$stmt->bind_param("ii",$starts,$limit);
+		$execute=$stmt->execute();
+		if($execute==false)
+		{
+			echo "error";
+		}
+		$stmt->bind_result($ids,$names,$parentids);
+		
 		while ($stmt->fetch()) 
 		{
 			# code...
-			array_push($category_array,array("id"=>$id,"name"=>$name,"parent_id"=>$parentid));
+
+			array_push($category_array,array("id"=>$ids,"name"=>$names,"parent_id"=>$parentids));
 		}
 		$stmt->close();
 		$conn->close();
@@ -107,7 +131,7 @@ include("sidebar.php");?>
 				</td>
 			</tr>
 		</tfoot>
-	 
+	 			
 		<tbody>
 				<!--default-->
 		<?php foreach($category_array as $key => $value):?>
@@ -133,6 +157,23 @@ include("sidebar.php");?>
 </div>
 <div class="clear"></div>
 <?php include("footer.php");?>
+<script type="text/javascript" src="jQuery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function()
+		{
+
+						//alert("allready loaded");
+						/////
+						var htm="<a href='managecategory.php?page_id=0' title='First Page'>&laquo; First</a><a href='managecategory.php?page_id=<?php  if($page_id==0) {echo $page_id;} else{echo $page_id-1;}?>' title='Previous Page'>&laquo; Previous</a>";
+						for(var i=1;i<='<?php echo $total_pages; ?>';i++)
+						{
+							htm+="<a href='managecategory.php?page_id="+(i-1)+"' class='number current' title="+i+">"+i+"</a>";
+						}
+						htm+="<a href='managecategory.php?page_id=<?php  echo $page_id+1;?>' title='Next Page'>Next &raquo;</a><a href='managecategory.php?page_id="+(i-2)+"' title='Last Page'>Last &raquo;</a>";
+						$(".pagination").html(htm);
+					});
+
+</script>
 </body>
 </html>
 <!--

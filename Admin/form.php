@@ -1,4 +1,5 @@
 <?php
+session_start();
  if(isset($_GET['e_id']))
 {
 	include("config.php");
@@ -113,7 +114,22 @@
 											<?php endforeach;?>
 									</select> 
 								</p>
-							
+								<?php if(isset($_SESSION['message'])):?>
+							<div class="notification success png_bg">
+								<a href="#" class="close"><img src="resources/images/icons/cross_grey_small.png" title="Close this notification" alt="close" /></a>
+								<div>
+								Success notification. Product has been added successfuly
+								</div>
+								</div>
+						<?php unset($_SESSION['message']); endif;?>
+						<?php if(isset($_SESSION['error'])):?>
+							<div class="notification error png_bg">
+								<a href="#" class="close"><img src="resources/images/icons/cross_grey_small.png" title="Close this notification" alt="close" /></a>
+								<div>
+									Error notification. Something went wrong;
+								</div>
+							</div>
+							<?php unset($_SESSION['error']); endif;?>
 							<?php if(isset($_GET['e_id'])){
 										echo "<input type='hidden' name='hidden_eid' value='".$_GET['e_id']."'>";
 												}
