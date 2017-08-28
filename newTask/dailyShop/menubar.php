@@ -8,7 +8,10 @@
 $digital_array=array();
 $sports_array=array();
 
- getCategoryall();
+
+  getCategoryall();
+
+ 
  function getCategoryall()
  {
   global $stmt,$conn,$category_array;
@@ -20,40 +23,13 @@ $sports_array=array();
   }
   $stmt->bind_result($id_cat,$name_cat,$parent_id_cat);
   while($stmt->fetch())
-  {
+  { 
+   
     array_push($category_array,array("id"=>$id_cat,"category_name"=>$name_cat,"parent_id"=>$parent_id_cat));
   }
-  //print_r($category_array);
-  //getsubCategory($category_array);
+ 
  }
- function getsubCategory($category_array)
- {
-     global $stmt,$conn,$women_array,$men_array,$kids_array,$digital_array,$sports_array;
-     foreach ($category_array as $key => $value)
-      {
-       # code...
-        if($category_array[$key]['category_name']=="Men")
-        {
-            array_push($men_array,array("id"=>$category_array[$key]['id'],"category_name"=>$category_array[$key]['category_name'],"parent_id"=>$category_array[$key]['parent_id']));
-        }
-        else if($category_array[$key]['category_name']=="Women")
-        {
-            array_push($women_array,array("id"=>$category_array[$key]['id'],"category_name"=>$category_array[$key]['category_name'],"parent_id"=>$category_array[$key]['parent_id']));
-        }
-        else if($category_array[$key]['category_name']=="Kids")
-        {
-              array_push($kids_array,array("id"=>$category_array[$key]['id'],"category_name"=>$category_array[$key]['category_name'],"parent_id"=>$category_array[$key]['parent_id']));
-        }
-         else if($category_array[$key]['category_name']=="Digital")
-        {
-              array_push($digital_array,array("id"=>$category_array[$key]['id'],"category_name"=>$category_array[$key]['category_name'],"parent_id"=>$category_array[$key]['parent_id']));
-        }
-         else if($category_array[$key]['category_name']=="Sports")
-        {
-              array_push($sports_array,array("id"=>$category_array[$key]['id'],"category_name"=>$category_array[$key]['category_name'],"parent_id"=>$category_array[$key]['parent_id']));
-        }
-     }
- }
+ 
 ?>
 <header id="aa-header">
     <!-- start header top  -->

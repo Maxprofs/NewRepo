@@ -11,7 +11,51 @@ else
 {
   $page_id=$_GET["page_id"];
 }
-$stmt=$conn->prepare("SELECT COUNT(*) FROM product_table");
+//echo "yes";
+if(isset($_GET['ctgry']))
+{
+    $cat_to_select=$_GET['ctgry'];
+    $stmt=$conn->prepare("SELECT * FROM product_table WHERE category=?");
+
+  $stmt->bind_param("s",$cat_to_select);
+  $stmt->execute();
+  $res=$stmt->bind_result($idpr,$namepr,$pricepr,$imagepr,$categorypr);
+if($res==false)
+{
+  echo "no result binded";
+}
+while($stmt->fetch())
+{
+  array_push($product_array, array("id"=>$idpr,"name"=>$namepr,"price"=>$pricepr,"image"=>$imagepr,"category"=>$categorypr));
+}
+
+}
+else if(isset($_POST['submit']))
+{
+  if(!empty($_POST['check_list']))
+  {
+    $total_selection=count($_POST['check_list']);
+    echo $total_selection; $i=0;
+    foreach ($_POST['check_list'] as $value)
+     { 
+      $v[$i]=$value;
+      echo $value;
+      $stmt=$conn->prepare("SELECT * FROM product_table WHERE category=?");
+      $stmt->bind_param("s",$value);
+      $stmt->execute();
+      $stmt->bind_result($id33,$name33,$price33,$image33,$category33);
+      while($stmt->fetch())
+      {
+        array_push($product_array, array("id"=>$id33,"name"=>$name33,"price"=>$price33,"image"=>$image33));
+      }
+      //print_r($product_array);
+    }
+    
+  }
+}
+else
+{
+  $stmt=$conn->prepare("SELECT COUNT(*) FROM product_table");
   $stmt->bind_result($numbr);
   $stmt->execute();
   
@@ -19,10 +63,8 @@ $stmt=$conn->prepare("SELECT COUNT(*) FROM product_table");
     $total_records= $numbr;
     # code...
   }
-  //$stmt->close();
-  //$conn->close();
   $total_pages=ceil($total_records/6);
-$start=$page_id*$limits;
+  $start=$page_id*$limits;
 $stmt=$conn->prepare("SELECT * FROM product_table LIMIT ?,? "); 
 $stmt->bind_param("ii",$start,$limits);
 $stmt->execute();
@@ -35,6 +77,8 @@ while($stmt->fetch())
 {
   array_push($product_array, array("id"=>$idp,"name"=>$namep,"price"=>$pricep,"image"=>$imagep,"category"=>$categoryp));
 }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -61,273 +105,7 @@ while($stmt->fetch())
  <!-- SCROLL TOP BUTTON -->
     <a class="scrollToTop" href="#"><i class="fa fa-chevron-up"></i></a>
   <!-- END SCROLL TOP BUTTON -->
-
-
-  <!-- Start header section -->
-  <header id="aa-header">
-    <!-- start header top  -->
-    <div class="aa-header-top">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="aa-header-top-area">
-              <!-- start header top left -->
-              <div class="aa-header-top-left">
-                <!-- start language -->
-                <div class="aa-language">
-                  <div class="dropdown">
-                    <a class="btn dropdown-toggle" href="#" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                      <img src="img/flag/english.jpg" alt="english flag">ENGLISH
-                      <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                      <li><a href="#"><img src="img/flag/french.jpg" alt="">FRENCH</a></li>
-                      <li><a href="#"><img src="img/flag/english.jpg" alt="">ENGLISH</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <!-- / language -->
-
-                <!-- start currency -->
-                <div class="aa-currency">
-                  <div class="dropdown">
-                    <a class="btn dropdown-toggle" href="#" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                      <i class="fa fa-usd"></i>USD
-                      <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                      <li><a href="#"><i class="fa fa-euro"></i>EURO</a></li>
-                      <li><a href="#"><i class="fa fa-jpy"></i>YEN</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <!-- / currency -->
-                <!-- start cellphone -->
-                <div class="cellphone hidden-xs">
-                  <p><span class="fa fa-phone"></span>00-62-658-658</p>
-                </div>
-                <!-- / cellphone -->
-              </div>
-              <!-- / header top left -->
-              <div class="aa-header-top-right">
-                <ul class="aa-head-top-nav-right">
-                  <li><a href="account.html">My Account</a></li>
-                  <li class="hidden-xs"><a href="wishlist.html">Wishlist</a></li>
-                  <li class="hidden-xs"><a href="cart.html">My Cart</a></li>
-                  <li class="hidden-xs"><a href="checkout.html">Checkout</a></li>
-                  <li><a href="" data-toggle="modal" data-target="#login-modal">Login</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- / header top  -->
-
-    <!-- start header bottom  -->
-    <div class="aa-header-bottom">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="aa-header-bottom-area">
-              <!-- logo  -->
-              <div class="aa-logo">
-                <!-- Text based logo -->
-                <a href="index.html">
-                  <span class="fa fa-shopping-cart"></span>
-                  <p>daily<strong>Shop</strong> <span>Your Shopping Partner</span></p>
-                </a>
-                <!-- img based logo -->
-                <!-- <a href="index.html"><img src="img/logo.jpg" alt="logo img"></a> -->
-              </div>
-              <!-- / logo  -->
-               <!-- cart box -->
-              <div class="aa-cartbox">
-                <a class="aa-cart-link" href="#">
-                  <span class="fa fa-shopping-basket"></span>
-                  <span class="aa-cart-title">SHOPPING CART</span>
-                  <span class="aa-cart-notify">2</span>
-                </a>
-                <div class="aa-cartbox-summary">
-                  <ul>
-                    <li>
-                      <a class="aa-cartbox-img" href="#"><img src="img/woman-small-2.jpg" alt="img"></a>
-                      <div class="aa-cartbox-info">
-                        <h4><a href="#">Product Name</a></h4>
-                        <p>1 x $250</p>
-                      </div>
-                      <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
-                    </li>
-                    <li>
-                      <a class="aa-cartbox-img" href="#"><img src="img/woman-small-1.jpg" alt="img"></a>
-                      <div class="aa-cartbox-info">
-                        <h4><a href="#">Product Name</a></h4>
-                        <p>1 x $250</p>
-                      </div>
-                      <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
-                    </li>                    
-                    <li>
-                      <span class="aa-cartbox-total-title">
-                        Total
-                      </span>
-                      <span class="aa-cartbox-total-price">
-                        $500
-                      </span>
-                    </li>
-                  </ul>
-                  <a class="aa-cartbox-checkout aa-primary-btn" href="#">Checkout</a>
-                </div>
-              </div>
-              <!-- / cart box -->
-              <!-- search box -->
-              <div class="aa-search-box">
-                <form action="">
-                  <input type="text" name="" id="" placeholder="Search here ex. 'man' ">
-                  <button type="submit"><span class="fa fa-search"></span></button>
-                </form>
-              </div>
-              <!-- / search box -->             
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- / header bottom  -->
-  </header>
-  <!-- / header section -->
-  <!-- menu -->
-  <section id="menu">
-    <div class="container">
-      <div class="menu-area">
-        <!-- Navbar -->
-        <div class="navbar navbar-default" role="navigation">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>          
-          </div>
-          <div class="navbar-collapse collapse">
-            <!-- Left nav -->
-            <ul class="nav navbar-nav">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="#">Men <span class="caret"></span></a>
-                <ul class="dropdown-menu">                
-                  <li><a href="#">Casual</a></li>
-                  <li><a href="#">Sports</a></li>
-                  <li><a href="#">Formal</a></li>
-                  <li><a href="#">Standard</a></li>                                                
-                  <li><a href="#">T-Shirts</a></li>
-                  <li><a href="#">Shirts</a></li>
-                  <li><a href="#">Jeans</a></li>
-                  <li><a href="#">Trousers</a></li>
-                  <li><a href="#">And more.. <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="#">Sleep Wear</a></li>
-                      <li><a href="#">Sandals</a></li>
-                      <li><a href="#">Loafers</a></li>                                      
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li><a href="#">Women <span class="caret"></span></a>
-                <ul class="dropdown-menu">  
-                  <li><a href="#">Kurta & Kurti</a></li>                                                                
-                  <li><a href="#">Trousers</a></li>              
-                  <li><a href="#">Casual</a></li>
-                  <li><a href="#">Sports</a></li>
-                  <li><a href="#">Formal</a></li>                
-                  <li><a href="#">Sarees</a></li>
-                  <li><a href="#">Shoes</a></li>
-                  <li><a href="#">And more.. <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="#">Sleep Wear</a></li>
-                      <li><a href="#">Sandals</a></li>
-                      <li><a href="#">Loafers</a></li>
-                      <li><a href="#">And more.. <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                          <li><a href="#">Rings</a></li>
-                          <li><a href="#">Earrings</a></li>
-                          <li><a href="#">Jewellery Sets</a></li>
-                          <li><a href="#">Lockets</a></li>
-                          <li class="disabled"><a class="disabled" href="#">Disabled item</a></li>                       
-                          <li><a href="#">Jeans</a></li>
-                          <li><a href="#">Polo T-Shirts</a></li>
-                          <li><a href="#">SKirts</a></li>
-                          <li><a href="#">Jackets</a></li>
-                          <li><a href="#">Tops</a></li>
-                          <li><a href="#">Make Up</a></li>
-                          <li><a href="#">Hair Care</a></li>
-                          <li><a href="#">Perfumes</a></li>
-                          <li><a href="#">Skin Care</a></li>
-                          <li><a href="#">Hand Bags</a></li>
-                          <li><a href="#">Single Bags</a></li>
-                          <li><a href="#">Travel Bags</a></li>
-                          <li><a href="#">Wallets & Belts</a></li>                        
-                          <li><a href="#">Sunglases</a></li>
-                          <li><a href="#">Nail</a></li>                       
-                        </ul>
-                      </li>                   
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li><a href="#">Kids <span class="caret"></span></a>
-                <ul class="dropdown-menu">                
-                  <li><a href="#">Casual</a></li>
-                  <li><a href="#">Sports</a></li>
-                  <li><a href="#">Formal</a></li>
-                  <li><a href="#">Standard</a></li>                                                
-                  <li><a href="#">T-Shirts</a></li>
-                  <li><a href="#">Shirts</a></li>
-                  <li><a href="#">Jeans</a></li>
-                  <li><a href="#">Trousers</a></li>
-                  <li><a href="#">And more.. <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="#">Sleep Wear</a></li>
-                      <li><a href="#">Sandals</a></li>
-                      <li><a href="#">Loafers</a></li>                                      
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li><a href="#">Sports</a></li>
-             <li><a href="#">Digital <span class="caret"></span></a>
-                <ul class="dropdown-menu">                
-                  <li><a href="#">Camera</a></li>
-                  <li><a href="#">Mobile</a></li>
-                  <li><a href="#">Tablet</a></li>
-                  <li><a href="#">Laptop</a></li>                                                
-                  <li><a href="#">Accesories</a></li>                
-                </ul>
-              </li>
-              <li><a href="#">Furniture</a></li>            
-             <li><a href="blog-archive.html">Blog <span class="caret"></span></a>
-                <ul class="dropdown-menu">                
-                  <li><a href="blog-archive.html">Blog Style 1</a></li>
-                  <li><a href="blog-archive-2.html">Blog Style 2</a></li>
-                  <li><a href="blog-single.html">Blog Single</a></li>                
-                </ul>
-              </li>
-              <li><a href="contact.html">Contact</a></li>
-              <li><a href="#">Pages <span class="caret"></span></a>
-                <ul class="dropdown-menu">                
-                  <li><a href="product.html">Shop Page</a></li>
-                  <li><a href="product-detail.html">Shop Single</a></li>                
-                  <li><a href="404.html">404 Page</a></li>                
-                </ul>
-              </li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div> 
-      </div>
-    </div>
-  </section>
-  <!-- / menu -->  
+  
  
   <!-- catg header banner section -->
   <section id="aa-catg-head-banner">
@@ -345,7 +123,7 @@ while($stmt->fetch())
    </div>
   </section>
   <!-- / catg header banner section -->
-
+<?php include("menubar.php");?>
   <!-- product category -->
   <section id="aa-product-category">
     <div class="container">
@@ -513,13 +291,144 @@ while($stmt->fetch())
             </div>
           </div>
         </div>
-        
+        <div class="col-lg-3 col-md-3 col-sm-4 col-md-pull-9">
+          <aside class="aa-sidebar">
+            <!-- single sidebar -->
+            <div class="aa-sidebar-widget">
+              <h3>Category</h3>
+              <ul class="aa-catg-nav">
+                <li><a href="product1.php?ctgry=Men">Men</a></li>
+                <li><a href="product1.php?ctgry=Women">Women</a></li>
+                <li><a href="product1.php?ctgry=Kids">Kids</a></li>
+                <li><a href="product1.php?ctgry=Digital">Electornics</a></li>
+                <li><a href="product1.php?ctgry=Sports">Sports</a></li>
+              </ul>
+            </div>
+            <div class="aa-sidebar-widget">
+              <form action="product1.php" method="post">
+                
+                <label class="heading">Select Your Technical Exposure:</label>
+                <input type="checkbox" name="check_list[]" value="Men"><label>Men</label><br>
+                <input type="checkbox" name="check_list[]" value="Women"><label>Women</label><br>
+                <input type="checkbox" name="check_list[]" value="Kids"><label>Kids</label><br>
+                <input type="checkbox" name="check_list[]" value="Sports"><label>Sports</label><br>
+                <input type="checkbox" name="check_list[]" value="Digital"><label>Electronics</label><br>
+                <input type="submit" name="submit" Value="Filter"/>
+              </form>
+            </div>
+            <!-- single sidebar -->
+            <div class="aa-sidebar-widget">
+              <h3>Tags</h3>
+              <div class="tag-cloud">
+                <a href="#">Fashion</a>
+                <a href="#">Ecommerce</a>
+                <a href="#">Shop</a>
+                <a href="#">Hand Bag</a>
+                <a href="#">Laptop</a>
+                <a href="#">Head Phone</a>
+                <a href="#">Pen Drive</a>
+              </div>
+            </div>
+            <!-- single sidebar -->
+            <div class="aa-sidebar-widget">
+              <h3>Shop By Price</h3>              
+              <!-- price range -->
+              <div class="aa-sidebar-price-range">
+               <form action="">
+                  <div id="skipstep" class="noUi-target noUi-ltr noUi-horizontal noUi-background">
+                  </div>
+                  <span id="skip-value-lower" class="example-val">30.00</span>
+                 <span id="skip-value-upper" class="example-val">100.00</span>
+                 <button class="aa-filter-btn" type="submit">Filter</button>
+               </form>
+              </div>              
+
+            </div>
+            <!-- single sidebar -->
+            <div class="aa-sidebar-widget">
+              <h3>Shop By Color</h3>
+              <div class="aa-color-tag">
+                <a class="aa-color-green" href="#"></a>
+                <a class="aa-color-yellow" href="#"></a>
+                <a class="aa-color-pink" href="#"></a>
+                <a class="aa-color-purple" href="#"></a>
+                <a class="aa-color-blue" href="#"></a>
+                <a class="aa-color-orange" href="#"></a>
+                <a class="aa-color-gray" href="#"></a>
+                <a class="aa-color-black" href="#"></a>
+                <a class="aa-color-white" href="#"></a>
+                <a class="aa-color-cyan" href="#"></a>
+                <a class="aa-color-olive" href="#"></a>
+                <a class="aa-color-orchid" href="#"></a>
+              </div>                            
+            </div>
+            <!-- single sidebar -->
+            <div class="aa-sidebar-widget">
+              <h3>Recently Views</h3>
+              <div class="aa-recently-views">
+                <ul>
+                  <li>
+                    <a href="#" class="aa-cartbox-img"><img alt="img" src="img/woman-small-2.jpg"></a>
+                    <div class="aa-cartbox-info">
+                      <h4><a href="#">Product Name</a></h4>
+                      <p>1 x $250</p>
+                    </div>                    
+                  </li>
+                  <li>
+                    <a href="#" class="aa-cartbox-img"><img alt="img" src="img/woman-small-1.jpg"></a>
+                    <div class="aa-cartbox-info">
+                      <h4><a href="#">Product Name</a></h4>
+                      <p>1 x $250</p>
+                    </div>                    
+                  </li>
+                   <li>
+                    <a href="#" class="aa-cartbox-img"><img alt="img" src="img/woman-small-2.jpg"></a>
+                    <div class="aa-cartbox-info">
+                      <h4><a href="#">Product Name</a></h4>
+                      <p>1 x $250</p>
+                    </div>                    
+                  </li>                                      
+                </ul>
+              </div>                            
+            </div>
+            <!-- single sidebar -->
+            <div class="aa-sidebar-widget">
+              <h3>Top Rated Products</h3>
+              <div class="aa-recently-views">
+                <ul>
+                  <li>
+                    <a href="#" class="aa-cartbox-img"><img alt="img" src="img/woman-small-2.jpg"></a>
+                    <div class="aa-cartbox-info">
+                      <h4><a href="#">Product Name</a></h4>
+                      <p>1 x $250</p>
+                    </div>                    
+                  </li>
+                  <li>
+                    <a href="#" class="aa-cartbox-img"><img alt="img" src="img/woman-small-1.jpg"></a>
+                    <div class="aa-cartbox-info">
+                      <h4><a href="#">Product Name</a></h4>
+                      <p>1 x $250</p>
+                    </div>                    
+                  </li>
+                   <li>
+                    <a href="#" class="aa-cartbox-img"><img alt="img" src="img/woman-small-2.jpg"></a>
+                    <div class="aa-cartbox-info">
+                      <h4><a href="#">Product Name</a></h4>
+                      <p>1 x $250</p>
+                    </div>                    
+                  </li>                                      
+                </ul>
+              </div>                            
+            </div>
+          </aside>
+        </div>
+       
       </div>
     </div>
   </section>
   <!-- / product category -->
 
-<?php include("new_sidebar.php");?>
+
   <!-- Subscribe section -->
   <section id="aa-subscribe">
     <div class="container">

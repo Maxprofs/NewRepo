@@ -5,7 +5,7 @@ session_start();
 	include("config.php");
 	$idtoedit=$_GET['e_id'];
 	include("config.php");
-	$stmt=$conn->prepare(" SELECT * FROM products_table  WHERE id=?");
+	$stmt=$conn->prepare(" SELECT * FROM product_table  WHERE id=?");
 	$stmt->bind_param("s",$idtoedit);
 	$stmt->execute();
 	$stmt->bind_result($id2,$name2,$price2,$quantity2,$image2,$category2);

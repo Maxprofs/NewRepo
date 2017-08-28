@@ -1,7 +1,8 @@
 <?php
-//session_start();
+
 if(isset($_POST['add_product']))
-{	 echo 1;
+{	 
+	echo 1;
 	include("config.php");
 	$id12=$_POST['p_id'];
 	$name12=$_POST['p_name'];
