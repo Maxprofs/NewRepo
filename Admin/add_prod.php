@@ -28,7 +28,7 @@ $stmt=$conn->prepare("INSERT INTO new_products_table (id ,name,price,qty,image,c
 			$_SESSION['error']="gfg";
 		}
 		else{
-			$_SESSION['message']="gfg";
+			$_SESSION['message']="gfgh";
 		}
 	$stmt->close();
 	$conn->close();
