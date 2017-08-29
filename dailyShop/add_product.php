@@ -1,6 +1,17 @@
 <?php
-session_start();
- if(isset($_GET['e_id']))
+//session_start();
+include("../functions.php");
+
+getCategory();
+if(isset($_POST['add_product']))
+
+{
+	
+	addProduct();
+	
+}
+ else if(isset($_GET['e_id']))
+
 {
 	include("config.php");
 	$idtoedit=$_GET['e_id'];
@@ -33,7 +44,7 @@ session_start();
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Simpla Admin</title>
+<title>add product</title>
 <?php include("new_header.php");?>
 </head>
 <body><div id="body-wrapper">
@@ -57,7 +68,7 @@ session_start();
 
 					<div class="tab-content1" id="t">
 					
-						<form action="add_prod_loigc.php" method="post" enctype="multipart/form-data">
+						<form action="add_product.php" method="post" enctype="multipart/form-data">
 							
 							<fieldset> <!-- Set class to "column-left" or "column-right" on fieldsets to divide the form into columns -->
 								
@@ -89,7 +100,7 @@ session_start();
 											 global $category_array;
 											 foreach ($category_array as $key => $value) :?>
 											 
-											<option value="<?php echo $category_array[$key]['category_name'];?>" data-optionid="<?php echo $category_array[$key]['id'];?>" data-optionparentid="<?php echo $category_array[$key]['parent_id'];?>" ><?php echo $category_array[$key]['category_name'];?></option>
+											<option value="<?php echo $category_array[$key]['name'];?>" data-optionid="<?php echo $category_array[$key]['id'];?>" data-optionparentid="<?php echo $category_array[$key]['parent_id'];?>" ><?php echo $category_array[$key]['name'];?></option>
 											<?php endforeach;?>
 									</select> 
 								</p>
@@ -133,6 +144,7 @@ session_start();
 							<!-- End .clear -->
 							
 						</form>
+						
 						
 					</div>
 						</div>

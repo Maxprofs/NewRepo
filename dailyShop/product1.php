@@ -1,64 +1,11 @@
+
 <?php
+ 
 
+ include("../functions.php");
+  $start=getNumberOfProducts();
+  $product_array=getCategoryFilter($start);
 
-
-if(isset($_GET['ctgry'] ))
-{ 
-  include("../functions.php");
-  getNumberOfProducts();
-  getCategoryFilter();
-
-}
-else if(isset($_POST['submit']))
-{
-  global $conn,$stmt;
-  if(!empty($_POST['check_list']))
-  {
-    $total_selection=count($_POST['check_list']);
-
-    foreach ($_POST['check_list'] as $value)
-     { 
-    
-      $stmt=$conn->prepare("SELECT * FROM product_table WHERE category=? LIMIT ?,?");
-      $stmt->bind_param("sii",$value,$start,$limits);
-      $stmt->execute();
-      $stmt->bind_result($id33,$name33,$price33,$image33,$category33);
-      while($stmt->fetch())
-      {
-        array_push($product_array, array("id"=>$id33,"name"=>$name33,"price"=>$price33,"image"=>$image33));
-      }
-      //print_r($product_array);
-    }
-    
-  }
-}
-else
-{
-  include("../functions.php");
-  global $conn,$stmt;
-  $stmt=$conn->prepare("SELECT COUNT(*) FROM product_table");
-  $stmt->bind_result($numbr);
-  $stmt->execute();
-  
-  while($stmt->fetch()) {
-    $total_records= $numbr;
-    # code...
-  }
-  $total_pages=ceil($total_records/6);
-  $start=$page_id*$limits;
-$stmt=$conn->prepare("SELECT * FROM product_table LIMIT ?,? "); 
-$stmt->bind_param("ii",$start,$limits);
-$stmt->execute();
-$res=$stmt->bind_result($idp,$namep,$pricep,$imagep,$categoryp);
-if($res==false)
-{
-  echo "no result binded";
-}
-while($stmt->fetch())
-{
-  array_push($product_array, array("id"=>$idp,"name"=>$namep,"price"=>$pricep,"image"=>$imagep,"category"=>$categoryp));
-}
-}
 
 ?>
 <!DOCTYPE html>
@@ -572,13 +519,22 @@ while($stmt->fetch())
   <script type="text/javascript" src="jQuery.js"></script>
           <script type="text/javascript">
             $(document).ready(function()
-              {
-                 var htm="<h2> <a href='product1.php?page_id=0' title='First Page'>&laquo; First</a><a href='product1.php?page_id=<?php  if($page_id==0) {echo $page_id;} else{echo $page_id-1;}?><?php if(isset($_GET['ctgry'])):?>&ctgry=<?php echo $_GET['ctgry'];?><?php endif;?>' title='Previous Page' aria-label='Previous'>&laquo;<span aria-hidden='true'>&laquo;</span></a>";
+              {<?php global $total_pages;?>
+                var j=0;
+                 var htm="<h2> <a href='product1.php?page_id=0<?php if(isset($_GET['ctgry'])):?>&ctgry=<?php echo $_GET['ctgry'];?><?php endif;?>' title='First Page'>&laquo; First</a><a href='product1.php?page_id=<?php  if($page_id==0) {echo $page_id;} else{echo $page_id-1;}?><?php if(isset($_GET['ctgry'])):?>&ctgry=<?php echo $_GET['ctgry'];?><?php endif;?><?php if(!empty($_POST['check_list'])):?>&checkbox2[]=<?php foreach ($_POST['check_list'] as $value) {
+                echo $value;
+              }?><?php endif;?>' title='Previous Page' aria-label='Previous'>&laquo;<span aria-hidden='true'>&laquo;</span></a>";
             for(var i=1;i<='<?php echo $total_pages; ?>';i++)
             {
-              htm+="<a href='product1.php?page_id="+(i-1)+"<?php if(isset($_GET['ctgry'])):?>&ctgry=<?php echo $_GET['ctgry'];?><?php endif;?>' class='number current' title="+i+">"+i+"</a>";
+              htm+="<a href='product1.php?page_id="+(i-1)+"<?php if(isset($_GET['ctgry'])):?>&ctgry=<?php echo $_GET['ctgry'];?><?php endif;?><?php if(!empty($_POST['check_list'])):?>&checkbox2[]=<?php foreach ($_POST['check_list'] as $value) {
+                echo $value;
+              }?><?php endif;?><?php if(isset($_GET['checkbox2'])):?>&chklst=<?php echo $_GET['checkbox2'];?><?php endif;?>' class='number current' title="+i+">"+i+"</a>";
             }
-            htm+="<a aria-label='Next' href='product1.php?page_id=<?php  echo $page_id+1;?><?php if(isset($_GET['ctgry'])):?>&ctgry=<?php echo $_GET['ctgry'];?><?php endif;?>'  title='Next Page'>Next &raquo;<span aria-hidden='true'>&raquo;</span></a><a href='product1.php?page_id="+(i-2)+"' title='Last Page'>Last &raquo;</a></h2>";
+            htm+="<a aria-label='Next' href='product1.php?page_id=<?php  echo $page_id+1;?><?php if(isset($_GET['ctgry'])):?>&ctgry=<?php echo $_GET['ctgry'];?><?php endif;?><?php if(!empty($_POST['check_list'])):?>&checkbox2[]=<?php foreach ($_POST['check_list'] as $value) {
+                echo $value;
+              }?><?php endif;?>'  title='Next Page'>Next &raquo;<span aria-hidden='true'>&raquo;</span></a><a href='product1.php?page_id="+(i-2)+"<?php if(isset($_GET['ctgry'])):?>&ctgry=<?php echo $_GET['ctgry'];?><?php endif;?><?php if(!empty($_POST['check_list'])):?>&checkbox2[]=<?php foreach ($_POST['check_list'] as $value) {
+                echo $value;
+              }?><?php endif;?>' title='Last Page'>Last &raquo;</a></h2>";
             $(".pagination").html(htm);
               });
           </script>

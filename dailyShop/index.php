@@ -1,55 +1,6 @@
 <?php
-include("config.php");
-global $product_array,$image_women,$image_men,$image_kids,$image_digital,$image_sport;
-$product_array=array();
-$image_women=array();
-$image_men=array();
-$image_kids=array();
-$image_digital=array();
-$image_sport=array();
-$stmt=$conn->prepare("SELECT * FROM product_table");
-$stmt->execute();
-$res=$stmt->bind_result($idp,$namep,$pricep,$imagep,$categoryp);
-if($res==false)
-{
-  echo "no result binded";
-}
-while($stmt->fetch())
-{
-  array_push($product_array, array("id"=>$idp,"name"=>$namep,"price"=>$pricep,"image"=>$imagep,"category"=>$categoryp));
-}
-
-getImagebyCategory($product_array,$image_women,$image_men,$image_kids,$image_digital,$image_sport);
-function getImagebyCategory($product_array,$image_women,$image_men,$image_kids,$image_digital,$image_sport)
-{
-    global $product_array,$image_women,$image_men,$image_kids,$image_digital,$image_sport;
-  foreach ($product_array as $key => $value) 
-  {
-    # code...
-
-    if($product_array[$key]['category']=="Men")
-        {
-          array_push($image_men,array("id"=>$product_array[$key]['id'],"name"=>$product_array[$key]['name'],"price"=>$product_array[$key]['price'],"image"=>$product_array[$key]['image'],"category"=>$product_array[$key]['category']));
-        }
-        else if($product_array[$key]['category']=="Women")
-        {
-        array_push($image_women,array("id"=>$product_array[$key]['id'],"name"=>$product_array[$key]['name'],"price"=>$product_array[$key]['price'],"image"=>$product_array[$key]['image'],"category"=>$product_array[$key]['category']));
-        }
-        else if($product_array[$key]['category']=="Kids")
-        {
-         array_push($image_kids,array("id"=>$product_array[$key]['id'],"name"=>$product_array[$key]['name'],"price"=>$product_array[$key]['price'],"image"=>$product_array[$key]['image'],"category"=>$product_array[$key]['category']));
-        }
-         else if($product_array[$key]['category']=="Digital")
-        {
-          array_push($image_digital,array("id"=>$product_array[$key]['id'],"name"=>$product_array[$key]['name'],"price"=>$product_array[$key]['price'],"image"=>$product_array[$key]['image'],"category"=>$product_array[$key]['category']));
-        }
-          else if($product_array[$key]['category']=="Sports")
-        {
-          array_push($image_sport,array("id"=>$product_array[$key]['id'],"name"=>$product_array[$key]['name'],"price"=>$product_array[$key]['price'],"image"=>$product_array[$key]['image'],"category"=>$product_array[$key]['category']));
-        }
-  }
-  //print_r($image_sport);
-}
+include("../functions.php");
+getAllProducts();
 
 ?>
 <!DOCTYPE html>

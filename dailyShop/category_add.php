@@ -1,28 +1,11 @@
 <?php 
-	include("config.php");
-	global $conn,$stmt,$category_array;
-	$category_array=array();
+	include("../functions.php");
 	getCategory();
 	 if(isset($_POST['add_category']))
 		{
 
-			//echo "nothing is happening";
-		if($_POST['dd_category']==" ")
-		{
-			echo "no category selected";
-			include("config.php");
-			$c_name=$_POST['category_name'];
-			$c_parent_id=0;
-			put_asParentCategory($c_name,$c_parent_id);
-			
-		}
-		else
-		{
-			echo $_POST['dd_category'];
-			$c_name1=$_POST['category_name'];
-			$category_selected=$_POST['dd_category'];
-			makeSubCategory($category_selected,$c_name1);
-		}
+		setCategory();
+		
 	}
 	else if(isset($_GET['e_id']))
 	{
@@ -59,70 +42,8 @@
 
 	}
 
-	function editCategory($idtoedit)
-	{
-
-	}
-	function getCategory()
-	{
-		global $conn,$stmt,$category_array;
-		$stmt=$conn->prepare("SELECT * FROM category_table");
-		$stmt->bind_result($id,$name,$parentid);
-		$execute=$stmt->execute();
-		if($execute==false)
-		{
-			echo "no data is fetched";
-		}
-		while ($stmt->fetch()) 
-		{
-			# code...
-
-			array_push($category_array,array("id"=>$id,"name"=>$name,"parent_id"=>$parentid));
-		}
-		$stmt->close();
-		$conn->close();
-		//print_r($category_array);
-	}
-	function put_asParentCategory($c_name,$c_parent_id)
-	{
-		global $conn,$stmt;
-
-		$stmt=$conn->prepare("INSERT INTO category_table (category,parent_id) VALUES(?,?)");
-		$stmt->bind_param("si",$c_name,$c_parent_id)	;
-		$stmt->execute();
-		if(false==$stmt)
-		{
-			echo "not inserted";
-		}
-		$stmt->close();
-		$conn->close();
-	}
-
-	function makeSubCategory($category_selected,$c_name1)
-	{
-		include("config.php");
-		$dd_selected=$category_selected;
-		$new_category=$c_name1;
-		echo $new_category;
-		$stmt=$conn->prepare("SELECT * FROM category_table WHERE category_name=?");
-		if($stmt==false)
-		{
-			echo "error";
-		}
-		$stmt->bind_param("s",$dd_selected);
-		$stmt->execute();
-		$stmt->bind_result($sub_cat_id,$ab,$cd);
-		while($stmt->fetch())
-		{
-			$cat_parent_id=$sub_cat_id;
-		}
-		$stmt->close();
-		$stmt=$conn->prepare("INSERT INTO category_table (category_name,parent_id) VALUES(?,?)");
-		$stmt->bind_param("si",$new_category,$cat_parent_id);
-		$stmt->execute();
-		$stmt->close();
-		$conn->close();
-	}
+	
+	
 ?>
 <!DOCTYPE html>
 <html>
