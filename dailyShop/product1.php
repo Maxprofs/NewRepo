@@ -1,40 +1,17 @@
 <?php
-include("config.php");
-global $product_array;
-$product_array=array();
-$limits=6;
-if(!isset($_GET["page_id"]))
-{
-  $page_id=0;
-}
-else
-{
-  $page_id=$_GET["page_id"];
-}
-//echo "yes";
-if(isset($_GET['ctgry']))
+
+
+
+if(isset($_GET['ctgry'] ))
 { 
-  $cttoselect=$_GET['ctgry'];
-   
-  echo $limits1.$start1;
-    $cat_to_select1=$_GET['ctgry'];
-    $stmt=$conn->prepare("SELECT * FROM product_table  WHERE category=? LIMIT ?,?");
-
-  $stmt->bind_param("sii",$cat_to_select1,$start1,$limits1);
-  $stmt->execute();
-  $res=$stmt->bind_result($idpr,$namepr,$pricepr,$imagepr,$categorypr);
-if($res==false)
-{
-  echo "no result binded";
-}
-while($stmt->fetch())
-{
-  array_push($product_array, array("id"=>$idpr,"name"=>$namepr,"price"=>$pricepr,"image"=>$imagepr,"category"=>$categorypr));
-}
+  include("../functions.php");
+  getNumberOfProducts();
+  getCategoryFilter();
 
 }
-else if(isset($_POST['submit']) || isset($_GET['ctgry_array']))
+else if(isset($_POST['submit']))
 {
+  global $conn,$stmt;
   if(!empty($_POST['check_list']))
   {
     $total_selection=count($_POST['check_list']);
@@ -57,6 +34,8 @@ else if(isset($_POST['submit']) || isset($_GET['ctgry_array']))
 }
 else
 {
+  include("../functions.php");
+  global $conn,$stmt;
   $stmt=$conn->prepare("SELECT COUNT(*) FROM product_table");
   $stmt->bind_result($numbr);
   $stmt->execute();

@@ -1,13 +1,6 @@
  <?php
- include("config.php");
- global $category_array;
- $category_array=array();
- $stmt=$conn->prepare("SELECT * FROM category_table");
- $stmt->execute();
- $stmt->bind_result($id13,$name13,$parent_id13);
- while ($stmt->fetch()) {
-   array_push($category_array, array("id"=>$id13,"name"=>$name13,"parent_id"=>$parent_id13));
- }
+//include("../functions.php");
+//getCategory();
  //print_r($category_array);
  ?>
  <header id="aa-header">
