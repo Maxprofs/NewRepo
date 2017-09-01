@@ -1,13 +1,15 @@
 
 <?php
+session_start();
 include("config.php");
 global $conn,$stmt;
-global $category_array;
+global $category_array,$array1;
 $category_array=array();
+$array1=array();
 global $product_array,$limits,$start,$numbr,$total_records,$page_id,$total_pages,$numbr1,$numbr3,$lmt1,$lmt,$starts,$offset1,$offset,$limit,$image_women,$image_men,$image_kids,$image_digital,$image_sport;
-global $c_name,$c_parent_id;
-//$c_name=" ";
-//$c_parent_id=0;
+global $c_name,$c_parent_id,$id_c_update,$name_c_update,$parentid_c_update,$id_c_p_update,$name_c_p_update,$parentid_c_p_update;
+global $cart;
+$cart=array();
 $product_array=array();
 $image_women=array();
 $image_men=array();
@@ -58,22 +60,76 @@ function addProduct()
 			
 	}
 
-function getAllProducts()
-{	
-	global $product_array,$stmt,$conn,$image_women,$image_men,$image_kids,$image_digital,$image_sport;
-	$stmt=$conn->prepare("SELECT * FROM product_table");
-$stmt->execute();
-$res=$stmt->bind_result($idp,$namep,$pricep,$imagep,$categoryp);
-if($res==false)
-{
-  echo "no result binded";
-}
-while($stmt->fetch())
-{
-  array_push($product_array, array("id"=>$idp,"name"=>$namep,"price"=>$pricep,"image"=>$imagep,"category"=>$categoryp));
-}
+	function updateProduct()
+	{
+			global $conn,$stmt,$id2,$name2,$price2,$quantity2,$image2,$category2;
+			$idtoedit=$_GET['e_id'];
+			$stmt=$conn->prepare(" SELECT * FROM product_table  WHERE id=?");
+			$stmt->bind_param("s",$idtoedit);
+			$stmt->execute();
+			$stmt->bind_result($id2,$name2,$price2,$image2,$category2);
 
-getImagebyCategory($product_array,$image_women,$image_men,$image_kids,$image_digital,$image_sport);
+			while($stmt->fetch()) {
+
+			}
+						 $stmt->close();
+		   		         $conn->close();
+	}
+
+	function editProduct($hiddenidtoedit,$page_id)
+		{
+			global $conn,$stmt;
+			$id_updated= $_POST['p_id'];
+			$name_updated= $_POST['p_name'];
+			$price_updated= $_POST['p_price'];
+			$category_updated= $_POST['p_category'];
+						   
+				 if(isset($_FILES['p_image']))
+				 {
+					$tempn=$_FILES['p_image']['tmp_name'];
+					$nm1=$_FILES['p_image']['name'];
+				 	if(move_uploaded_file($tempn,"../uploadsnew/".$nm1))
+				 	{
+				 		echo "image uploaded successfully";
+						$image_updated=$nm1;
+				
+					}
+				 }
+			
+			$stmt=$conn->prepare("UPDATE product_table  SET id=?,name=?,price=?,image=?,category=? WHERE id=?");
+			$stmt->bind_param("ssisss",$id_updated,$name_updated,$price_updated,$image_updated,$category_updated,$hiddenidtoedit);
+			$stmt->execute();
+			header("location:manageprod.php?page_id=<?php echo $page_id;?>");
+		}
+
+  function deleteProduct()
+  {
+  		global $conn,$stmt;
+  		$idtodel=$_GET['d_id'];
+		$page_id=$_GET['page_id'];
+		$stmt=$conn->prepare(" DELETE FROM product_table WHERE id=?");
+		$stmt->bind_param("s",$idtodel);
+		$stmt->execute();
+  }
+function getAllProducts($page)
+{	
+		global $page,$start,$limits,$page_id;
+		global $product_array,$stmt,$conn,$image_women,$image_men,$image_kids,$image_digital,$image_sport;
+		$query="SELECT * FROM ";
+		$query1=" ";
+		$start=countProducts($query1);	
+			if($page=="index.php")
+			{
+			$query.=" product_table LIMIT ".$start.",".$limits;
+			$product_array=returnResult($query);
+			}
+			else if($page=="UserPageIndex.php")
+			{
+				$query.=" product_table ";
+				$product_array=returnResult($query);
+				getImagebyCategory($product_array,$image_women,$image_men,$image_kids,$image_digital,$image_sport);
+			}
+					
 }
 
 function getImagebyCategory($product_array,$image_women,$image_men,$image_kids,$image_digital,$image_sport)
@@ -81,7 +137,6 @@ function getImagebyCategory($product_array,$image_women,$image_men,$image_kids,$
     global $product_array,$image_women,$image_men,$image_kids,$image_digital,$image_sport;
   foreach ($product_array as $key => $value) 
   {
-    # code...
 
     if($product_array[$key]['category']=="Men")
         {
@@ -104,7 +159,7 @@ function getImagebyCategory($product_array,$image_women,$image_men,$image_kids,$
           array_push($image_sport,array("id"=>$product_array[$key]['id'],"name"=>$product_array[$key]['name'],"price"=>$product_array[$key]['price'],"image"=>$product_array[$key]['image'],"category"=>$product_array[$key]['category']));
         }
   }
-  //print_r($image_sport);
+ 
 
 	
 }
@@ -126,25 +181,67 @@ function checkPageId()
    function getCategory()
 	{
 	global $category_array;
-	global $conn,$stmt;
-	 $category_array=array();
-	 $stmt=$conn->prepare("SELECT * FROM category_table");
+	global $conn,$stmt,$start,$limits;
+
+	 $query1="SELECT * FROM  ";
+	 if(isset($_GET['showcategories']))
+	 { 	
+	 	$start=countProducts($query1);
+
+	 	$query1.=" category_table LIMIT ?,? ";
+	 	$stmt=$conn->prepare($query1);
+	 	
+	 	echo $start."<br>";
+	 	$bnd=$stmt->bind_param("ii",$start,$limits);
+	 	if($bnd==false)
+	 	{
+	 		echo "error";
+	 	}
+	 	
+	 }
+	 else
+	 {
+	 	$query1.=" category_table";
+	 	$stmt=$conn->prepare($query1);
+	 }
 	 $stmt->execute();
 	 $stmt->bind_result($id13,$name13,$parent_id13);
 	 while ($stmt->fetch()) 
 	 {
 	   array_push($category_array, array("id"=>$id13,"name"=>$name13,"parent_id"=>$parent_id13));
 	 }
+	
 	 return $category_array;
 	}
 
+	function editCategory()
+	{
+		global $conn,$stmt,$id_c_update,$name_c_update,$parentid_c_update,$id_c_p_update,$name_c_p_update,$parentid_c_p_update;
+		$idtoedit=$_GET['e_id'];
+		$stmt=$conn->prepare("SELECT * FROM category_table WHERE id=?");
+		$stmt->bind_param("i",$idtoedit);
+		$stmt->execute();
+		$stmt->bind_result($id_c_update,$name_c_update,$parentid_c_update);
+		while ($stmt->fetch()) 
+		{
+		}
+		
+		$stmt=$conn->prepare("SELECT * FROM category_table WHERE id=?");
+		$stmt->bind_param("i",$parentid_c_update);
+		$stmt->execute();
+		$stmt->bind_result($id_c_p_update,$name_c_p_update,$parentid_c_p_update);
+		while ($stmt->fetch()) {
+		
+		}
+		
+	}
 	function setCategory()
 	{
 		global $c_name,$c_parent_id;
 		$c_name=$_POST['category_name'];
 		if($_POST['dd_category']==" ")
 		{
-			echo "";
+		
 			$c_parent_id=0;
 			put_asParentCategory($c_name,$c_parent_id);
 			
@@ -167,12 +264,8 @@ function checkPageId()
 			{
 				echo "not inserted";
 			}
-			else
-			{
-				echo "entered as parent category";
-			}
-			$stmt->close();
-			$conn->close();
+			
+			
 		}
 
 		function makeSubCategory($category_selected,$c_name1)
@@ -186,10 +279,7 @@ function checkPageId()
 			{
 				echo "error";
 			}
-			else
-			{
-				echo "entered as child category";
-			}
+			
 			$stmt->bind_param("s",$dd_selected);
 			$stmt->execute();
 			$stmt->bind_result($sub_cat_id,$ab,$cd);
@@ -204,156 +294,254 @@ function checkPageId()
 			$stmt->close();
 			$conn->close();
 		}
-	function getNumberOfProducts()
-	{
-		global $conn,$stmt,$start,$limits,$numbr,$total_records,$page_id,$total_pages,$numbr1,$numbr3;
-		$page_id=checkPageId();
-		$query="SELECT COUNT(*) FROM product_table "; 
-		if(isset($_GET['ctgry']))
-		{
-			$cat_to_show=$_GET['ctgry'];
-			$query.="WHERE category=?";
-			$stmt=$conn->prepare($query);
-			$stmt->bind_param("s",$cat_to_show);
-			//echo 12345;
-			
-		}
-		else if(!empty($_POST['check_list']))
-			  {
-			  	$query.="WHERE category=?";
-			  	foreach ($_POST['check_list'] as $value)
-     			{
-     				$stmt=$conn->prepare($query);
-					$stmt->bind_param("s",$value);
-					$stmt->execute();
-					$stmt->bind_result($numbr1); 
-					while($stmt->fetch()) 
-					{
-     			 	 $total_records= $total_records+$numbr1;
-     			  	
-     			  # code...
-     			}
-     			}
-     			//echo $total_records;
-     			$total_pages=ceil($total_records/6);
-     			$start=$page_id*$limits;
-     			return $start;
-			  }
-			  else if(isset($_GET['checkbox2']))
-					{
-						$query.="WHERE category=?";
-						foreach ($_GET['checkbox2'] as $value2)
-						 {
-						 				  		//echo $value2[2];
-						 	     				$stmt=$conn->prepare($query);
-						 						$stmt->bind_param("s",$value2);
-						 						$stmt->execute();
-						 						$stmt->bind_result($numbr3); 
-						 						while($stmt->fetch()) 
-						 						{
-						 	     			 	 $total_records= $total_records+$numbr3;
-						 	     			  	
-						 	     			  # code...
+	
 
-						 	     			}
-						 	     			
-						 	     			}
-						 	     			//echo $total_records;
-						 	     			$total_pages=ceil($total_records/6);
-						 	     			$start=$page_id*$limits;
-						 	     			return $start;
-						
-						}
-						//return 0;
-					
-		else
-		{
-			$stmt=$conn->prepare($query);
-		}
-		
-		$stmt->execute();
-		$stmt->bind_result($numbr);
-		
-		
-		while($stmt->fetch()) 
-		{
-		  $total_records= $numbr;
-		  //echo $total_records;
-		  # code...
-		}
-		$total_pages=ceil($total_records/6);
-		$start=$page_id*$limits;
-		//echo $start;
-		return $start;
-	}
-	 function getCategoryFilter($start)
+	 function returnResult($query)
 	 {
-	 	  global $conn,$stmt,$limits,$start,$product_array,$lmt1,$lmt,$starts,$offset1,$offset,$limit;
-	 	  //$cttoselect=$_GET['ctgry'];
-	 	  $offset=$start;
-	 	  $offset1=$start;
-	 	  $lmt1=$limits;
-	 	  $starts=$start;
-	 	  $lmt=$limits;
-	 	  $limit=$limits;
-	 	  $query="SELECT * FROM product_table  WHERE category=? LIMIT ?,?";
-	 	  $stmt=$conn->prepare($query);
-	 	  if(isset($_GET['ctgry']))
-	 	  {
-	 	  	$cat_to_select=$_GET['ctgry']; 
-	 	 	 $stmt->bind_param("sii",$cat_to_select,$start,$limits);
-	 	  }
-	 	  else if(!empty($_POST['check_list']))
-	 	  {
-	 	  	foreach ($_POST['check_list'] as $value1)
-	 	  	 {
-	 	  		
-	 	  		$stmt->bind_param("sii",$value1,$offset,$lmt);
-	 	  		$stmt->execute();
-	 	  		$res=$stmt->bind_result($idpr1,$namepr1,$pricepr1,$imagepr1,$categorypr1);
-		 	  	while($stmt->fetch())
-		 	  	{
-		 	  	  array_push($product_array, array("id"=>$idpr1,"name"=>$namepr1,"price"=>$pricepr1,"image"=>$imagepr1,"category"=>$categorypr1));
-		 	  	}
-	 	 	 }
-	 	 	 return $product_array;
+	 	global $conn,$stmt,$limits,$start,$product_array;
+	 	$stmt=$conn->query($query);
+	    $var=$stmt->num_rows;
+	 		 	  		
+	 		 	  		if($var > 0)
+	 		 	  		{
+	 		 	  			//echo "<br>354345";
+	 		 	  			while($row=$stmt->fetch_assoc())
+	 				 	  	{
+	 				 	  		//
+	 				 	  	  array_push($product_array, array("id"=>$row['id'],"name"=>$row['name'],"price"=>$row['price'],"image"=>$row['image'],"category"=>$row['category']));
+	 				 	  	}
+	 		 	  		}
 
-	 	  }
-	 	  else if(isset($_GET['checkbox2']))
-					{
-						
-						foreach ($_GET['checkbox2'] as $value4)
-						 {
-						 	 	  		$stmt->bind_param("sii",$value4,$offset1,$lmt1);
-						 	 	  		$stmt->execute();
-						 	 	  		$res=$stmt->bind_result($idpr11,$namepr11,$pricepr11,$imagepr11,$categorypr11);
-						 		 	  	while($stmt->fetch())
-						 		 	  	{
-						 		 	  	  array_push($product_array, array("id"=>$idpr11,"name"=>$namepr11,"price"=>$pricepr11,"image"=>$imagepr11,"category"=>$categorypr11));
-						 		 	  	}
-						 	 	 	 }
-						 	 	 	 return $product_array;
-						 }
-						
-	 	  else
-	 	  {
-	 	  	 $query="SELECT * FROM product_table LIMIT ?,?";
-		 	 $stmt=$conn->prepare($query);
-		 	 $stmt->bind_param("ii",$starts,$limit);
-	 	  }
-	 	
-	 	  $stmt->execute();
-	 	  $res=$stmt->bind_result($idpr,$namepr,$pricepr,$imagepr,$categorypr);
-	 	if($res==false)
-	 	{
-	 	  echo "no result binded";
-	 	}
-	 	while($stmt->fetch())
-	 	{
-	 	  array_push($product_array, array("id"=>$idpr,"name"=>$namepr,"price"=>$pricepr,"image"=>$imagepr,"category"=>$categorypr));
-	 	}
-	 	return $product_array;
+	 			 	  	return $product_array;
 	 }
 
- 
+	 function masterFun($id_c,$name_c,$price_c,$image_c,$category_c,$cart)
+		{
+			global $cart;
+			if(isset($_SESSION['cart']))
+			{
+				$cart=$_SESSION['cart'];
+				if(isExist($id_c,$cart))
+				{
+					$cart=updateProd($id_c,$cart);
+					$_SESSION['cart']=$cart;
+					$cart=$_SESSION['cart'];
+					
+				}
+				else
+				{
+				array_push($cart,array("id"=>$id_c,"name"=>$name_c,"price"=>$price_c,"image"=>$image_c,"category"=>$category_c,"quantity"=>1));
+				$_SESSION['cart']=$cart;
+				$cart=$_SESSION['cart'];
+				
+				}
+
+			}
+			else
+			{
+				array_push($cart,array("id"=>$id_c,"name"=>$name_c,"price"=>$price_c,"image"=>$image_c,"category"=>$category_c,"quantity"=>1));
+				$_SESSION['cart']=$cart;
+				$cart=$_SESSION['cart'];
+				
+			}
+				
+				echo json_encode(array("arraycart"=>$cart));
+		}
+
+		function isExist($id_c,$cart)
+		{
+			global $cart;
+			foreach($cart as $key=>$value)
+			{
+				if($id_c==$cart[$key]['id'])
+				{
+					return true;
+				}
+			}
+			return false;
+		}
+
+		function updateProd($id_c,$cart)
+		{
+			foreach($cart as $key=>$value)
+			{
+				if($id_c==$cart[$key]['id'])
+				{
+					$cart[$key]['quantity']=$cart[$key]['quantity']+1;
+
+				}
+			}
+			return $cart;
+
+		}
+	 
+		function addtoCart()
+	 {
+	 				global $cart,$product_array,$stmt,$conn;
+	 				$c=0;
+					$query="SELECT * FROM product_table "; 
+					//echo $query;
+					if(isset($_GET['p_id']))
+					{
+						$query.=" WHERE id=?";
+						$vallId= $_GET['p_id'];
+						$c=1;
+
+					}
+					else if (isset($_POST['match_category'])) 
+						{
+							$query.=" WHERE category=?";
+							$vallId=$_POST['p_category'];
+					
+						}
+						$stmt=$conn->prepare($query);
+						$stmt->bind_param("s",$vallId);
+						$stmt->execute();
+
+					 $stmt->bind_result($id14,$name14,$price14,$image14,$category14);
+					while($stmt->fetch())
+					{
+						if($c==1)
+						{
+							echo $c;
+							masterFun($id14,$name14,$price14,$image14,$category14,$cart);
+							
+						}
+						else
+						{ 
+							array_push($product_array,array("id"=>$id14,"name"=>$name14,"price"=>$price14,"image"=>$image14,"category"=>$category14));
+						}
+						
+						
+					}
+					
+	 }
+
+
+
+	  function deleteFromCart()
+	  {
+	  	global $cart;
+	  	foreach ($cart as $key => $value)
+	  	 {
+
+	  		$did=$_GET['d_id'];
+	  		if($cart[$key]['id']==$did)
+	  		{
+	  			unset($cart[$key]);
+
+	  		}
+	  		//$cart=array_values($cart[$key]);
+	  	}
+	  	$_SESSION['cart']=$cart;
+	  	$cart=$_SESSION['cart'];
+	  }
+	   function filterFun()
+	   {
+			$k=1;
+			$listchecked=0;	
+			$query1=" ";   	
+	   	 global $stmt,$conn,$start,$limits,$product_array,$array1;
+
+
+	   	 $query="SELECT * FROM product_table ";
+	   	 if(isset($_GET['ctgry']))
+	   	 {
+	   	 	$query1=" WHERE category='".$_GET['ctgry']."'";
+	   	 }
+	   	 if(!empty($_GET['check_list']) || !empty($_POST['check_list']))
+	 	  	{
+	 	  		$array1=!empty($_GET['check_list'])?$_GET['check_list']:$_POST['check_list'];
+	 	  		$tr=count($array1);
+	 	  		$query1=" WHERE category IN('";  
+	 	  		foreach ($array1 as $value) 
+	 	  		{
+	 	  			
+		 	  		if($k<$tr)
+		 	  		{
+		 	  			$query1.=$value."','";
+		 	  			$k++;
+		 	  		}
+		 	  		else
+		 	  		{
+		 	  			$query1.=$value."') ";
+		 	  		}
+	 	  		}
+	 	  		$listchecked=1;	
+
+	 	  	}
+	 	  	if(isset($_POST['submit_price1']))	
+	 	  				{
+	 	  					if($listchecked==1)
+	 	  					{
+	 	  						$query1.="AND ";
+	 	  					}
+	 	  					else
+	 	  					{
+	 	  						$query1.="WHERE "; 
+	 	  					}
+	 	  	  				$query1.=" price BETWEEN '".$_POST['min']."' AND '".$_POST['max']."'";
+	 	  	  				
+
+	 	  				}
+	 	  				$start=countProducts($query1);
+	 	  				$query1.=" LIMIT ".$start.",".$limits;
+	 	  				$query=$query.$query1;
+	 	  				//echo $query;
+	 	  				$product_array=returnResult($query);
+	 	  				
+	 	  		}
+
+	 	  		function countProducts($query1)
+	 	  		{
+	 	  			global $stmt,$conn,$start,$page_id,$total_pages,$limits;
+	 	  			$page_id=checkPageId();
+	 	  			$query_count="SELECT COUNT(*) as count FROM "; 
+	 	  			if(isset($_GET['showcategories']))
+	 	  			{
+	 	  				$query_count.=" category_table";
+	 	  			}
+	 	  			else
+	 	  			{
+	 	  				$query_count.=" product_table".$query1;
+	 	  			}
+	 	  			//echo $query_count;
+	 	  				$stmt=$conn->query($query_count);
+	 	  				   $var=$stmt->num_rows;
+	 	  						 	  		
+	 	  						 	  		if($var > 0)
+	 	  						 	  		{
+	 	  						 	  			
+	 	  						 	  		while($row=$stmt->fetch_assoc())
+	 	  								 	{
+	 	  									$cnn=$row['count']; 
+	 	  									}
+
+	 	  									}			 	  
+			 	  		 $total_pages=ceil($cnn/6);
+		     			$start=$page_id*$limits;
+		     			return $start;				 	  
+
+	 	  		}
+	   
+
+ //
+	 	  function editQuantity()
+	 {
+	 	global $cart;
+	 	$cart=$_SESSION['cart'];
+	 	//$idtoedit=$_POST['hidden_field'];
+	 	$newQuant=$_POST['u_quantity']; 
+	 	echo $newQuant;
+	 	//foreach ($cart as $key => $value)
+	 	 //{
+	 		
+	 		//if($cart[$key]['id']==$idtoedit)
+	 		//{
+	 			//$cart[$key]['quantity']=$newQuant;
+	 		//}
+	 	//}
+	 	//$_SESSION['cart']=$cart;
+	 	//$cart=$_SESSION['cart'];
+	 }
  ?>

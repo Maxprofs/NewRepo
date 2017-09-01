@@ -1,12 +1,13 @@
 
 <?php
  
-
  include("../functions.php");
-  $start=getNumberOfProducts();
-  $product_array=getCategoryFilter($start);
-
-
+  filterFun();
+    if(isset($_GET['p_id']))
+    {
+      echo "entered";
+     addtoCart();
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,8 +21,7 @@
     <?php include("new_header.php");?>
 
   </head>
-  <!-- !Important notice -->
-  <!-- Only for product page body tag have to added .productPage class -->
+
   <body class="productPage">  
    <!-- wpf loader Two -->
     <div id="wpf-loader-two">          
@@ -43,7 +43,7 @@
       <div class="aa-catg-head-banner-content">
         <h2>Fashion</h2>
         <ol class="breadcrumb">
-          <li><a href="index.html">Home</a></li>         
+          <li><a href="UserPageIndex.php">Home</a></li>              
           <li class="active">Women</li>
         </ol>
       </div>
@@ -53,6 +53,14 @@
   <!-- / catg header banner section -->
 <?php include("menubar.php");?>
   <!-- product category -->
+  
+     <div style="float:rigth;">
+     <a href="cart.php"  class="small-input"><img src="img/cart.svg" height="60px" width="60px" title="Go to Cart">Go to Cart</a>
+      
+  
+    
+                </div>
+  
   <section id="aa-product-category">
     <div class="container">
       <div class="row">
@@ -87,12 +95,12 @@
               <ul class="aa-product-catg">
                 <!-- start single product item -->
                  <?php global $product_array;
-                         //print_r($product_array);
+                         
                         foreach ($product_array as $key => $value): ?>
                 <li>
                   <figure>
                     <a class="aa-product-img" href="#"><img width="150px" height="250px" src="../uploadsnew/<?php echo $product_array[$key]['image'];?>" alt="polo shirt img"></a>
-                    <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+                    <a class="aa-add-card-btn" href="product1.php?p_id=<?php echo $product_array[$key]['id'];?>"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
                     <figcaption>
                       <h4 class="aa-product-title"><a href="#"><?php echo $product_array[$key]['name'];?></a></h4>
                       <span class="aa-product-price"><?php echo $product_array[$key]['price'];?></span><span class="aa-product-price"><del><?php echo $product_array[$key]['price']*5;?></del></span>
@@ -198,19 +206,45 @@
             </div>
             <div class="aa-product-catg-pagination">
               <nav>
+              <?php
+                  global $total_pages,$c;
+                  //$c=array();
+            ?>
                 <ul class="pagination">
-                  <li>
-                    <a href="#" aria-label="Previous">
+                  <li><?php global $page_id,$total_pages;
+
+                  ?>
+                    <a href="product1.php?page_id=<?php echo $page_id-1;?><?php if(isset($_GET['ctgry'])){echo '&ctgry='.$_GET['ctgry'];} ?><?php if(!empty($_POST['check_list'])):?><?php  foreach ($_POST['check_list'] as $key=>$value) {echo '&check_list[]='
+                  .$value;
+                  
+                }?><?php endif; ?><?php if(!empty($_GET['check_list'])):?><?php  foreach ($_GET['check_list'] as $key=>$value) {echo '&check_list[]='
+                  .$value;
+                  
+                }?><?php endif; ?>" aria-label="Previous">
                       <span aria-hidden="true">&laquo;</span>
                     </a>
                   </li>
-                  <li><a href="#">1</a></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li><a href="#">5</a></li>
+                  
+                <?php for($j=1;$j<=$total_pages;$j++):?>
+                
+                   <li><a href="product1.php?page_id=<?php echo $j-1;?><?php if(isset($_GET['ctgry'])){echo '&ctgry='.$_GET['ctgry'];} ?><?php if(!empty($_POST['check_list'])):?><?php  foreach ($_POST['check_list'] as $key=>$value) {echo '&check_list[]='
+                  .$value;
+                  
+                }?><?php endif; ?><?php if(!empty($_GET['check_list'])):?><?php  foreach ($_GET['check_list'] as $key=>$value) {echo '&check_list[]='
+                  .$value;
+                  
+                }?><?php endif; ?>"><?php echo $j; ?></a></li>;
+                
+                <?php endfor;?>
+                  
                   <li>
-                    <a href="#" aria-label="Next">
+                    <a href="product1.php?page_id=<?php echo $j-2;?><?php if(isset($_GET['ctgry'])){echo '&ctgry='.$_GET['ctgry'];} ?><?php if(!empty($_POST['check_list'])):?><?php  foreach ($_POST['check_list'] as $key=>$value) {echo '&check_list[]='
+                  .$value;
+                  
+                }?><?php endif; ?><?php if(!empty($_GET['check_list'])):?><?php  foreach ($_GET['check_list'] as $key=>$value) {echo '&check_list[]='
+                  .$value;
+                  
+                }?><?php endif; ?>" aria-label="Next">
                       <span aria-hidden="true">&raquo;</span>
                     </a>
                   </li>
@@ -225,7 +259,10 @@
             <div class="aa-sidebar-widget">
               <h3>Category</h3>
               <ul class="aa-catg-nav">
+            
+               
                 <li><a href="product1.php?ctgry=Men">Men</a></li>
+             
                 <li><a href="product1.php?ctgry=Women">Women</a></li>
                 <li><a href="product1.php?ctgry=Kids">Kids</a></li>
                 <li><a href="product1.php?ctgry=Digital">Electornics</a></li>
@@ -241,8 +278,8 @@
                 <input type="checkbox" name="check_list[]" value="Kids"><label>Kids</label><br>
                 <input type="checkbox" name="check_list[]" value="Sports"><label>Sports</label><br>
                 <input type="checkbox" name="check_list[]" value="Digital"><label>Electronics</label><br>
-                <input type="submit" name="submit" Value="Filter"/>
-              </form>
+                
+             
             </div>
             <!-- single sidebar -->
             <div class="aa-sidebar-widget">
@@ -262,12 +299,15 @@
               <h3>Shop By Price</h3>              
               <!-- price range -->
               <div class="aa-sidebar-price-range">
-               <form action="">
+              
                   <div id="skipstep" class="noUi-target noUi-ltr noUi-horizontal noUi-background">
                   </div>
-                  <span id="skip-value-lower" class="example-val">30.00</span>
-                 <span id="skip-value-upper" class="example-val">100.00</span>
-                 <button class="aa-filter-btn" type="submit">Filter</button>
+                  <span id="skip-value-lower" class="example-val" >900.00</span>
+                 <span id="skip-value-upper" class="example-val" >100000.00</span>
+                <input type="hidden" id="skip-value-lower1" class="example-val" value="" name="min">
+                 <input type="hidden" id="skip-value-upper1" class="example-val" value="" name="max">
+               
+                <input class="aa-filter-btn" type="submit" name="submit_price1" value="Filter here">
                </form>
               </div>              
 
@@ -493,7 +533,6 @@
     </div><!-- /.modal-dialog -->
   </div>
 
-
     
 
   <!-- jQuery library -->
@@ -517,27 +556,16 @@
   <!-- Custom js -->
   <script src="js/custom.js"></script> 
   <script type="text/javascript" src="jQuery.js"></script>
-          <script type="text/javascript">
-            $(document).ready(function()
-              {<?php global $total_pages;?>
-                var j=0;
-                 var htm="<h2> <a href='product1.php?page_id=0<?php if(isset($_GET['ctgry'])):?>&ctgry=<?php echo $_GET['ctgry'];?><?php endif;?>' title='First Page'>&laquo; First</a><a href='product1.php?page_id=<?php  if($page_id==0) {echo $page_id;} else{echo $page_id-1;}?><?php if(isset($_GET['ctgry'])):?>&ctgry=<?php echo $_GET['ctgry'];?><?php endif;?><?php if(!empty($_POST['check_list'])):?>&checkbox2[]=<?php foreach ($_POST['check_list'] as $value) {
-                echo $value;
-              }?><?php endif;?>' title='Previous Page' aria-label='Previous'>&laquo;<span aria-hidden='true'>&laquo;</span></a>";
-            for(var i=1;i<='<?php echo $total_pages; ?>';i++)
-            {
-              htm+="<a href='product1.php?page_id="+(i-1)+"<?php if(isset($_GET['ctgry'])):?>&ctgry=<?php echo $_GET['ctgry'];?><?php endif;?><?php if(!empty($_POST['check_list'])):?>&checkbox2[]=<?php foreach ($_POST['check_list'] as $value) {
-                echo $value;
-              }?><?php endif;?><?php if(isset($_GET['checkbox2'])):?>&chklst=<?php echo $_GET['checkbox2'];?><?php endif;?>' class='number current' title="+i+">"+i+"</a>";
-            }
-            htm+="<a aria-label='Next' href='product1.php?page_id=<?php  echo $page_id+1;?><?php if(isset($_GET['ctgry'])):?>&ctgry=<?php echo $_GET['ctgry'];?><?php endif;?><?php if(!empty($_POST['check_list'])):?>&checkbox2[]=<?php foreach ($_POST['check_list'] as $value) {
-                echo $value;
-              }?><?php endif;?>'  title='Next Page'>Next &raquo;<span aria-hidden='true'>&raquo;</span></a><a href='product1.php?page_id="+(i-2)+"<?php if(isset($_GET['ctgry'])):?>&ctgry=<?php echo $_GET['ctgry'];?><?php endif;?><?php if(!empty($_POST['check_list'])):?>&checkbox2[]=<?php foreach ($_POST['check_list'] as $value) {
-                echo $value;
-              }?><?php endif;?>' title='Last Page'>Last &raquo;</a></h2>";
-            $(".pagination").html(htm);
-              });
-          </script>
+   <script type="text/javascript">
+     $(document).ready(function()
+      {
+       // $("#skip-value-lower").change(function()
+          $(document.body).on('change','#skip-value-lower',function()
+          {
+            alert(564532);
+          });
+      });
+   </script>       
 
   </body>
 </html> 

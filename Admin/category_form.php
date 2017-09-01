@@ -1,124 +1,17 @@
 <?php 
-	include("config.php");
-	global $conn,$stmt,$category_array;
-	$category_array=array();
-	getCategory();
+	include("../functions.php");
+	$category_array=getCategory();
+	
 	 if(isset($_POST['add_category'])|| isset($_POST['edit_category']))
 		{
-
-			//echo "nothing is happening";
-		if($_POST['dd_category']==" ")
-		{
-			echo "no category selected";
-			include("config.php");
-			$c_name=$_POST['category_name'];
-			$c_parent_id=0;
-			put_asParentCategory($c_name,$c_parent_id);
-			
+			setCategory();
 		}
-		else
-		{
-			echo $_POST['dd_category'];
-			$c_name1=$_POST['category_name'];
-			$category_selected=$_POST['dd_category'];
-			makeSubCategory($category_selected,$c_name1);
-		}
-	}
 	else if(isset($_GET['e_id']))
 	{
-		$idtoedit=$_GET['e_id'];
-		include("config.php");
-		$stmt=$conn->prepare("SELECT * FROM category_table WHERE id=?");
-		$stmt->bind_param("i",$idtoedit);
-		$stmt->execute();
-		$stmt->bind_result($id11,$name11,$parentid11);
-		while ($stmt->fetch()) {
-			$id12=$id11;
-			$name12=$name11;
-			$parentid12=$parentid11;
-		}
-		//echo $parentid12;
-		//$stmt->close();
-		$stmt=$conn->prepare("SELECT * FROM category_table WHERE id=?");
-		$stmt->bind_param("i",$parentid12);
-		$stmt->execute();
-		$stmt->bind_result($parent_id11,$parent_name11,$parent_parentid11);
-		while ($stmt->fetch()) {
-			$id13=$parent_id11;
-			$name13=$parent_name11;
-			$parentid13=$parent_parentid11;
-		}
-		//echo $name13;
-		$stmt->close();
-		$conn->close();
-		//editCategory($idtoedit);
+		editCategory();	
 
 	}
-	else if(isset($_POST['edit_category']))
-	{
-
-	}
-
-	function editCategory($idtoedit)
-	{
-
-	}
-	function getCategory()
-	{
-		global $conn,$stmt,$category_array;
-		$stmt=$conn->prepare("SELECT * FROM category_table");
-		$stmt->bind_result($id,$name,$parentid);
-		$stmt->execute();
-		while ($stmt->fetch()) 
-		{
-			# code...
-
-			array_push($category_array,array("id"=>$id,"name"=>$name,"parent_id"=>$parentid));
-		}
-		$stmt->close();
-		$conn->close();
-		//print_r($category_array);
-	}
-	function put_asParentCategory($c_name,$c_parent_id)
-	{
-		global $conn,$stmt;
-
-		$stmt=$conn->prepare("INSERT INTO category_table (category,parent_id) VALUES(?,?)");
-		$stmt->bind_param("si",$c_name,$c_parent_id)	;
-		$stmt->execute();
-		if(false==$stmt)
-		{
-			echo "not inserted";
-		}
-		$stmt->close();
-		$conn->close();
-	}
-
-	function makeSubCategory($category_selected,$c_name1)
-	{
-		include("config.php");
-		$dd_selected=$category_selected;
-		$new_category=$c_name1;
-		echo $new_category;
-		$stmt=$conn->prepare("SELECT * FROM category_table WHERE category=?");
-		if($stmt==false)
-		{
-			echo "error";
-		}
-		$stmt->bind_param("s",$dd_selected);
-		$stmt->execute();
-		$stmt->bind_result($sub_cat_id,$ab,$cd);
-		while($stmt->fetch())
-		{
-			$cat_parent_id=$sub_cat_id;
-		}
-		$stmt->close();
-		$stmt=$conn->prepare("INSERT INTO category_table (category,parent_id) VALUES(?,?)");
-		$stmt->bind_param("si",$new_category,$cat_parent_id);
-		$stmt->execute();
-		$stmt->close();
-		$conn->close();
-	}
+	
 ?>
 <!DOCTYPE html>
 <html>
@@ -146,15 +39,16 @@ include("sidebar.php");
 						<form action="category_form.php" method="post">
 							
 							<fieldset> 
-								<p >
+								<p ><?php global $name_c_update,$name_c_p_update;
+								?>
 									<label>Category Name</label>
-										<input class="text-input small-input" type="text"  name="category_name" value="<?php if(isset($_GET['e_id'])){echo $name12;} else echo " ";?>" /> <span class="input-notification success png_bg">Successful message</span> <!-- Classes for input-notification: success, error, information, attention -->
+										<input class="text-input small-input" type="text"  name="category_name" value="<?php if(isset($_GET['e_id'])){echo $name_c_update;} else echo " ";?>" /> <span class="input-notification success png_bg">Successful message</span> <!-- Classes for input-notification: success, error, information, attention -->
 										
 								</p>
 								<p >
 									<label>Select Parent Category</label>
 										<select name="dd_category" id="category-select">
-										<option value="<?php if(isset($_GET['e_id'])) echo $name13; else echo " "?>"><?php if(isset($_GET['e_id'])) {echo $name13;} else echo "--Select--";?></option>
+										<option value="<?php if(isset($_GET['e_id'])) echo $name_c_p_update; else echo " "?>"><?php if(isset($_GET['e_id'])) {echo $name_c_p_update;} else echo "--Select--";?></option>
 											<?php
 											 global $category_array;
 											 foreach ($category_array as $key => $value) :?>

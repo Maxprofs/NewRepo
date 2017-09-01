@@ -1,3 +1,4 @@
+
 <div id="sidebar"><div id="sidebar-wrapper"> <!-- Sidebar with logo and menu -->
 			
 			<h1 id="sidebar-title"><a href="#">Simpla Admin</a></h1>
@@ -104,12 +105,17 @@
 						{
 							 echo "<li><a href='category_form.php'>Add Category</a></li>";
 						}
-						?><li><a href="managecategory.php">Manage Category</a></li>
-					    <li><a href="manageprod.php?ctgry=fashion">Fashion</a></li>
-						<li><a href="manageprod.php?ctgry=sports">Sports</a></li>
-						<li><a href="manageprod.php?ctgry=cosmetics">Cosmetics</a></li>
-						<li><a href="manageprod.php?ctgry=automobiles">Automobiles</a></li>
-						<li><a href="manageprod.php?ctgry=electronics">Electronics</a></li>
+						?>
+
+						<li><a href="managecategory.php?page_id=0&showcategories=1">Manage Category</a></li>
+						<?php 
+							//$category_array=getCategory();
+							global $category_array;
+							foreach ($category_array as $key => $value): 
+							?>
+							<li><a href="manageprod.php?ctgry=<?php echo $category_array[$key]['name'];?>"><?php echo $category_array[$key]['name'];?></a></li>
+						<?php endforeach;?>
+					   
 					</ul>
 				</li>
 				

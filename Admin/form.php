@@ -1,49 +1,26 @@
 <?php
-session_start();
- if(isset($_GET['e_id']))
-{
-	include("config.php");
-	$idtoedit=$_GET['e_id'];
-	include("config.php");
-	$stmt=$conn->prepare(" SELECT * FROM new_products_table  WHERE id=?");
-	$stmt->bind_param("s",$idtoedit);
-	$stmt->execute();
-	$stmt->bind_result($id2,$name2,$price2,$quantity2,$image2,$category2);
-
-	while($stmt->fetch()) {
-
-	    $id11= $id2; 
-	    $name11= $name2;
-	    $price11 = $price2;
-	    $quantity11 = $quantity2;
-	    $image11= $image2;
-	    $category11 = $category2;
-	}
-				 $stmt->close();
-   		         $conn->close();
-
-}
-	include("config.php");
-	global $conn,$stmt,$category_array;
-	$category_array=array();
-	getCategory();
-
-	function getCategory()
-	{
-		global $conn,$stmt,$category_array;
-		$stmt=$conn->prepare("SELECT * FROM category_table");
-		$stmt->bind_result($id,$name,$parentid);
-		$stmt->execute();
-		while ($stmt->fetch()) 
-		{
-			# code...
-
-			array_push($category_array,array("id"=>$id,"name"=>$name,"parent_id"=>$parentid));
+	session_start();
+	include("../functions.php");
+	$category_array=getCategory();
+	
+	if(isset($_POST['add_product']))
+		{	
+			
+			addProduct();
 		}
-		$stmt->close();
-		$conn->close();
-		//print_r($category_array);
+
+	else if(isset($_GET['e_id']))
+	{
+		updateProduct();
+
 	}
+	else if(isset($_POST['edit_product']))
+	{
+	$page_id=$_GET['page_id'];
+	$hiddenidtoedit=$_POST['hidden_eid'];
+	editProduct($hiddenidtoedit,$page_id);
+	}
+
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -75,42 +52,42 @@ session_start();
 
 					<div class="tab-content1" id="t">
 					
-						<form action="add_prod.php" method="post" enctype="multipart/form-data">
+						<form action="form.php" method="post" enctype="multipart/form-data">
 							
 							<fieldset> <!-- Set class to "column-left" or "column-right" on fieldsets to divide the form into columns -->
-								
+								<?php global $id2,$name2,$price2,$quantity2,$image2,$category2;?>
 								<p >
 									<label>Product Id</label>
-										<input class="text-input small-input" type="text" id="idp" name="p_id" value="<?php if(isset($_GET['e_id'])){echo $id11;}  ?>"/> <span class="input-notification success png_bg">Successful message</span> <!-- Classes for input-notification: success, error, information, attention -->
+										<input class="text-input small-input" type="text" id="idp" name="p_id" value="<?php if(isset($_GET['e_id'])){echo $id2;}  ?>"/> <span class="input-notification success png_bg">Successful message</span> <!-- Classes for input-notification: success, error, information, attention -->
 										<br /><small>A small description of the field</small>
 								</p>
 								
 								<p>
 									<label>Product Name</label>
-									<input class="text-input medium-input datepicker" type="text" id="namep" name="p_name" value="<?php if(isset($_GET['e_id'])){echo $name11;}  ?>"/> <span class="input-notification error png_bg">Error message</span>
+									<input class="text-input medium-input datepicker" type="text" id="namep" name="p_name" value="<?php if(isset($_GET['e_id'])){echo $name2;}  ?>"/> <span class="input-notification error png_bg">Error message</span>
 								</p>
 								
 								<p>
 									<label>Product Price</label>
-									<input class="text-input medium-input datepicker" type="text" id="pricep" name="p_price" value="<?php if(isset($_GET['e_id'])){echo $price11;}  ?>"/>
+									<input class="text-input medium-input datepicker" type="text" id="pricep" name="p_price" value="<?php if(isset($_GET['e_id'])){echo $price2;}  ?>"/>
 								</p>
-								<p>
+								<!--<p>
 									<label>Product Quantity</label>
-									<input class="text-input medium-input datepicker" type="text" id="quantityp" name="p_quantity" value="<?php if(isset($_GET['e_id'])){echo $quantity11;}  ?>"/>
-								</p>
+									<input class="text-input medium-input datepicker" type="text" id="quantityp" name="p_quantity" value="<?php //if(isset($_GET['e_id'])){echo $quantity2;}  ?>"/>
+								</p>-->
 								<p>
 									<label>Product Image</label>
-									<input type="file" id="imagep" name="p_image" value="<?php if(isset($_GET['e_id'])){echo $image11;}  ?>"/>
+									<input type="file" id="imagep" name="p_image" value="<?php if(isset($_GET['e_id'])){echo $image2;}  ?>"/>
 								</p>
 								<p>
 									<label>Select Category</label>              
 									<select name="p_category" class="small-input" value=" ">
-										<option value="<?php if(isset($_GET['e_id'])){echo $category11;}  ?>"><?php if(isset($_GET['e_id'])){echo $category11;}  else echo"--Select--";?></option>
+										<option value="<?php if(isset($_GET['e_id'])){echo $category2;}  ?>"><?php if(isset($_GET['e_id'])){echo $category2;}  else echo"--Select--";?></option>
 										<?php
 											 global $category_array;
 											 foreach ($category_array as $key => $value) :?>
 											 
-											<option value="<?php echo $category_array[$key]['name'];?>" data-optionid="<?php echo $category_array[$key]['id'];?>" data-optionparentid="<?php echo $category_array[$key]['parent_id'];?>" ><?php echo $category_array[$key]['name'];?></option>
+											<option value="<?php echo $category_array[$key]['name'];?>"  ><?php echo $category_array[$key]['name'];?></option>
 											<?php endforeach;?>
 									</select> 
 								</p>

@@ -1,59 +1,19 @@
 <?php
-session_start();
+//session_start();
+include("../functions.php");
 global $cart,$price1;
 $price1=0;
-$cart=array();
 $cart=$_SESSION['cart'];
 
-	include("config.php");
-	if(isset($_GET['page_id']))
-	{
-		$page_id=$_GET['page_id'];
-	}
-	else
-	{
-		$page_id=0;
-	}
-	$total_records=count($cart);
-	$total_pages=ceil($total_records/4);
-	$limits=4;
-	$start=$page_id*$limits;
-	
-//
 	if(isset($_GET['d_id']))
 	{ 
-		global $cart;
-		foreach ($cart as $key => $value)
-		 {
-
-			$did=$_GET['d_id'];
-			if($cart[$key]['id']==$did)
-			{
-				unset($cart[$key]);
-
-			}
-			//$cart=array_values($cart[$key]);
-		}
-		$_SESSION['cart']=$cart;
-		$cart=$_SESSION['cart'];
+		deleteFromCart();
 
 	}
 	else if(isset($_POST['edit_quant']))
 	{
-		global $cart;
-		$idtoedit=$_POST['hidden_field'];
-		$newQuant=$_POST['quant_field']; 
-		echo $newQuant;
-		foreach ($cart as $key => $value)
-		 {
-			# code...
-			if($cart[$key]['id']==$idtoedit)
-			{
-				$cart[$key]['quantity']=$newQuant;
-			}
-		}
-		$_SESSION['cart']=$cart;
-		$cart=$_SESSION['cart'];
+		
+		editQuantity();
 
 	}
 ?>
@@ -86,11 +46,12 @@ $cart=$_SESSION['cart'];
 <body>
 <?php include("sidebar.php");
 	?>
-<div id="main-content">
+<div id="container">
 <div style="float: right;">
-	<a href="index.php"  class="button"><img src="home.png" height="30px" width="30px" title="Home"></a>
-	<a href="#"  class=""><img src="store.png" height="30px" width="30px" title="Place Order"></a>
+	<a href="index.php"  class="button"><img src="resources/home.png" height="30px" width="30px" title="Home"></a>
+	<a href="#"  class=""><img src="resources/store.png" height="30px" width="30px" title="Place Order"></a>
 </div>
+<div id="main-content">
 <form action="checkout.php" method="post">
 <table>
 						
@@ -121,20 +82,34 @@ $cart=$_SESSION['cart'];
 										<a class="button" href="#">Apply to selected</a>
 									</div>
 									
-									<div class="pagination">
-										
 
-										
-									</div> <!-- End .pagination -->
+<?php global $total_pages,$page_id;?>
+				<div class="pagination" style="float: right;">
+											<a href="index.php?page_id=<?php echo 0;?>" title="First Page">&laquo; First</a>
+
+											<a href="index.php?page_id=<?php if($page_id==0){echo 0;}else {echo $page_id-1;}?>" title="Previous Page">&laquo; Previous</a>
+
+											<?php for($i=1;$i<=$total_pages;$i++):?>
+											<a href="index.php?page_id=<?php echo $i-1;?>" class="number" title="<?php echo $i; ?>"><?php echo $i;?></a>
+											<?php endfor;?>
+
+											<a href="index.php?page_id=<?php if($page_id==$total_pages-1){echo $total_pages-1;} else {echo $page_id+1;}?>" title="Next Page">Next &raquo;</a>
+
+											<a href="index.php?page_id=<?php echo $total_pages-1;?>" title="Last Page">Last &raquo;</a>
+										</div>
+				
+					<div class="clear"></div>
+
+									<!-- End .pagination -->
 									<div class="clear"></div>
 								</td>
 							</tr>
 						</tfoot>
-					 
 						<tbody>
-<?php foreach($cart as $key => $value):?>
+<?php global $price1,$cart;
+foreach($cart as $key => $value):?>
 	<tr>					
-						<?php global $price1;
+						<?php 
 						$price1+=$cart[$key]['quantity']*$cart[$key]['price'];
 						?>
 						<td><input type="checkbox" /></td>
@@ -143,7 +118,7 @@ $cart=$_SESSION['cart'];
 						<td><strong><?php echo $cart[$key]['name'];?></strong></td>
 						<td><strong><?php echo $cart[$key]['price'];?></strong></td>
 						<td><strong><input type="number" name="quant_field" value="<?php echo $cart[$key]['quantity'];?>"></strong></td>
-						<td><img height="70px" width="70px" src='../uploads/<?php echo $cart[$key]['image']; ?>'></td>
+						<td><img height="150px" width="100px" src='../uploadsnew/<?php echo $cart[$key]['image']; ?>'></td>
 						<td>
 							<!-- Icons///a href="checkout.php?e_id=<?php //echo $cart[$key]['id'];?>" -->
 							<input type="hidden" value="<?php echo $cart[$key]['id'];?>" name="hidden_field">
@@ -158,18 +133,26 @@ $cart=$_SESSION['cart'];
 					</table>
 					</form>
 					</div>
-					<script type="text/javascript" src="jQuery.js"></script>
+					</div>
+
+
+				
+</body>
+</html>
+<!--
+
+
+	<script type="text/javascript" src="jQuery.js"></script>
 				<script type="text/javascript">
 				$(document).ready(function()
 					{ 
-						var htm=" <a href='checkout.php?page_id=0' title='First Page'>&laquo; First</a><a href='checkout.php?page_id=<?php  if($page_id==0) {echo $page_id;} else{echo $page_id-1;}?>' title='Previous Page'>&laquo; Previous</a>";
-						for(var i=1;i<='<?php echo $total_pages; ?>';i++)
+						var htm=" <a href='checkout.php?page_id=0' title='First Page'>&laquo; First</a><a href='checkout.php?page_id=<?//php  if($page_id==0) {echo $page_id;} else{echo $page_id-1;}?>' title='Previous Page'>&laquo; Previous</a>";
+						for(var i=1;i<='<?php //echo $total_pages; ?>';i++)
 						{
 							htm+="<a href='checkout.php?page_id="+(i-1)+"' class='number current' title="+i+">"+i+"</a>";
 						}
-						htm+="<a href='checkout.php?page_id=<?php  echo $page_id+1;?>' title='Next Page'>Next &raquo;</a><a href='checkout.php?page_id="+(i-2)+"' title='Last Page'>Last &raquo;</a>";
+						htm+="<a href='checkout.php?page_id=<?php // echo $page_id+1;?>' title='Next Page'>Next &raquo;</a><a href='checkout.php?page_id="+(i-2)+"' title='Last Page'>Last &raquo;</a>";
 						$(".pagination").html(htm);
 					});
 				</script>
-</body>
-</html>
+				-->

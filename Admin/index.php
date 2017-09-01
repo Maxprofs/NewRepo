@@ -1,155 +1,22 @@
 <?php
-session_start();
-global $cart;
-$cart=array();
-global $product1;
-$product1=array();
-global $c_product;
-$c_product=array();
-global $conn,$stmt,$category_array;
+global $page,$start;
+include("../functions.php");
+$category_array=getCategory();
 
-if(isset($_POST['p_id']))
-				{
-					$p=$_POST['p_id'];
-					include("config.php");
-					$stmt=$conn->prepare("SELECT * FROM new_products_table WHERE id=?");
-
-					if ( false === $stmt ) {
-						return false;
-					}
-					$stmt->bind_param("s",$p);
-
-					if ( false === $params) {
-						return false;
-					}
-					$stmt->execute();
-
-					if ( false === $execute) {
-						return false;
-					}
-					$stmt->bind_result($id12,$name12,$price12,$quantity12,$image12,$category12);
-					while($stmt->fetch())
-					{
-						masterFun($id12,$name12,$price12,$image12,$category12,$cart);
-					}
-					
-					$stmt->close();
-					$conn->close();
-					echo json_encode($p);
-					//header("loacation:index.php");
-				}
-				else if (isset($_POST['match_category'])) 
-				{
-					$catg_to_show=$_POST['p_category'];
-					echo $catg_to_show;
-					include("config.php");
-					$stmt=$conn->prepare("SELECT * FROM new_products_table WHERE category=?");
-					$stmt->bind_param("s",$catg_to_show);
-					$stmt->bind_result($id14,$name14,$price14,$quantity14,$image14,$category14);
-					$stmt->execute();
-					while($stmt->fetch())
-					{
-						array_push($product1,array("id"=>$id14,"name"=>$name14,"price"=>$price14,"image"=>$image14,"quantity"=>$quantity14,"category"=>$category14));
-					}
-					$stmt->close();
-					$conn->close();
-					//$_SESSION['prod']=$product1;
-					//$product1=$_SESSION['prod'];
-					//header("location:index.php");
-					//echo json_encode(array("prod"=>$product1));
-				}
-
-				else
-				{
-				include("config.php");
-				$stmt=$conn->prepare("SELECT * FROM new_products_table");
-				$stmt->bind_result($id11,$name11,$price11,$quantity11,$image11,$category11);
-				$stmt->execute();
-				while($stmt->fetch())
-				{
-					array_push($product1,array("id"=>$id11,"name"=>$name11,"price"=>$price11,"image"=>$image11,"quantity"=>$quantity11,"category"=>$category11));
-				}
-				$stmt->close();
-				$category_array=array();
-				getCategory();
-				//$conn->close();
-
-				}
-
-				function getCategory()
-			{
-				global $conn,$stmt,$category_array;
-				$stmt=$conn->prepare("SELECT * FROM category_table");
-				$stmt->bind_result($id,$name,$parentid);
-				$stmt->execute();
-				while ($stmt->fetch()) 
-				{
-					array_push($category_array,array("id"=>$id,"name"=>$name,"parent_id"=>$parentid));
-				
-				}
-					$stmt->close();
-					$conn->close();
-				//print_r($category_array);
-				}
-function masterFun($id_c,$name_c,$price_c,$image_c,$category_c,$cart)
+if(isset($_POST['p_id']) || isset($_POST['match_category']))
 {
-	if(isset($_SESSION['cart']))
-	{
-		$cart=$_SESSION['cart'];
-		if(isExist($id_c,$cart))
-		{
-			$cart=updateProd($id_c,$cart);
-			$_SESSION['cart']=$cart;
-			$cart=$_SESSION['cart'];
-			echo json_encode(array("arraycart"=>$cart));
-		}
-		else
-		{
-		array_push($cart,array("id"=>$id_c,"name"=>$name_c,"price"=>$price_c,"image"=>$image_c,"category"=>$category_c,"quantity"=>1));
-		$_SESSION['cart']=$cart;
-		$cart=$_SESSION['cart'];
-		echo json_encode(array("arraycart"=>$cart));
-		}
-	}
-	else
-	{
-		array_push($cart,array("id"=>$id_c,"name"=>$name_c,"price"=>$price_c,"image"=>$image_c,"category"=>$category_c,"quantity"=>1));
-		$_SESSION['cart']=$cart;
-		$cart=$_SESSION['cart'];
-		echo json_encode(array("arraycart"=>$cart));
-	}
-}
-function isExist($id_c,$cart)
+	addtoCart();
+}	
+else
 {
-	foreach($cart as $key=>$value)
-	{
-		if($id_c==$cart[$key]['id'])
-		{
-			return true;
-		}
-	}
-	return false;
-}
-function updateProd($id_c,$cart)
-{
-	foreach($cart as $key=>$value)
-	{
-		if($id_c==$cart[$key]['id'])
-		{
-			$cart[$key]['quantity']=$cart[$key]['quantity']+1;
-		}
-	}
-	return $cart;
-
-}
-
-//by default
-
-
+	
+	$page=basename($_SERVER['PHP_SELF']);
+	
+	getAllProducts($start);
+}		
 ?>
 	
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
@@ -159,7 +26,7 @@ function updateProd($id_c,$cart)
 </head>
 	<body><div id="body-wrapper"> 
 	<?php
-	$page=basename($_SERVER['PHP_SELF']);
+	
 	?>
 	<!-- Wrapper for the radial gradient background -->
 		<?php
@@ -170,7 +37,7 @@ function updateProd($id_c,$cart)
 		<div id="main-content">
 		 <!-- Main Content Section with everything -->
 		 <div style="float:rigth;">
-		 <a href="checkout.php"  class="small-input"><img src="store.png" height="30px" width="30px" title="Store"></a>
+		 <a href="checkout.php"  class="small-input"><img src="resources/store.png" height="30px" width="30px" title="Store"></a>
 			
 		 <form action="index.php" method="post">
 		 	 <p>
@@ -178,7 +45,8 @@ function updateProd($id_c,$cart)
 									<select name="p_category" class="small-input">
 										<option class="cat" value="<?php if (isset($_POST['match_category'])) echo $_POST['p_category'];?>" ><?php if (isset($_POST['match_category'])) echo $_POST['p_category'];
 										else echo "--Select--";?></option>
-										<?php foreach ($category_array as $key => $value):?> 
+										<?php global $category_array; 
+										foreach ($category_array as $key => $value):?> 
 										
 										<option class="cat" value="<?php echo $category_array[$key]['name'];?>"><?php echo $category_array[$key]['name'];?></option>
 									<?php endforeach;?>
@@ -204,18 +72,32 @@ function updateProd($id_c,$cart)
 					<h3>Add Products to cart</h3>
 					<div id="main">
 		<div id="products">
-		<?php  foreach ($product1 as $key => $value) :?>
-			<div id="<?php echo $product1[$key]['id']; ?>" class="product">
+		<?php global $product_array;  
+		foreach ($product_array as $key => $value) :?>
+			<div id="<?php echo $product_array[$key]['id']; ?>" class="product">
 
-				<img src="../uploads/<?php echo $product1[$key]['image']; ?>" width="90px" height="90px">
-				<h3 class="title"><a href="#"><?php echo $product1[$key]['name']; ?></a></h3>
-				<h3><?php echo $product1[$key]['price']; ?></h3><br>
-				<span><?php echo $product1[$key]['id']; ?></span>
-				<a class="add-to-cart" name="add_to_cart" data-productid="<?php echo $product1[$key]['id']; ?>">Add To Cart</a>
+				<img src="../uploadsnew/<?php echo $product_array[$key]['image']; ?>" width="120px" height="120px">
+				<h3 class="title"><a href="#"><?php echo $product_array[$key]['name']; ?></a></h3>
+				<h3><?php echo $product_array[$key]['price']; ?></h3><br>
+				<span><?php echo $product_array[$key]['id']; ?></span>
+				<a class="add-to-cart" name="add_to_cart" data-productid="<?php echo $product_array[$key]['id']; ?>">Add To Cart</a>
 			</div>
 		<?php endforeach; ?>	
 		</div>
+		<?php global $total_pages,$page_id;?>
+				<div class="pagination" style="float: right;">
+											<a href="index.php?page_id=<?php echo 0;?>" title="First Page">&laquo; First</a>
 
+											<a href="index.php?page_id=<?php if($page_id==0){echo 0;}else {echo $page_id-1;}?>" title="Previous Page">&laquo; Previous</a>
+
+											<?php for($i=1;$i<=$total_pages;$i++):?>
+											<a href="index.php?page_id=<?php echo $i-1;?>" class="number" title="<?php echo $i; ?>"><?php echo $i;?></a>
+											<?php endfor;?>
+
+											<a href="index.php?page_id=<?php if($page_id==$total_pages-1){echo $total_pages-1;} else {echo $page_id+1;}?>" title="Next Page">Next &raquo;</a>
+
+											<a href="index.php?page_id=<?php echo $total_pages-1;?>" title="Last Page">Last &raquo;</a>
+										</div>
 				
 					<div class="clear"></div>
 					
@@ -228,7 +110,7 @@ function updateProd($id_c,$cart)
 	
 			<div class="clear"></div>
 			
-			<script type="text/javascript" src="jQuery.js"></script>
+			<script type="text/javascript" src="resources/jQuery.js"></script>
 				<script type="text/javascript">
 					
 					$(document).ready(function()

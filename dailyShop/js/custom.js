@@ -242,21 +242,21 @@ jQuery(function($){
        var skipSlider = document.getElementById('skipstep');
         noUiSlider.create(skipSlider, {
             range: {
-                'min': 0,
-                '10%': 10,
-                '20%': 20,
-                '30%': 30,
-                '40%': 40,
-                '50%': 50,
-                '60%': 60,
-                '70%': 70,
-                '80%': 80,
-                '90%': 90,
-                'max': 100
+                'min': 100,
+                '10%': 10000,
+                '20%': 20000,
+                '30%': 30000,
+                '40%': 40000,
+                '50%': 50000,
+                '60%': 60000,
+                '70%': 70000,
+                '80%': 80000,
+                '90%': 90000,
+                'max': 100000
             },
             snap: true,
             connect: true,
-            start: [20, 70]
+            start: [100, 100000]
         });
         // for value print
         var skipValues = [
@@ -266,6 +266,13 @@ jQuery(function($){
 
         skipSlider.noUiSlider.on('update', function( values, handle ) {
           skipValues[handle].innerHTML = values[handle];
+        });
+        var skipValues1 = [
+          document.getElementById('skip-value-lower1'),
+          document.getElementById('skip-value-upper1')
+        ];
+         skipSlider.noUiSlider.on('update', function( values, handle ) {
+          skipValues1[handle].value = values[handle];
         });
       }
     });

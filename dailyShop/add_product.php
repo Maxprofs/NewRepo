@@ -6,7 +6,6 @@ getCategory();
 if(isset($_POST['add_product']))
 
 {
-	
 	addProduct();
 	
 }

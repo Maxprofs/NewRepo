@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 if(isset($_POST['add_product']))
 {	
 	include("config.php");
