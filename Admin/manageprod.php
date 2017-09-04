@@ -3,15 +3,16 @@ global $product;
 $product=array();
 global $cat_product;
 $cat_product=array();
-//
+
+$page=basename($_SERVER['PHP_SELF']);
 	include("../functions.php");
 	if(isset($_GET['d_id']))
 	{
 		deleteProduct();
 	}
-	
-	$start=getNumberOfProducts();
-	$product_array=getCategoryFilter($start);
+	getAllProducts($page);
+	//$start=getNumberOfProducts();
+	//$product_array=getCategoryFilter($start);
 ?>
 
 
@@ -26,7 +27,7 @@ $cat_product=array();
 	<body><div id="body-wrapper">
 	 <!-- Wrapper for the radial gradient background -->
 		<?php
-		$page=basename($_SERVER['PHP_SELF']);
+		
 		include("sidebar.php");
 		?>
 		<div id="main-content"> <!-- Main Content Section with everything -->
@@ -80,6 +81,11 @@ $cat_product=array();
 									
 										
 										<div class="pagination">
+										<a class="previous" href="#">&laquo; Previous</a>
+										<?php for($i=1;$i<=$total_pages;$i++) :?>
+										<a href="#"><?php echo $i;?></a>
+									<?php endfor;?>
+									<a href="#"> &raquo;Next</a>
 										</div>
 									 
 									<div class="clear"></div>

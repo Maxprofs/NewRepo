@@ -2,17 +2,20 @@
 global $page,$start;
 include("../functions.php");
 $category_array=getCategory();
+$page=basename($_SERVER['PHP_SELF']);
 
-if(isset($_POST['p_id']) || isset($_POST['match_category']))
+if(isset($_POST['p_id']) )
 {
+	//getAllProducts($page);
 	addtoCart();
+}
+else if(isset($_POST['match_category']))
+{
+	getAllProducts($page);
 }	
 else
 {
-	
-	$page=basename($_SERVER['PHP_SELF']);
-	
-	getAllProducts($start);
+	getAllProducts($page);
 }		
 ?>
 	

@@ -1,7 +1,5 @@
  <?php
-//include("../functions.php");
-//getCategory();
- //print_r($category_array);
+//session_start();
  ?>
  <header id="aa-header">
     <!-- start header top  -->
@@ -86,7 +84,7 @@
                 <a class="aa-cart-link" href="#">
                   <span class="fa fa-shopping-basket"></span>
                   <span class="aa-cart-title">SHOPPING CART</span>
-                  <span class="aa-cart-notify">2</span>
+                  <span class="aa-cart-notify"><?php if(isset($_SESSION['total_products'])) echo $_SESSION['total_products']; else echo "+";?></span>
                 </a>
                 <div class="aa-cartbox-summary">
                   <ul>

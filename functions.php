@@ -118,9 +118,15 @@ function getAllProducts($page)
 		$query="SELECT * FROM ";
 		$query1=" ";
 		$start=countProducts($query1);	
-			if($page=="index.php")
+			if($page=="index.php" || $page=="manageprod.php")
 			{
-			$query.=" product_table LIMIT ".$start.",".$limits;
+				$query.=" product_table ";
+				if(isset($_POST['match_category']))
+				{
+					$query.=" WHERE category='".$_POST['p_category']."' ";
+				}
+			$query.=" LIMIT ".$start.",".$limits;
+			//echo $query;
 			$product_array=returnResult($query);
 			}
 			else if($page=="UserPageIndex.php")
@@ -128,6 +134,17 @@ function getAllProducts($page)
 				$query.=" product_table ";
 				$product_array=returnResult($query);
 				getImagebyCategory($product_array,$image_women,$image_men,$image_kids,$image_digital,$image_sport);
+			}
+			else if($page=="manage_orders.php")
+			{
+				//echo "see orders";
+				$query.=" table_order";
+				$orders_array=returnResult($query);
+				return $orders_array;
+			}
+			else
+			{
+
 			}
 					
 }
@@ -298,7 +315,7 @@ function checkPageId()
 
 	 function returnResult($query)
 	 {
-	 	global $conn,$stmt,$limits,$start,$product_array;
+	 	global $conn,$stmt,$limits,$start,$product_array,$page;
 	 	$stmt=$conn->query($query);
 	    $var=$stmt->num_rows;
 	 		 	  		
@@ -307,11 +324,23 @@ function checkPageId()
 	 		 	  			//echo "<br>354345";
 	 		 	  			while($row=$stmt->fetch_assoc())
 	 				 	  	{
-	 				 	  		//
+	 				 	  		
+	 		 	  			if($page=="manage_orders.php")
+	 		 	  			{
+	 		 	  				
+	 		 	  				array_push($product_array,array("email"=>$row['user_email'],"orders"=>$row['order_data'],"date"=>$row['order_date'],"price"=>$row['order_price']));
+	 		 	  				//print_r($product_array['orders']);die;
+	 		 	  				echo "do something";
+	 		 	  			}
+	 		 	  			else
+	 		 	  			{
+	 		 	  			//
 	 				 	  	  array_push($product_array, array("id"=>$row['id'],"name"=>$row['name'],"price"=>$row['price'],"image"=>$row['image'],"category"=>$row['category']));
 	 				 	  	}
-	 		 	  		}
 
+	 		 	  		}
+	 		 	  	}
+	 		 	  	
 	 			 	  	return $product_array;
 	 }
 
@@ -345,7 +374,7 @@ function checkPageId()
 				
 			}
 				
-				echo json_encode(array("arraycart"=>$cart));
+				//echo json_encode(array("arraycart"=>$cart));
 		}
 
 		function isExist($id_c,$cart)
@@ -494,12 +523,20 @@ function checkPageId()
 
 	 	  		function countProducts($query1)
 	 	  		{
-	 	  			global $stmt,$conn,$start,$page_id,$total_pages,$limits;
+	 	  			global $stmt,$conn,$start,$page_id,$total_pages,$limits,$page;
 	 	  			$page_id=checkPageId();
 	 	  			$query_count="SELECT COUNT(*) as count FROM "; 
 	 	  			if(isset($_GET['showcategories']))
 	 	  			{
 	 	  				$query_count.=" category_table";
+	 	  			}
+	 	  			else if($page=="manage_orders.php")
+	 	  			{
+	 	  				$query_count.=" table_order";
+	 	  			}
+	 	  			else if(isset($_POST['match_category']))
+	 	  			{
+	 	  				$query_count.=" product_table WHERE category='".$_POST['match_category']."'";
 	 	  			}
 	 	  			else
 	 	  			{
@@ -526,22 +563,86 @@ function checkPageId()
 	   
 
  //
-	 	  function editQuantity()
-	 {
+	 	 function editQuantity()
+	 	{
 	 	global $cart;
 	 	$cart=$_SESSION['cart'];
-	 	//$idtoedit=$_POST['hidden_field'];
-	 	$newQuant=$_POST['u_quantity']; 
-	 	echo $newQuant;
-	 	//foreach ($cart as $key => $value)
-	 	 //{
+	 	foreach ($_POST['u_quantity'] as $value)
+	 	 {
+	 	
+	 	foreach ($_POST['ids'] as $value1) 
+	 	{
+	 	
+	 	foreach ($cart as $key=>$value2)
+	 	 {
 	 		
-	 		//if($cart[$key]['id']==$idtoedit)
-	 		//{
-	 			//$cart[$key]['quantity']=$newQuant;
-	 		//}
-	 	//}
-	 	//$_SESSION['cart']=$cart;
-	 	//$cart=$_SESSION['cart'];
+	 		if($cart[$key]['id']==$value1)
+	 		{
+	 			//echo $value;
+	 			$cart[$key]['quantity']=$value;
+	 		}
+	 	}
 	 }
+	}
+	 	$_SESSION['cart']=$cart;
+	 	$cart=$_SESSION['cart'];
+	 }
+
+	 function  loginFunction()
+	 {
+	 	global $stmt,$conn;
+	 	$stmt=$conn->prepare("SELECT * FROM login");
+
+	 	//$stmt->bind_param("sss",$_POST['email_user'],$_POST['name_user'],$_POST['password_user']);
+	 	$execute=$stmt->execute();
+	 	if($execute==false)
+	 	{
+	 		echo "no login details found";
+	 	}
+	 	$stmt->bind_result($idu,$nameu,$passwordu,$role);
+	 	while ($stmt->fetch()) 
+	 	{
+	 		if($idu==$_POST['email_user'] && $nameu==$_POST['name_user'] && $passwordu==$_POST['password_user'])
+	 		{
+	 			$_SESSION['user_name']=$nameu;
+	 			$_SESSION['email']=$idu;
+	 			header("location:checkout.php");
+	 		}
+	 		
+	}
+	 		
+	 			echo "wrong login details";
+	 		
+	 }
+
+	 function registerFunction()
+
+	 {
+	 	global $stmt,$conn;
+	 	$role="User";
+	 	$stmt=$conn->prepare("INSERT INTO login (id_u,name_u,password_u,role_u) VALUES(?,?,?,?)");
+	 	$stmt->bind_param("ssss",$_POST['register_email'],$_POST['register_name'],$_POST['regsister_pass'],$role);
+	 	$execute=$stmt->execute();
+	 	if($execute==false)
+	 	{
+	 		echo "user not registerd";
+	 	}
+
+	 }
+	 function placeOrder()
+	 {
+	 	global $stmt,$conn;
+	 	$date=date('Y/m/d H:i:s');
+	 	$total_price=$_SESSION['total_price'];
+	 	 $cart=json_encode($_SESSION['cart']);
+	 	$stmt=$conn->prepare("INSERT INTO table_order (user_email,order_date,order_price,order_data) VALUES(?,?,?,?)");
+	 	$stmt->bind_param("ssss",$_SESSION['email'],$date,$total_price,$cart);
+	 	$stmt->execute();
+	 		session_unset($_SESSION['user_name']);
+	 		session_unset($_SESSION['total_price']);
+	 		session_unset($_SESSION['email']);
+	 		session_destroy();
+	 		header("location:thanku.php");
+	 }
+
  ?>

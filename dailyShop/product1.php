@@ -5,7 +5,7 @@
   filterFun();
     if(isset($_GET['p_id']))
     {
-      echo "entered";
+      
      addtoCart();
     }
 ?>
@@ -55,7 +55,7 @@
   <!-- product category -->
   
      <div style="float:rigth;">
-     <a href="cart.php"  class="small-input"><img src="img/cart.svg" height="60px" width="60px" title="Go to Cart">Go to Cart</a>
+     <a href="<?php if(isset($_SERVER['user_name'])){echo 'cart.php';} else{echo 'account.php';}?>"  class="small-input"><img src="img/cart.svg" height="60px" width="60px" title="Go to Cart">Go to Cart</a>
       
   
     

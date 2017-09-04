@@ -186,7 +186,7 @@ getAllProducts($page);
   <div id="main-content">
      <!-- Main Content Section with everything -->
      <div style="float:rigth;">
-     <a href="cart.php"  class="small-input"><img src="img/cart.svg" height="60px" width="60px" title="Go to Cart">Go to Cart</a>
+     <a href="<?php if(isset($_SERVER['user_name'])){echo 'cart.php';} else{echo 'account.php';}?>"  class="small-input"><img src="img/cart.svg" height="60px" width="60px" title="Go to Cart">Go to Cart</a>
       
   
     
@@ -308,13 +308,13 @@ getAllProducts($page);
                       <ul class="aa-product-catg">
                       
                         <?php global $image_sport;
-                         //print_r($image_sport);
+                        // print_r($image_sport);
                         foreach ($image_sport as $key => $value): ?>
                          
                         <li>
                           <figure>
                             <a class="aa-product-img" href="#"><img height="250px" width="200px" src="../uploadsnew/<?php echo $image_sport[$key]['image'];?>" alt="polo shirt img"></a>
-                            <a class="aa-add-card-btn" href="UserPageIndex.php?p_id=<?php echo $image_sports[$key]['id'];?>" data-productid="<?php echo $image_sport[$key]['id'];?>"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+                            <a class="aa-add-card-btn" href="UserPageIndex.php?p_id=<?php echo $image_sport[$key]['id'];?>" data-productid="<?php echo $image_sport[$key]['id'];?>"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
                             <figcaption>
                               <h4 class="aa-product-title"><a href="#"><?php echo $image_sport[$key]['name'];?></a></h4>
                               <span class="aa-product-price"><?php echo $image_sport[$key]['price'];?></span><span class="aa-product-price"><del><?php echo $image_sport[$key]['price']*7;?></del></span>
