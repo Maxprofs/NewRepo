@@ -48,9 +48,9 @@
               <!-- / header top left -->
               <div class="aa-header-top-right">
                 <ul class="aa-head-top-nav-right">
-                  <li><a href="account.html">My Account</a></li>
-                  <li class="hidden-xs"><a href="wishlist.html">Wishlist</a></li>
-                  <li class="hidden-xs"><a href="cart.php">My Cart</a></li>
+                  <li><a href="account.php">My Account</a></li>
+                  <li class="hidden-xs"><a href="wishlist.php">Wishlist</a></li>
+                  <li class="hidden-xs"><a href="<?php if(isset($_SESSION['cart'])){echo 'cart.php';} else { echo 'product1.php?&msg=add Something to cart';}?>">My Cart</a></li>
                   <li class="hidden-xs"><a href="checkout.php">Checkout</a></li>
                   <li><a href="" data-toggle="modal" data-target="#login-modal">Login</a></li>
                 </ul>
@@ -71,7 +71,7 @@
               <!-- logo  -->
               <div class="aa-logo">
                 <!-- Text based logo -->
-                <a href="index.html">
+                <a href="UserPageIndex.html">
                   <span class="fa fa-shopping-cart"></span>
                   <p>daily<strong>Shop</strong> <span>Your Shopping Partner</span></p>
                 </a>
@@ -251,7 +251,7 @@
               <li><a href="#">Pages <span class="caret"></span></a>
                 <ul class="dropdown-menu">                
                   <li><a href="product1.php">Shop Page</a></li>
-                  <li><a href="product-detail.html">Shop Single</a></li>                
+                  <li><a href="product-detail.php">Shop Single</a></li>                
                   <li><a href="404.html">404 Page</a></li>                
                 </ul>
               </li>

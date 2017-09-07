@@ -87,19 +87,20 @@ else
 			</div>
 		<?php endforeach; ?>	
 		</div>
-		<?php global $total_pages,$page_id;?>
+		<?php global $total_pages,$page_id;
+		//echo $total_pages."<br>".$page_id; ?>
 				<div class="pagination" style="float: right;">
-											<a href="index.php?page_id=<?php echo 0;?>" title="First Page">&laquo; First</a>
+											<a href="index.php?page_id=<?php echo 0;?><?php if(isset($_POST['match_category'])){echo '&ctgry='.$_POST['p_category'];} ?><?php if(isset($_GET['ctgry'])){echo '&ctgry='.$_GET['ctgry'];} ?>" title="First Page">&laquo; First</a>
 
-											<a href="index.php?page_id=<?php if($page_id==0){echo 0;}else {echo $page_id-1;}?>" title="Previous Page">&laquo; Previous</a>
+											<a href="index.php?page_id=<?php if($page_id==0){echo 0;}else {echo $page_id-1;}?><?php if(isset($_POST['match_category'])){echo '&ctgry='.$_POST['p_category'];} ?><?php if(isset($_GET['ctgry'])){echo '&ctgry='.$_GET['ctgry'];} ?>" title="Previous Page">&laquo; Previous</a>
 
 											<?php for($i=1;$i<=$total_pages;$i++):?>
-											<a href="index.php?page_id=<?php echo $i-1;?>" class="number" title="<?php echo $i; ?>"><?php echo $i;?></a>
+											<a href="index.php?page_id=<?php echo $i-1;?><?php if(isset($_POST['match_category'])){echo '&ctgry='.$_POST['p_category'];} ?><?php if(isset($_GET['ctgry'])){echo '&ctgry='.$_GET['ctgry'];} ?>" class="number" title="<?php echo $i; ?>"><?php echo $i;?></a>
 											<?php endfor;?>
 
-											<a href="index.php?page_id=<?php if($page_id==$total_pages-1){echo $total_pages-1;} else {echo $page_id+1;}?>" title="Next Page">Next &raquo;</a>
+											<a href="index.php?page_id=<?php if($page_id==$total_pages-1){echo $total_pages-1;} else {echo $page_id+1;}?><?php if(isset($_POST['match_category'])){echo '&ctgry='.$_POST['p_category'];} ?><?php if(isset($_GET['ctgry'])){echo '&ctgry='.$_GET['ctgry'];} ?>" title="Next Page">Next &raquo;</a>
 
-											<a href="index.php?page_id=<?php echo $total_pages-1;?>" title="Last Page">Last &raquo;</a>
+											<a href="index.php?page_id=<?php echo $total_pages-1;?><?php if(isset($_POST['match_category'])){echo '&ctgry='.$_POST['p_category'];} ?><?php if(isset($_GET['ctgry'])){echo '&ctgry='.$_GET['ctgry'];} ?>" title="Last Page">Last &raquo;</a>
 										</div>
 				
 					<div class="clear"></div>

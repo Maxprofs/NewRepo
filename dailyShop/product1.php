@@ -8,6 +8,17 @@
       
      addtoCart();
     }
+    else if(isset($_GET['wish_id']))
+    {
+      addToWishList();
+    }
+    else if(isset($_GET['msg']))
+    {
+      $msg=$_GET['msg'];
+      echo $msg;
+      //$htm="<script>alert(".$msg.");</script>";
+     // echo $htm;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +45,7 @@
     <a class="scrollToTop" href="#"><i class="fa fa-chevron-up"></i></a>
   <!-- END SCROLL TOP BUTTON -->
   
- 
+ <?php include("menubar.php");?>
   <!-- catg header banner section -->
   <section id="aa-catg-head-banner">
    <img src="img/fashion/fashion-header-bg-8.jpg" alt="fashion img">
@@ -51,14 +62,12 @@
    </div>
   </section>
   <!-- / catg header banner section -->
-<?php include("menubar.php");?>
+
   <!-- product category -->
   
      <div style="float:rigth;">
-     <a href="<?php if(isset($_SERVER['user_name'])){echo 'cart.php';} else{echo 'account.php';}?>"  class="small-input"><img src="img/cart.svg" height="60px" width="60px" title="Go to Cart">Go to Cart</a>
-      
-  
-    
+     <a href="<?php if(isset($_SERVER['user_name'])){echo 'cart.php';} else{echo 'account.php';}?>?page_name=<?php echo $page;?>"  class="small-input"><img src="img/cart.svg" height="60px" width="60px" title="Go to Cart">Go to Cart</a>
+          
                 </div>
   
   <section id="aa-product-category">
@@ -93,7 +102,7 @@
             </div>
             <div class="aa-product-catg-body">
               <ul class="aa-product-catg">
-                <!-- start single product item -->
+                
                  <?php global $product_array;
                          
                         foreach ($product_array as $key => $value): ?>
@@ -103,12 +112,12 @@
                     <a class="aa-add-card-btn" href="product1.php?p_id=<?php echo $product_array[$key]['id'];?>"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
                     <figcaption>
                       <h4 class="aa-product-title"><a href="#"><?php echo $product_array[$key]['name'];?></a></h4>
-                      <span class="aa-product-price"><?php echo $product_array[$key]['price'];?></span><span class="aa-product-price"><del><?php echo $product_array[$key]['price']*5;?></del></span>
+                      <span class="aa-product-price"><?php echo $product_array[$key]['price'];?></span><span class="aa-product-price"><del><?php echo $product_array[$key]['price']*2;?></del></span>
                       <p class="aa-product-descrip">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam accusamus facere iusto, autem soluta amet sapiente ratione inventore nesciunt a, maxime quasi consectetur, rerum illum.</p>
                     </figcaption>
                   </figure>                         
                   <div class="aa-product-hvr-content">
-                    <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                    <a href="product1.php?wish_id=<?php echo $product_array[$key]['id'];?>" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
                     <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
                     <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>                            
                   </div>

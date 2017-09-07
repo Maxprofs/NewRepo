@@ -13,10 +13,17 @@ $cart=$_SESSION['cart'];
   }
   else if(isset($_POST['update_cart']))
   {
-    //echo 3213621;
-    editQuantity();
-
+    
+    $i=0;
+    $ids_array=$_POST['ids'];
+    //print_r($ids_array);
+    foreach ($_POST['u_quantity'] as $value) 
+    {
+   
+    editQuantity($value,$ids_array[$i]);
+    $i++;
   }
+}
  
 ?>
 <!DOCTYPE html>

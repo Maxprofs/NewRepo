@@ -7,6 +7,14 @@ if(isset($_GET['p_id']) || isset($_POST['match_category']))
 {
   addtoCart();
 }
+else if(isset($_GET['wish_id']))
+{
+  addToWishList();
+}
+else if(isset($_GET['quick_view']))
+{
+  
+}
 
 getAllProducts($page);
 
@@ -186,7 +194,7 @@ getAllProducts($page);
   <div id="main-content">
      <!-- Main Content Section with everything -->
      <div style="float:rigth;">
-     <a href="<?php if(isset($_SERVER['user_name'])){echo 'cart.php';} else{echo 'account.php';}?>"  class="small-input"><img src="img/cart.svg" height="60px" width="60px" title="Go to Cart">Go to Cart</a>
+     <a href="<?php if(isset($_SERVER['user_name'])){echo 'cart.php';} else{echo 'account.php';}?>&page_name=<?php echo $page;?>"  class="small-input"><img src="img/cart.svg" height="60px" width="60px" title="Go to Cart">Go to Cart</a>
       
   
     
@@ -226,9 +234,9 @@ getAllProducts($page);
                             </figcaption>
                           </figure>                         
                           <div class="aa-product-hvr-content">
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                            <a href="UserPageIndex.php?wish_id=<?php echo $image_men[$key]['id'];?>" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
                             <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
-                            <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>                            
+                            <a href="UserPageIndex.php?quick_view=1&prod_id=<?php echo $image_men[$key]['id'];?>" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>                            
                           </div>
                           <!-- product badge -->
                           <span class="aa-badge aa-sale" href="#">SALE!</span>
@@ -258,9 +266,9 @@ getAllProducts($page);
                             </figcaption>
                           </figure>                         
                           <div class="aa-product-hvr-content">
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                            <a href="UserPageIndex.php?wish_id=<?php echo $image_women[$key]['id'];?>" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
                             <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
-                            <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>                            
+                            <a href="UserPageIndex.php?quick_view=1&prod_id=<?php echo $image_women[$key]['id'];?>" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>                            
                           </div>
                           <!-- product badge -->
                           <span class="aa-badge aa-sale" href="#">SALE!</span>
@@ -289,9 +297,9 @@ getAllProducts($page);
                             </figcaption>
                           </figure>                         
                           <div class="aa-product-hvr-content">
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                            <a href="UserPageIndex.php?wish_id=<?php echo $image_kids[$key]['id'];?>" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
                             <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
-                            <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>                            
+                            <a href="UserPageIndex.php?quick_view=1&prod_id=<?php echo $image_kids[$key]['id'];?>" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>                            
                           </div>
                           <!-- product badge -->
                           <span class="aa-badge aa-sale" href="#">SALE!</span>
@@ -321,9 +329,9 @@ getAllProducts($page);
                             </figcaption>
                           </figure>                         
                           <div class="aa-product-hvr-content">
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                            <a href="UserPageIndex.php?wish_id=<?php echo $image_sport[$key]['id'];?>" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
                             <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
-                            <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>                            
+                            <a href="UserPageIndex.php?quick_view=1&prod_id=<?php echo $image_sport[$key]['id'];?>" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>                            
                           </div>
                           <!-- product badge -->
                           <span class="aa-badge aa-sale" href="#">SALE!</span>
@@ -354,9 +362,9 @@ getAllProducts($page);
                             </figcaption>
                           </figure>                         
                           <div class="aa-product-hvr-content">
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                            <a href="UserPageIndex.php?wish_id=<?php echo $image_digital[$key]['id'];?>" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
                             <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
-                            <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>                            
+                            <a href="UserPageIndex.php?quick_view=1&prod_id=<?php echo $image_digital[$key]['id'];?>" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>                            
                           </div>
                           <!-- product badge -->
                           <span class="aa-badge aa-sale" href="#">SALE!</span>
@@ -372,7 +380,8 @@ getAllProducts($page);
                     </div>
                     <!-- / electronic product category -->
                   </div>
-                  <!-- quick view modal -->                  
+                  <!-- quick view modal --> 
+                  <?php if(isset($_GET['quick_view'])):?>                 
                   <div class="modal fade" id="quick-view-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                       <div class="modal-content">                      
@@ -452,7 +461,8 @@ getAllProducts($page);
                         </div>                        
                       </div><!-- /.modal-content -->
                     </div><!-- /.modal-dialog -->
-                  </div><!-- / quick view modal -->              
+                  </div><!-- / quick view modal -->   
+                   <?php endif;?>          
               </div>
             </div>
           </div>

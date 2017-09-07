@@ -16,9 +16,12 @@
 			<ul id="main-nav">  <!-- Accordion Menu -->
 				
 				<li>
-					<a href="http://www.google.com/" class="nav-top-item no-submenu"> <!-- Add the class "no-submenu" to menu items with no sub menu -->
-						Dashboard
-					</a>       
+					<a href="#" class="nav-top-item "> <!-- Add the class "no-submenu" to menu items with no sub menu -->
+					Orders
+					</a>    
+					<ul>
+						<li><a href="manage_orders.php">Manage Orders</a></li>
+					</ul>   
 				</li>
 				<?php if($page=="index.php"):?>
 				<li> 

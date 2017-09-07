@@ -3,9 +3,10 @@
 session_start();
 include("config.php");
 global $conn,$stmt;
-global $category_array,$array1;
+global $category_array,$array1,$wish_array;
 $category_array=array();
 $array1=array();
+$wish_array=array();
 global $product_array,$limits,$start,$numbr,$total_records,$page_id,$total_pages,$numbr1,$numbr3,$lmt1,$lmt,$starts,$offset1,$offset,$limit,$image_women,$image_men,$image_kids,$image_digital,$image_sport;
 global $c_name,$c_parent_id,$id_c_update,$name_c_update,$parentid_c_update,$id_c_p_update,$name_c_p_update,$parentid_c_p_update;
 global $cart;
@@ -118,12 +119,17 @@ function getAllProducts($page)
 		$query="SELECT * FROM ";
 		$query1=" ";
 		$start=countProducts($query1);	
+		echo $start;
 			if($page=="index.php" || $page=="manageprod.php")
 			{
 				$query.=" product_table ";
 				if(isset($_POST['match_category']))
 				{
 					$query.=" WHERE category='".$_POST['p_category']."' ";
+				}
+				else if(isset($_GET['ctgry']))
+				{
+					$query.="WHERE category='".$_GET['ctgry']."' ";
 				}
 			$query.=" LIMIT ".$start.",".$limits;
 			//echo $query;
@@ -329,8 +335,7 @@ function checkPageId()
 	 		 	  			{
 	 		 	  				
 	 		 	  				array_push($product_array,array("email"=>$row['user_email'],"orders"=>$row['order_data'],"date"=>$row['order_date'],"price"=>$row['order_price']));
-	 		 	  				//print_r($product_array['orders']);die;
-	 		 	  				echo "do something";
+	 		 	  				
 	 		 	  			}
 	 		 	  			else
 	 		 	  			{
@@ -536,7 +541,11 @@ function checkPageId()
 	 	  			}
 	 	  			else if(isset($_POST['match_category']))
 	 	  			{
-	 	  				$query_count.=" product_table WHERE category='".$_POST['match_category']."'";
+	 	  				$query_count.=" product_table WHERE category='".$_POST['p_category']."'";
+	 	  			}
+	 	  			else if(isset($_GET['ctgry']))
+	 	  			{
+	 	  				$query_count.=" product_table WHERE category='".$_GET['ctgry']."'";
 	 	  			}
 	 	  			else
 	 	  			{
@@ -563,34 +572,10 @@ function checkPageId()
 	   
 
  //
-	 	 function editQuantity()
-	 	{
-	 	global $cart;
-	 	$cart=$_SESSION['cart'];
-	 	foreach ($_POST['u_quantity'] as $value)
-	 	 {
-	 	
-	 	foreach ($_POST['ids'] as $value1) 
-	 	{
-	 	
-	 	foreach ($cart as $key=>$value2)
-	 	 {
-	 		
-	 		if($cart[$key]['id']==$value1)
-	 		{
-	 			//echo $value;
-	 			$cart[$key]['quantity']=$value;
-	 		}
-	 	}
-	 }
-	}
-	 	$_SESSION['cart']=$cart;
-	 	$cart=$_SESSION['cart'];
-	 }
-
+	 	 
 	 function  loginFunction()
 	 {
-	 	global $stmt,$conn;
+	 	global $stmt,$conn,$page;
 	 	$stmt=$conn->prepare("SELECT * FROM login");
 
 	 	//$stmt->bind_param("sss",$_POST['email_user'],$_POST['name_user'],$_POST['password_user']);
@@ -606,7 +591,15 @@ function checkPageId()
 	 		{
 	 			$_SESSION['user_name']=$nameu;
 	 			$_SESSION['email']=$idu;
-	 			header("location:checkout.php");
+	 			if($_GET['page_name']=="UserPageIndex.php" || $_GET['page_name']=="product1.php" )
+	 			{
+	 				header("location:checkout.php");
+	 			}
+	 			else
+	 			{
+	 				header("location:cart.php");
+	 			}
+	 			
 	 		}
 	 		
 	}
@@ -644,5 +637,59 @@ function checkPageId()
 	 		session_destroy();
 	 		header("location:thanku.php");
 	 }
+
+	 function addToWishList()
+	 {
+	 	global $stmt,$conn,$wish_array;
+	 	$idtowish=$_GET['wish_id'];
+	 	$query="SELECT * FROM product_table WHERE id='".$idtowish."'";
+	 	//$product_array=returnResult($query);
+	 	if(isset($_SESSION['wishlist']))
+	 	{
+	 		$wish_array=$_SESSION['wishlist'];
+	 		if(alreadyExist($idtowish,$wish_array))
+	 		{
+	 			$_SESSION['message']="already added";
+	 		}
+	 		else
+	 		{
+	 			$wish_array=returnResult($query);
+	 			$_SESSION['wishlist']=$wish_array;
+	 			$wish_array=$_SESSION['wishlist'];
+	 		}
+	 		
+	 	}
+			 else
+			 {
+			 	$wish_array=returnResult($query);
+	 			$_SESSION['wishlist']=$wish_array;
+	 			$wish_array=$_SESSION['wishlist'];
+			 }
+			// print_r($_SESSION['wishlist']);
+	}
+	function alreadyExist($idtowish,$wish_array)
+	{
+		foreach ($wish_array as $key => $value) 
+		{
+			if($wish_array[$key]['id']==$idtowish)
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+	function editQuantity($value1,$ids_array)
+	{
+		global $cart;
+		foreach ($cart as $key => $value)
+		 {
+			if($cart[$key]['id']==$ids_array)
+			{
+				$cart[$key]['quantity']=$value1;
+			}
+		}
+		$_SESSION['cart']=$cart;
+		$cart=$_SESSION['cart'];
+	}
 
  ?>
