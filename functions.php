@@ -691,5 +691,16 @@ function checkPageId()
 		$_SESSION['cart']=$cart;
 		$cart=$_SESSION['cart'];
 	}
+	function showQuickView($id_to_view)
+	{
+		global $product_array;
+		$query="SELECT * FROM product_table WHERE id = "."'".$id_to_view."'";
+		//echo $query;
+		$product_array=returnResult($query);
+		return $product_array;
+		//print_r($product_array);
+		
+	}
 
  ?>
+
