@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<store-inventory xmlns="http://seller.marketplace.sears.com/catalog/v7" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://seller.marketplace.sears.com/catalog/v7 ../../../../../rest/inventory/import/v7/store-inventory.xsd">
+  <item item-id="testproduct1341">
+    <locations>
+      <location location-id="478303959">
+        <quantity>1011</quantity>
+        <pick-up-now-eligible>false</pick-up-now-eligible>
+        <inventory-timestamp>2017-09-26T09:08:01Z</inventory-timestamp>
+      </location>
+    </locations>
+  </item>
+</store-inventory>

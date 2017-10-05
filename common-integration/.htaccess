@@ -1,0 +1,15 @@
+#AuthUserFile /home/cedcom5/public_html/jet/.htpasswd
+#AuthType Basic
+#AuthName "My restricted Area"
+#Require valid-user
+RewriteEngine On
+#RewriteCond %{HTTPS} on
+#RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# if a directory or a file exists, use it directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond $1 !^(index\.php)
+
+# otherwise forward it to index.php
+RewriteRule ^(.+)$ index.php?$1 [PT,L,QSA]

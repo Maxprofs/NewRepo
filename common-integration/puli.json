@@ -1,0 +1,244 @@
+{
+    "version": "1.0",
+    "name": "yiisoft/yii2-app-advanced",
+    "config": {
+        "bootstrap-file": "vendor/autoload.php"
+    },
+    "packages": {
+        "bower-asset/bootstrap": {
+            "install-path": "vendor/bower/bootstrap",
+            "installer": "composer"
+        },
+        "bower-asset/jquery": {
+            "install-path": "vendor/bower/jquery",
+            "installer": "composer"
+        },
+        "bower-asset/jquery.inputmask": {
+            "install-path": "vendor/bower/jquery.inputmask",
+            "installer": "composer"
+        },
+        "bower-asset/punycode": {
+            "install-path": "vendor/bower/punycode",
+            "installer": "composer"
+        },
+        "bower-asset/typeahead.js": {
+            "install-path": "vendor/bower/typeahead.js",
+            "installer": "composer",
+            "env": "dev"
+        },
+        "bower-asset/yii2-pjax": {
+            "install-path": "vendor/bower/yii2-pjax",
+            "installer": "composer"
+        },
+        "cebe/markdown": {
+            "install-path": "vendor/cebe/markdown",
+            "installer": "composer"
+        },
+        "clue/stream-filter": {
+            "install-path": "vendor/clue/stream-filter",
+            "installer": "composer"
+        },
+        "container-interop/container-interop": {
+            "install-path": "vendor/container-interop/container-interop",
+            "installer": "composer"
+        },
+        "ezyang/htmlpurifier": {
+            "install-path": "vendor/ezyang/htmlpurifier",
+            "installer": "composer"
+        },
+        "fzaninotto/faker": {
+            "install-path": "vendor/fzaninotto/faker",
+            "installer": "composer",
+            "env": "dev"
+        },
+        "guzzlehttp/guzzle": {
+            "install-path": "vendor/guzzlehttp/guzzle",
+            "installer": "composer"
+        },
+        "guzzlehttp/promises": {
+            "install-path": "vendor/guzzlehttp/promises",
+            "installer": "composer"
+        },
+        "guzzlehttp/psr7": {
+            "install-path": "vendor/guzzlehttp/psr7",
+            "installer": "composer"
+        },
+        "justinrainbow/json-schema": {
+            "install-path": "vendor/justinrainbow/json-schema",
+            "installer": "composer"
+        },
+        "liyunfang/yii2-widget-linkpager": {
+            "install-path": "vendor/liyunfang/yii2-widget-linkpager",
+            "installer": "composer"
+        },
+        "mailgun/mailgun-php": {
+            "install-path": "vendor/mailgun/mailgun-php",
+            "installer": "composer"
+        },
+        "monolog/monolog": {
+            "install-path": "vendor/monolog/monolog",
+            "installer": "composer"
+        },
+        "nikic/fast-route": {
+            "install-path": "vendor/nikic/fast-route",
+            "installer": "composer"
+        },
+        "paragonie/random_compat": {
+            "install-path": "vendor/paragonie/random_compat",
+            "installer": "composer"
+        },
+        "php-http/client-common": {
+            "install-path": "vendor/php-http/client-common",
+            "installer": "composer"
+        },
+        "php-http/discovery": {
+            "install-path": "vendor/php-http/discovery",
+            "installer": "composer"
+        },
+        "php-http/guzzle6-adapter": {
+            "install-path": "vendor/php-http/guzzle6-adapter",
+            "installer": "composer"
+        },
+        "php-http/httplug": {
+            "install-path": "vendor/php-http/httplug",
+            "installer": "composer"
+        },
+        "php-http/message": {
+            "install-path": "vendor/php-http/message",
+            "installer": "composer"
+        },
+        "php-http/message-factory": {
+            "install-path": "vendor/php-http/message-factory",
+            "installer": "composer"
+        },
+        "php-http/multipart-stream-builder": {
+            "install-path": "vendor/php-http/multipart-stream-builder",
+            "installer": "composer"
+        },
+        "php-http/promise": {
+            "install-path": "vendor/php-http/promise",
+            "installer": "composer"
+        },
+        "phpspec/php-diff": {
+            "install-path": "vendor/phpspec/php-diff",
+            "installer": "composer",
+            "env": "dev"
+        },
+        "pimple/pimple": {
+            "install-path": "vendor/pimple/pimple",
+            "installer": "composer"
+        },
+        "psr/container": {
+            "install-path": "vendor/psr/container",
+            "installer": "composer"
+        },
+        "psr/http-message": {
+            "install-path": "vendor/psr/http-message",
+            "installer": "composer"
+        },
+        "psr/log": {
+            "install-path": "vendor/psr/log",
+            "installer": "composer"
+        },
+        "puli/composer-plugin": {
+            "install-path": "vendor/puli/composer-plugin",
+            "installer": "composer"
+        },
+        "puli/discovery": {
+            "install-path": "vendor/puli/discovery",
+            "installer": "composer"
+        },
+        "puli/repository": {
+            "install-path": "vendor/puli/repository",
+            "installer": "composer"
+        },
+        "puli/url-generator": {
+            "install-path": "vendor/puli/url-generator",
+            "installer": "composer"
+        },
+        "ramsey/uuid": {
+            "install-path": "vendor/ramsey/uuid",
+            "installer": "composer"
+        },
+        "seld/jsonlint": {
+            "install-path": "vendor/seld/jsonlint",
+            "installer": "composer"
+        },
+        "slim/slim": {
+            "install-path": "vendor/slim/slim",
+            "installer": "composer"
+        },
+        "swiftmailer/swiftmailer": {
+            "install-path": "vendor/swiftmailer/swiftmailer",
+            "installer": "composer"
+        },
+        "symfony/options-resolver": {
+            "install-path": "vendor/symfony/options-resolver",
+            "installer": "composer"
+        },
+        "symfony/process": {
+            "install-path": "vendor/symfony/process",
+            "installer": "composer"
+        },
+        "webmozart/assert": {
+            "install-path": "vendor/webmozart/assert",
+            "installer": "composer"
+        },
+        "webmozart/expression": {
+            "install-path": "vendor/webmozart/expression",
+            "installer": "composer"
+        },
+        "webmozart/glob": {
+            "install-path": "vendor/webmozart/glob",
+            "installer": "composer"
+        },
+        "webmozart/json": {
+            "install-path": "vendor/webmozart/json",
+            "installer": "composer"
+        },
+        "webmozart/path-util": {
+            "install-path": "vendor/webmozart/path-util",
+            "installer": "composer"
+        },
+        "yiisoft/yii2": {
+            "install-path": "vendor/yiisoft/yii2",
+            "installer": "composer"
+        },
+        "yiisoft/yii2-bootstrap": {
+            "install-path": "vendor/yiisoft/yii2-bootstrap",
+            "installer": "composer"
+        },
+        "yiisoft/yii2-codeception": {
+            "install-path": "vendor/yiisoft/yii2-codeception",
+            "installer": "composer",
+            "env": "dev"
+        },
+        "yiisoft/yii2-composer": {
+            "install-path": "vendor/yiisoft/yii2-composer",
+            "installer": "composer"
+        },
+        "yiisoft/yii2-debug": {
+            "install-path": "vendor/yiisoft/yii2-debug",
+            "installer": "composer",
+            "env": "dev"
+        },
+        "yiisoft/yii2-faker": {
+            "install-path": "vendor/yiisoft/yii2-faker",
+            "installer": "composer",
+            "env": "dev"
+        },
+        "yiisoft/yii2-gii": {
+            "install-path": "vendor/yiisoft/yii2-gii",
+            "installer": "composer",
+            "env": "dev"
+        },
+        "yiisoft/yii2-swiftmailer": {
+            "install-path": "vendor/yiisoft/yii2-swiftmailer",
+            "installer": "composer"
+        },
+        "zendframework/zend-diactoros": {
+            "install-path": "vendor/zendframework/zend-diactoros",
+            "installer": "composer"
+        }
+    }
+}

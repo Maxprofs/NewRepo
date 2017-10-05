@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<catalog-feed xmlns="http://seller.marketplace.sears.com/catalog/v22" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://seller.marketplace.sears.com/catalog/v22 ../../../../../rest/catalog/import/v22/lmp-item.xsd">
+  <fbm-catalog>
+    <items-to-delete>
+      <item-to-delete item-id="testvarient2"/>
+      <item-to-delete item-id="newtestvariant1"/>
+      <item-to-delete item-id="testvarient3"/>
+      <item-to-delete item-id="testvarient4"/>
+      <item-to-delete item-id="newtestvariant2"/>
+      <item-to-delete item-id="newtestvariant3"/>
+    </items-to-delete>
+  </fbm-catalog>
+</catalog-feed>

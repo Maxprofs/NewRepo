@@ -1,0 +1,184 @@
+<?xml version="1.0"?>
+<MPItemFeed xmlns="http://walmart.com/">
+  <MPItemFeedHeader>
+    <version>3.1</version>
+    <requestId>1505281950</requestId>
+    <requestBatchId>1505281950</requestBatchId>
+  </MPItemFeedHeader>
+  <MPItem>
+    <processMode>CREATE</processMode>
+    <sku>SKU-77-3 lbs~unflavored</sku>
+    <productIdentifiers>
+      <productIdentifier>
+        <productIdType>UPC</productIdType>
+        <productId>638170970467</productId>
+      </productIdentifier>
+    </productIdentifiers>
+    <MPProduct>
+      <productName><![CDATA[3-Protein Blend]]></productName>
+      <category>
+        <HealthAndBeauty>
+          <MedicineAndSupplements>
+            <variantAttributeNames>
+              <variantAttributeName>size</variantAttributeName>
+              <variantAttributeName>flavor</variantAttributeName>
+            </variantAttributeNames>
+            <variantGroupId>grp_id_1505281950</variantGroupId>
+            <size>3 lbs</size>
+            <flavor>unflavored</flavor>
+            <shortDescription><![CDATA[<p><span style="font-size:11.0pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:Calibri;mso-fareast-theme-font:
+minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:&quot;Times New Roman&quot;;
+mso-bidi-theme-font:minor-bidi;mso-ansi-language:RU;mso-fareast-language:EN-US;
+mso-bidi-language:AR-SA">3-Protein Blend</span><br></p>]]></shortDescription>
+            <brand>3-Protein Blend</brand>
+            <hasIngredientList>No</hasIngredientList>
+            <mainImageUrl>http://bestbulkwheyprotein.com/admin/image/catalog/products/3proteinblend/3-protein-blend-box.jpg</mainImageUrl>
+            <productSecondaryImageURL>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/admin/image/catalog/products/3proteinblend/3-protein-blend_facts.jpg</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/admin/image/catalog/products/3proteinblend/3-protein-blend_label.jpg</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue/>
+            </productSecondaryImageURL>
+          </MedicineAndSupplements>
+        </HealthAndBeauty>
+      </category>
+    </MPProduct>
+    <MPOffer>
+      <price>34</price>
+      <ShippingWeight>
+        <measure>0.19</measure>
+        <unit>lb</unit>
+      </ShippingWeight>
+      <ProductTaxCode>2048154</ProductTaxCode>
+    </MPOffer>
+  </MPItem>
+  <MPItem>
+    <processMode>CREATE</processMode>
+    <sku>SKU-77-3 lbs~vanilla</sku>
+    <productIdentifiers>
+      <productIdentifier>
+        <productIdType>UPC</productIdType>
+        <productId>638170970863</productId>
+      </productIdentifier>
+    </productIdentifiers>
+    <MPProduct>
+      <productName><![CDATA[3-Protein Blend]]></productName>
+      <category>
+        <HealthAndBeauty>
+          <MedicineAndSupplements>
+            <variantAttributeNames>
+              <variantAttributeName>size</variantAttributeName>
+              <variantAttributeName>flavor</variantAttributeName>
+            </variantAttributeNames>
+            <variantGroupId>grp_id_1505281950</variantGroupId>
+            <size>3 lbs</size>
+            <flavor>vanilla</flavor>
+            <shortDescription><![CDATA[<p><span style="font-size:11.0pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:Calibri;mso-fareast-theme-font:
+minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:&quot;Times New Roman&quot;;
+mso-bidi-theme-font:minor-bidi;mso-ansi-language:RU;mso-fareast-language:EN-US;
+mso-bidi-language:AR-SA">3-Protein Blend</span><br></p>]]></shortDescription>
+            <brand>3-Protein Blend</brand>
+            <hasIngredientList>No</hasIngredientList>
+            <mainImageUrl>http://bestbulkwheyprotein.com/admin/image/catalog/products/3proteinblend/3-protein-blend-box.jpg</mainImageUrl>
+            <productSecondaryImageURL>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/admin/image/catalog/products/3proteinblend/3-protein-blend_facts.jpg</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/admin/image/catalog/products/3proteinblend/3-protein-blend_label.jpg</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue/>
+            </productSecondaryImageURL>
+          </MedicineAndSupplements>
+        </HealthAndBeauty>
+      </category>
+    </MPProduct>
+    <MPOffer>
+      <price>34</price>
+      <ShippingWeight>
+        <measure>0.19</measure>
+        <unit>lb</unit>
+      </ShippingWeight>
+      <ProductTaxCode>2048154</ProductTaxCode>
+    </MPOffer>
+  </MPItem>
+  <MPItem>
+    <processMode>CREATE</processMode>
+    <sku>SKU-77-3 lbs~chocolate</sku>
+    <productIdentifiers>
+      <productIdentifier>
+        <productIdType>UPC</productIdType>
+        <productId>638170970917</productId>
+      </productIdentifier>
+    </productIdentifiers>
+    <MPProduct>
+      <productName><![CDATA[3-Protein Blend]]></productName>
+      <category>
+        <HealthAndBeauty>
+          <MedicineAndSupplements>
+            <variantAttributeNames>
+              <variantAttributeName>size</variantAttributeName>
+              <variantAttributeName>flavor</variantAttributeName>
+            </variantAttributeNames>
+            <variantGroupId>grp_id_1505281950</variantGroupId>
+            <size>3 lbs</size>
+            <flavor>chocolate</flavor>
+            <shortDescription><![CDATA[<p><span style="font-size:11.0pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:Calibri;mso-fareast-theme-font:
+minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:&quot;Times New Roman&quot;;
+mso-bidi-theme-font:minor-bidi;mso-ansi-language:RU;mso-fareast-language:EN-US;
+mso-bidi-language:AR-SA">3-Protein Blend</span><br></p>]]></shortDescription>
+            <brand>3-Protein Blend</brand>
+            <hasIngredientList>No</hasIngredientList>
+            <mainImageUrl>http://bestbulkwheyprotein.com/admin/image/catalog/products/3proteinblend/3-protein-blend-box.jpg</mainImageUrl>
+            <productSecondaryImageURL>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/admin/image/catalog/products/3proteinblend/3-protein-blend_facts.jpg</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/admin/image/catalog/products/3proteinblend/3-protein-blend_label.jpg</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue/>
+            </productSecondaryImageURL>
+          </MedicineAndSupplements>
+        </HealthAndBeauty>
+      </category>
+    </MPProduct>
+    <MPOffer>
+      <price>34</price>
+      <ShippingWeight>
+        <measure>0.19</measure>
+        <unit>lb</unit>
+      </ShippingWeight>
+      <ProductTaxCode>2048154</ProductTaxCode>
+    </MPOffer>
+  </MPItem>
+  <MPItem>
+    <processMode>CREATE</processMode>
+    <sku>SKU-81</sku>
+    <productIdentifiers>
+      <productIdentifier>
+        <productIdType>UPC</productIdType>
+        <productId>638170970238</productId>
+      </productIdentifier>
+    </productIdentifiers>
+    <MPProduct>
+      <productName><![CDATA[Girth Gripz]]></productName>
+      <category>
+        <HealthAndBeauty>
+          <MedicineAndSupplements>
+            <shortDescription><![CDATA[<p>Almost 1/2" Thick to Protect Hand Tendons from </p><p>Bruising While Pumping Insane Poundage</p><p>For those in the 90th Percentile...</p>]]></shortDescription>
+            <brand>Girth Gripz</brand>
+            <hasIngredientList>No</hasIngredientList>
+            <mainImageUrl>http://bestbulkwheyprotein.com/admin/image/catalog/products/Girth Gripz/GirthGripz.jpg</mainImageUrl>
+            <productSecondaryImageURL>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/admin/image/catalog/products/Girth Gripz/GirthGripz.jpg</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue/>
+            </productSecondaryImageURL>
+          </MedicineAndSupplements>
+        </HealthAndBeauty>
+      </category>
+    </MPProduct>
+    <MPOffer>
+      <price>19</price>
+      <ShippingWeight>
+        <measure>0.06</measure>
+        <unit>lb</unit>
+      </ShippingWeight>
+      <ProductTaxCode>2048154</ProductTaxCode>
+    </MPOffer>
+  </MPItem>
+</MPItemFeed>

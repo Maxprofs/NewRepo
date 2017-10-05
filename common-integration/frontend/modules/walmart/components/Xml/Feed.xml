@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<MPItemFeed xmlns="http://walmart.com/">
+  <MPItemFeedHeader>
+    <version>3.1</version>
+    <requestId>1500543108</requestId>
+    <requestBatchId>1500543108</requestBatchId>
+  </MPItemFeedHeader>
+  <MPItem>
+    <processMode>CREATE</processMode>
+    <sku>HO984tazRSQ-0434.jpg</sku>
+    <productIdentifiers>
+      <productIdentifier>
+        <productIdType>UPC</productIdType>
+        <productId></productId>
+      </productIdentifier>
+    </productIdentifiers>
+    <MPProduct>
+      <productName>&lt;![CDATA[Body Accentz&#xAE; Nipple Ring Dangle Heart Captive Bead Body Jewelry Pair 14 ...]]&gt;</productName>
+      <category>
+        <JewelryCategory>
+          <Jewelry>
+            <gender>Unisex</gender>
+            <jewelryStyle>Fashion</jewelryStyle>
+            <variantAttributeNames>
+              <variantAttributeName>color</variantAttributeName>
+            </variantAttributeNames>
+            <variantGroupId>3494407471500543107</variantGroupId>
+            <shortDescription>&lt;![CDATA[&lt;p&gt;new &lt;!-- Inserted by Sellbrite --&gt;&lt;/p&gt;
+&lt;div id="poweredby" style="margin: 60px 0px 40px 0px;width: 100%;text-align: center;display: block !important;"&gt;
+  &lt;div style="margin:0px auto 5px;width:88px;background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iODhweCIgaGVpZ2h0PSIzM3B4IiB2aWV3Qm94PSIwIDAgODggMzMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDg4IDMzIiB4bWw6c3BhY2U9InByZXNlcnZlIj48c3R5bGU+LnN0eWxlMHtmaWxsOgkjMzMzMzMzO30uc3R5bGUxe2ZpbGw6CSMxMUE2QUU7fS5zdHlsZTEwe2ZpbGw6CSNGNEREODQ7fS5zdHlsZTExe2ZpbGw6CSNDNDgxQjc7fS5zdHlsZTEye2ZpbGw6CSNFQjUyOUQ7fS5zdHlsZTEze2ZpbGw6CSM3NUFBRDU7fS5zdHlsZTE0e2ZpbGw6CSNEMUUwNjk7fS5zdHlsZTE1e2ZpbGw6CSNEQTcwQUM7fS5zdHlsZTE2e2ZpbGw6CSNGM0FENkU7fS5zdHlsZTE3e2ZpbGw6CSNGRkZGRkY7fS5zdHlsZTJ7ZmlsbDoJI0VGQzk1Mzt9LnN0eWxlM3tmaWxsOgkjQTc1MDlFO30uc3R5bGU0e2ZpbGw6CSNFMzI0NzY7fS5zdHlsZTV7ZmlsbDoJIzQzODFCQzt9LnN0eWxlNntmaWxsOgkjQjhENDMzO30uc3R5bGU3e2ZpbGw6CSNDODNFODg7fS5zdHlsZTh7ZmlsbDoJI0VDODMzQzt9LnN0eWxlOXtmaWxsOgkjM0NDMUM4O308L3N0eWxlPjxnPjxwYXRoIGQ9Ik04OCAyOGMwIDIuNzYyLTIuMjM4IDUtNSA1SDVjLTIuNzYxIDAtNS0yLjIzOC01LTVWNWMwLTIuNzYxIDIuMjM5LTUgNS01aDc4YzIuNzYyIDAgNSAyLjIzOSA1IDVWMjh6IiBjbGFzcz0ic3R5bGUwIi8+PGc+PHBhdGggZD0iTTE4Ljc3MyA4LjIyM2MwLjMyOC0wLjkzIDAuNTc0LTEuNzk1IDAuNjQ5LTIuNDQ5YzAuMDA0LTAuMDQxIDAuMDA4LTAuMDcyIDAuMDEtMC4xMDNsMC4wMDYtMC4wNjcgYzAuMDA0LTAuMDYyIDAuMDA3LTAuMTI5IDAuMDA3LTAuMTk2YzAtMS42MDUtMS4zMDYtMi45MDktMi45MS0yLjkwOWMtMS42MDUgMC0yLjkxIDEuMzA0LTIuOTEgMi45MDkgYzAgMC4wNjcgMC4wMDQgMC4xMzMgMC4wMDcgMC4ybDAuMDA2IDAuMDYzYzAuMDAyIDAuMDMyIDAuMDA3IDAuMDY0IDAuMDEgMC4wOTdjMC4wNzQgMC42NTIgMC4zMTggMS41MTIgMC42NDQgMi40MzYgYzAuNzA0LTAuMTg1IDEuNDQ0LTAuMjg3IDIuMjA3LTAuMjg3QzE3LjI4NyA3LjkxOCAxOC4wNDkgOC4wMjQgMTguNzczIDguMjIzIiBjbGFzcz0ic3R5bGUxIi8+PHBhdGggZD0iTTguMjI1IDE0LjIyN2MtMC45MzEtMC4zMjktMS43OTctMC41NzUtMi40NS0wLjY0OWMtMC4wNDEtMC4wMDYtMC4wNzItMC4wMDktMC4xMDQtMC4wMTJMNS42MDYgMTMuNTYgYy0wLjA2NC0wLjAwMy0wLjEzLTAuMDA2LTAuMTk4LTAuMDA2Yy0xLjYwMyAwLTIuOTA5IDEuMzA1LTIuOTA5IDIuOTFjMCAxLjYwNCAxLjMwNiAyLjkxIDIuOTA5IDIuOTEgYzAuMDY4IDAgMC4xMzUtMC4wMDQgMC4yLTAuMDA4bDAuMDYyLTAuMDA1YzAuMDMzLTAuMDAzIDAuMDY2LTAuMDA2IDAuMDk4LTAuMDExYzAuNjUxLTAuMDc0IDEuNTEyLTAuMzE3IDIuNDM3LTAuNjQ0IGMtMC4xODctMC43MDQtMC4yODYtMS40NDMtMC4yODYtMi4yMDdDNy45MTkgMTUuNzExIDguMDI2IDE0Ljk1MiA4LjIyNSAxNC4yMjciIGNsYXNzPSJzdHlsZTIiLz48cGF0aCBkPSJNMjcuNTg5IDEzLjYyN2MtMC4wNjYgMC0wLjEzMyAwLjAwMi0wLjIgMC4wMDZsLTAuMDYxIDAuMDA1Yy0wLjAzMyAwLjAwMy0wLjA2NiAwLjAwNy0wLjA5OCAwLjAxMSBjLTAuNjUxIDAuMDc0LTEuNTEyIDAuMzE5LTIuNDM3IDAuNjQ0YzAuMTg3IDAuNzA0IDAuMjg2IDEuNDQyIDAuMjg2IDIuMjA2YzAgMC43ODgtMC4xMDcgMS41NDktMC4zMDUgMi4yNzQgYzAuOTMgMC4zMyAxLjc5NyAwLjU3NiAyLjQ1IDAuNjQ5YzAuMDQxIDAuMDA2IDAuMDcxIDAuMDA5IDAuMTA0IDAuMDExbDAuMDY0IDAuMDA2YzAuMDY0IDAuMDAzIDAuMTI5IDAuMDA3IDAuMTk2IDAuMDA3IGMxLjYwNSAwIDIuOTExLTEuMzA0IDIuOTExLTIuOTExQzMwLjUgMTQuOTMxIDI5LjE5NCAxMy42MjcgMjcuNTg5IDEzLjYyNyIgY2xhc3M9InN0eWxlMyIvPjxwYXRoIGQ9Ik0xNC4yMjcgMjQuNzc2Yy0wLjMyOSAwLjkzLTAuNTc0IDEuNzkzLTAuNjQ5IDIuNDQ5Yy0wLjAwNCAwLjA0LTAuMDA4IDAuMDY5LTAuMDEyIDAuMTA0bC0wLjAwMyAwLjA2NSBjLTAuMDA0IDAuMDYyLTAuMDA5IDAuMTI3LTAuMDA5IDAuMTk1YzAgMS42MDQgMS4zMDYgMi45MDkgMi45MTEgMi45MDljMS42MDUgMCAyLjkxMS0xLjMwNSAyLjkxMS0yLjkwOSBjMC0wLjA2OC0wLjAwNS0wLjEzMy0wLjAwOS0wLjIwMWwtMC4wMDQtMC4wNmMtMC4wMDItMC4wMzUtMC4wMDctMC4wNjQtMC4wMS0wLjA5OWMtMC4wNzQtMC42NTItMC4zMTgtMS41MTEtMC42NDUtMi40MzYgYy0wLjcwNSAwLjE4NC0xLjQ0MyAwLjI4Ni0yLjIwNiAwLjI4NkMxNS43MTMgMjUuMDgyIDE0Ljk1MSAyNC45NzQgMTQuMjI3IDI0Ljc3NiIgY2xhc3]]&gt;</shortDescription>
+            <brand>n/a</brand>
+            <mainImageUrl>https://cdn.shopify.com/s/files/1/0639/4181/products/406ee82e2b4-265e-4190-8142-71341039b0ac.jpg?v=1500036785</mainImageUrl>
+            <productSecondaryImageURL>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/0639/4181/products/406d6bd1109-faf7-478f-a0e0-22f20a0d0455.jpg?v=1500036785</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/0639/4181/products/406599356fb-6bbd-468d-9555-e103a45b3e95.jpg?v=1500036785</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/0639/4181/products/40653d0248f-16e9-4ff5-9a1a-8170647a7a4e.jpg?v=1500036785</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/0639/4181/products/406e5a28379-793b-45b6-9c86-b3b59f8427e2.jpg?v=1500036785</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/0639/4181/products/4069b42e42d-772e-46d8-9668-9ffdd89e120b.jpg?v=1500036785</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/0639/4181/products/24089_52748d1b-c1a8-47dc-a9f1-dffb895bf59c0.jpg?v=1500036788</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/0639/4181/products/24090_2c15948d-ac07-4723-8756-69c55ffded990.jpg?v=1500036790</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/0639/4181/products/24091_5cfac285-59ba-4ca6-8392-9cb1a85156340.jpg?v=1500036792</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/0639/4181/products/24092_632bf52b-6995-46b2-bde6-d5234caaeaa10.jpg?v=1500036793</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/0639/4181/products/411e78264c6-ad1a-4f22-9c6f-ce5aa3565d63.jpg?v=1500036795</productSecondaryImageURLValue>
+            </productSecondaryImageURL>
+          </Jewelry>
+        </JewelryCategory>
+      </category>
+    </MPProduct>
+    <MPOffer>
+      <price>8.73</price>
+      <ShippingWeight>
+        <measure>8.73</measure>
+        <unit>lb</unit>
+      </ShippingWeight>
+      <ProductTaxCode>2038710</ProductTaxCode>
+    </MPOffer>
+  </MPItem>
+</MPItemFeed>

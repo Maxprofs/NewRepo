@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<pricing-feed xmlns="http://seller.marketplace.sears.com/pricing/v5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://seller.marketplace.sears.com/pricing/v5 ../../../../../rest/pricing/import/v5/pricing.xsd">
+  <fbm-pricing>
+    <item item-id="630509453122">
+      <standard-price>1260</standard-price>
+    </item>
+  </fbm-pricing>
+</pricing-feed>

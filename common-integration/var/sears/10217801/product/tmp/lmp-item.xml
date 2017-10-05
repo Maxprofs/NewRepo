@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<catalog-feed xmlns="http://seller.marketplace.sears.com/catalog/v22" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://seller.marketplace.sears.com/catalog/v22 ../../../../../rest/catalog/import/v22/lmp-item.xsd">
+  <fbm-catalog>
+    <items>
+      <item item-id="testproduct1341">
+        <title>testproduct134222</title>
+        <short-desc>54646jhgjnvb&#xD;
+jhk</short-desc>
+        <mature-content>false</mature-content>
+        <upc>556644118823</upc>
+        <item-class id="1073">
+          <name>Suitable for Diabetics</name>
+        </item-class>
+        <your-categorization>Clothing|Women's Apparel|Intimates|Women's Intimates Socks &amp; Hosiery</your-categorization>
+        <long-desc>67567567ghk&#xD;
+kjhkghj</long-desc>
+        <model-number>jhgjghk57</model-number>
+        <standard-price>185.00</standard-price>
+        <brand>cedcommerce</brand>
+        <shipping-length>1.07</shipping-length>
+        <shipping-width>1.04</shipping-width>
+        <shipping-height>1.01</shipping-height>
+        <shipping-weight>22.05</shipping-weight>
+        <image-url>
+          <url>https://cdn.shopify.com/s/files/1/1009/2336/products/newegg-big-banner.png?v=1492578008</url>
+        </image-url>
+        <swatch-image-url>
+          <url>https://cdn.shopify.com/s/files/1/1009/2336/products/newegg-big-banner.png?v=1492578008</url>
+        </swatch-image-url>
+        <attributes>
+          <attribute>
+            <attribute-id>7747</attribute-id>
+            <attribute-value-id id="30596">
+              <name>Slipper socks</name>
+            </attribute-value-id>
+          </attribute>
+          <attribute>
+            <attribute-id>325901</attribute-id>
+            <attribute-value-id id="2331410">
+              <name>Maternity plus</name>
+            </attribute-value-id>
+          </attribute>
+          <attribute>
+            <attribute-id>7688</attribute-id>
+            <attribute-value-id id="10689">
+              <name>Linen</name>
+            </attribute-value-id>
+          </attribute>
+        </attributes>
+        <offer-condition>
+          <condition>NEW</condition>
+        </offer-condition>
+      </item>
+    </items>
+  </fbm-catalog>
+</catalog-feed>

@@ -1,0 +1,414 @@
+[29-Mar-2016 04:18:12 America/Los_Angeles] An Error occurred while handling another error:
+exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: yii\web\Request::requestUri' in /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/base/Component.php:143
+Stack trace:
+#0 /home/cedcom5/public_html/shopify/frontend/views/layouts/main.php(411): yii\base\Component->__get('requestUri')
+#1 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/base/View.php(325): require('/home/cedcom5/p...')
+#2 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/home/cedcom5/p...', Array)
+#3 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/base/Controller.php(386): yii\base\View->renderFile('/home/cedcom5/p...', Array, Object(frontend\controllers\SiteController))
+#4 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/base/Controller.php(372): yii\base\Controller->renderContent('<style>\n.error{...')
+#5 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/web/ErrorAction.php(108): yii\base\Controller->render('error', Array)
+#6 [internal function]: yii\web\ErrorAction->run()
+#7 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/base/Action.php(92): call_user_func_array(Array, Array)
+#8 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\Action->runWithParams(Array)
+#9 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('error', Array)
+#10 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/web/ErrorHandler.php(80): yii\base\Module->runAction('site/error')
+#11 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/base/ErrorHandler.php(101): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#13 {main}
+Previous exception:
+exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "sizzle.min.map".' in /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/base/Module.php:461
+Stack trace:
+#0 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('sizzle.min.map', Array)
+#1 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /home/cedcom5/public_html/shopify/frontend/index.php(37): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/web/Application.php:96
+Stack trace:
+#0 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /home/cedcom5/public_html/shopify/frontend/index.php(37): yii\base\Application->run()
+#2 {main}
+$_SERVER = [
+    'CONTEXT_DOCUMENT_ROOT' => '/home/cedcom5/public_html/shopify',
+    'CONTEXT_PREFIX' => '',
+    'DOCUMENT_ROOT' => '/home/cedcom5/public_html/shopify',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTPS' => 'on',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5',
+    'HTTP_CACHE_CONTROL' => 'no-cache',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'HTTP_COOKIE' => '_frontendUser=1e2fda6d2b3ede3f8cd4b1adf36e942a3df92b6a9f9a93b5a7170203d1b0da02a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_frontendUser%22%3Bi%3A1%3Bs%3A47%3A%22%5B14%2C%228865bbe71a314d7583b11da8470572d4%22%2C2592000%5D%22%3B%7D; PHPFRONTSESSID=978212b7a1f8d6ff25b161cad69ce8cc; _frontendCSRF=ed339474aff1a1d29994ee4af2a766e7117a5b79be252375cceb22bc6fe5e8efa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_frontendCSRF%22%3Bi%3A1%3Bs%3A32%3A%22yWy6LMHBptHGFtMat-MVWzZHFcr6VmPp%22%3B%7D; PHPBACKSESSID=f8bd426417784ddf9f3424c76686ac22; _backendCSRF=8173284c7d08de5b8b59a5f8bc0a77c4a26a4a75c36556fc93e4ace7df85965da%3A2%3A%7Bi%3A0%3Bs%3A12%3A%22_backendCSRF%22%3Bi%3A1%3Bs%3A32%3A%22Pkjqw64I7wJDNdmw6HEem47bX4xIwgxA%22%3B%7D; __cfduid=d213d9569488cc342299798caf218611b1459227135; _ga=GA1.2.1334670241.1459227256; __zlcmid=ZtfR3AtOHTdFJK; _backendUser=9f910d9c67c6214d0900558b4fee3ee91104b483b151a4f3fd692f077cfd2d27a%3A2%3A%7Bi%3A0%3Bs%3A12%3A%22_backendUser%22%3Bi%3A1%3Bs%3A46%3A%22%5B5%2C%221yZb0ARiycSE2xAzR463QvYmCRQqppT4%22%2C2592000%5D%22%3B%7D',
+    'HTTP_HOST' => 'shopify.cedcommerce.com',
+    'HTTP_PRAGMA' => 'no-cache',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/home/cedcom5/public_html',
+    'QUERY_STRING' => 'sizzle.min.map',
+    'REDIRECT_HTTPS' => 'on',
+    'REDIRECT_QUERY_STRING' => 'sizzle.min.map',
+    'REDIRECT_SSL_CIPHER' => 'ECDHE-RSA-AES128-GCM-SHA256',
+    'REDIRECT_SSL_CIPHER_ALGKEYSIZE' => '128',
+    'REDIRECT_SSL_CIPHER_EXPORT' => 'false',
+    'REDIRECT_SSL_CIPHER_USEKEYSIZE' => '128',
+    'REDIRECT_SSL_CLIENT_VERIFY' => 'NONE',
+    'REDIRECT_SSL_COMPRESS_METHOD' => 'NULL',
+    'REDIRECT_SSL_PROTOCOL' => 'TLSv1.2',
+    'REDIRECT_SSL_SECURE_RENEG' => 'true',
+    'REDIRECT_SSL_SERVER_A_KEY' => 'rsaEncryption',
+    'REDIRECT_SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption',
+    'REDIRECT_SSL_SERVER_I_DN' => 'CN=Go Daddy Secure Certificate Authority - G2,OU=http://certs.godaddy.com/repository/,O=GoDaddy.com\\, Inc.,L=Scottsdale,ST=Arizona,C=US',
+    'REDIRECT_SSL_SERVER_I_DN_C' => 'US',
+    'REDIRECT_SSL_SERVER_I_DN_CN' => 'Go Daddy Secure Certificate Authority - G2',
+    'REDIRECT_SSL_SERVER_I_DN_L' => 'Scottsdale',
+    'REDIRECT_SSL_SERVER_I_DN_O' => 'GoDaddy.com, Inc.',
+    'REDIRECT_SSL_SERVER_I_DN_OU' => 'http://certs.godaddy.com/repository/',
+    'REDIRECT_SSL_SERVER_I_DN_ST' => 'Arizona',
+    'REDIRECT_SSL_SERVER_M_SERIAL' => '186779A34ED74935',
+    'REDIRECT_SSL_SERVER_M_VERSION' => '3',
+    'REDIRECT_SSL_SERVER_SAN_DNS_0' => 'shopify.cedcommerce.com',
+    'REDIRECT_SSL_SERVER_SAN_DNS_1' => 'www.shopify.cedcommerce.com',
+    'REDIRECT_SSL_SERVER_S_DN' => 'CN=shopify.cedcommerce.com,OU=Domain Control Validated',
+    'REDIRECT_SSL_SERVER_S_DN_CN' => 'shopify.cedcommerce.com',
+    'REDIRECT_SSL_SERVER_S_DN_OU' => 'Domain Control Validated',
+    'REDIRECT_SSL_SERVER_V_END' => 'Mar  3 12:48:38 2017 GMT',
+    'REDIRECT_SSL_SERVER_V_START' => 'Mar  3 12:48:38 2016 GMT',
+    'REDIRECT_SSL_SESSION_ID' => '25e1d4af1ffa802c790d61bd2c723a5c22e25183552c61e96ce9b819466751fa',
+    'REDIRECT_SSL_SESSION_RESUMED' => 'Resumed',
+    'REDIRECT_SSL_TLS_SNI' => 'shopify.cedcommerce.com',
+    'REDIRECT_SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.16',
+    'REDIRECT_SSL_VERSION_LIBRARY' => 'OpenSSL/1.0.1e-fips',
+    'REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'Vvpkc8YuVxsAAF0lstcAAACC',
+    'REDIRECT_URL' => '/frontend/sizzle.min.map',
+    'REMOTE_ADDR' => '122.160.111.71',
+    'REMOTE_PORT' => '13928',
+    'REQUEST_METHOD' => 'GET',
+    'REQUEST_SCHEME' => 'https',
+    'REQUEST_URI' => '/frontend/sizzle.min.map',
+    'SCRIPT_FILENAME' => '/home/cedcom5/public_html/shopify/frontend/index.php',
+    'SCRIPT_NAME' => '/frontend/index.php',
+    'SERVER_ADDR' => '198.46.87.27',
+    'SERVER_ADMIN' => 'webmaster@shopify.cedcommerce.com',
+    'SERVER_NAME' => 'shopify.cedcommerce.com',
+    'SERVER_PORT' => '443',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SSL_CIPHER' => 'ECDHE-RSA-AES128-GCM-SHA256',
+    'SSL_CIPHER_ALGKEYSIZE' => '128',
+    'SSL_CIPHER_EXPORT' => 'false',
+    'SSL_CIPHER_USEKEYSIZE' => '128',
+    'SSL_CLIENT_VERIFY' => 'NONE',
+    'SSL_COMPRESS_METHOD' => 'NULL',
+    'SSL_PROTOCOL' => 'TLSv1.2',
+    'SSL_SECURE_RENEG' => 'true',
+    'SSL_SERVER_A_KEY' => 'rsaEncryption',
+    'SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption',
+    'SSL_SERVER_I_DN' => 'CN=Go Daddy Secure Certificate Authority - G2,OU=http://certs.godaddy.com/repository/,O=GoDaddy.com\\, Inc.,L=Scottsdale,ST=Arizona,C=US',
+    'SSL_SERVER_I_DN_C' => 'US',
+    'SSL_SERVER_I_DN_CN' => 'Go Daddy Secure Certificate Authority - G2',
+    'SSL_SERVER_I_DN_L' => 'Scottsdale',
+    'SSL_SERVER_I_DN_O' => 'GoDaddy.com, Inc.',
+    'SSL_SERVER_I_DN_OU' => 'http://certs.godaddy.com/repository/',
+    'SSL_SERVER_I_DN_ST' => 'Arizona',
+    'SSL_SERVER_M_SERIAL' => '186779A34ED74935',
+    'SSL_SERVER_M_VERSION' => '3',
+    'SSL_SERVER_SAN_DNS_0' => 'shopify.cedcommerce.com',
+    'SSL_SERVER_SAN_DNS_1' => 'www.shopify.cedcommerce.com',
+    'SSL_SERVER_S_DN' => 'CN=shopify.cedcommerce.com,OU=Domain Control Validated',
+    'SSL_SERVER_S_DN_CN' => 'shopify.cedcommerce.com',
+    'SSL_SERVER_S_DN_OU' => 'Domain Control Validated',
+    'SSL_SERVER_V_END' => 'Mar  3 12:48:38 2017 GMT',
+    'SSL_SERVER_V_START' => 'Mar  3 12:48:38 2016 GMT',
+    'SSL_SESSION_ID' => '25e1d4af1ffa802c790d61bd2c723a5c22e25183552c61e96ce9b819466751fa',
+    'SSL_SESSION_RESUMED' => 'Resumed',
+    'SSL_TLS_SNI' => 'shopify.cedcommerce.com',
+    'SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.16',
+    'SSL_VERSION_LIBRARY' => 'OpenSSL/1.0.1e-fips',
+    'UNIQUE_ID' => 'Vvpkc8YuVxsAAF0lstcAAACC',
+    'PHP_SELF' => '/frontend/index.php',
+    'REQUEST_TIME_FLOAT' => 1459250291.9718630313873291015625,
+    'REQUEST_TIME' => 1459250291,
+    'argv' => [
+        'sizzle.min.map',
+    ],
+    'argc' => 1,
+]
+[29-Mar-2016 04:20:37 America/Los_Angeles] An Error occurred while handling another error:
+exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: yii\web\Response::requestUri' in /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/base/Component.php:143
+Stack trace:
+#0 /home/cedcom5/public_html/shopify/frontend/views/layouts/main.php(411): yii\base\Component->__get('requestUri')
+#1 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/base/View.php(325): require('/home/cedcom5/p...')
+#2 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/home/cedcom5/p...', Array)
+#3 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/base/Controller.php(386): yii\base\View->renderFile('/home/cedcom5/p...', Array, Object(frontend\controllers\SiteController))
+#4 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/base/Controller.php(372): yii\base\Controller->renderContent('<style>\n.error{...')
+#5 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/web/ErrorAction.php(108): yii\base\Controller->render('error', Array)
+#6 [internal function]: yii\web\ErrorAction->run()
+#7 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/base/Action.php(92): call_user_func_array(Array, Array)
+#8 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\Action->runWithParams(Array)
+#9 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('error', Array)
+#10 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/web/ErrorHandler.php(80): yii\base\Module->runAction('site/error')
+#11 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/base/ErrorHandler.php(101): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#13 {main}
+Previous exception:
+exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "sizzle.min.map".' in /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/base/Module.php:461
+Stack trace:
+#0 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('sizzle.min.map', Array)
+#1 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /home/cedcom5/public_html/shopify/frontend/index.php(37): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/web/Application.php:96
+Stack trace:
+#0 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /home/cedcom5/public_html/shopify/frontend/index.php(37): yii\base\Application->run()
+#2 {main}
+$_SERVER = [
+    'CONTEXT_DOCUMENT_ROOT' => '/home/cedcom5/public_html/shopify',
+    'CONTEXT_PREFIX' => '',
+    'DOCUMENT_ROOT' => '/home/cedcom5/public_html/shopify',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTPS' => 'on',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5',
+    'HTTP_CACHE_CONTROL' => 'no-cache',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'HTTP_COOKIE' => '_frontendUser=1e2fda6d2b3ede3f8cd4b1adf36e942a3df92b6a9f9a93b5a7170203d1b0da02a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_frontendUser%22%3Bi%3A1%3Bs%3A47%3A%22%5B14%2C%228865bbe71a314d7583b11da8470572d4%22%2C2592000%5D%22%3B%7D; PHPFRONTSESSID=978212b7a1f8d6ff25b161cad69ce8cc; _frontendCSRF=ed339474aff1a1d29994ee4af2a766e7117a5b79be252375cceb22bc6fe5e8efa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_frontendCSRF%22%3Bi%3A1%3Bs%3A32%3A%22yWy6LMHBptHGFtMat-MVWzZHFcr6VmPp%22%3B%7D; PHPBACKSESSID=f8bd426417784ddf9f3424c76686ac22; _backendCSRF=8173284c7d08de5b8b59a5f8bc0a77c4a26a4a75c36556fc93e4ace7df85965da%3A2%3A%7Bi%3A0%3Bs%3A12%3A%22_backendCSRF%22%3Bi%3A1%3Bs%3A32%3A%22Pkjqw64I7wJDNdmw6HEem47bX4xIwgxA%22%3B%7D; __cfduid=d213d9569488cc342299798caf218611b1459227135; _ga=GA1.2.1334670241.1459227256; __zlcmid=ZtfR3AtOHTdFJK; _backendUser=9f910d9c67c6214d0900558b4fee3ee91104b483b151a4f3fd692f077cfd2d27a%3A2%3A%7Bi%3A0%3Bs%3A12%3A%22_backendUser%22%3Bi%3A1%3Bs%3A46%3A%22%5B5%2C%221yZb0ARiycSE2xAzR463QvYmCRQqppT4%22%2C2592000%5D%22%3B%7D',
+    'HTTP_HOST' => 'shopify.cedcommerce.com',
+    'HTTP_PRAGMA' => 'no-cache',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/home/cedcom5/public_html',
+    'QUERY_STRING' => 'sizzle.min.map',
+    'REDIRECT_HTTPS' => 'on',
+    'REDIRECT_QUERY_STRING' => 'sizzle.min.map',
+    'REDIRECT_SSL_CIPHER' => 'ECDHE-RSA-AES128-GCM-SHA256',
+    'REDIRECT_SSL_CIPHER_ALGKEYSIZE' => '128',
+    'REDIRECT_SSL_CIPHER_EXPORT' => 'false',
+    'REDIRECT_SSL_CIPHER_USEKEYSIZE' => '128',
+    'REDIRECT_SSL_CLIENT_VERIFY' => 'NONE',
+    'REDIRECT_SSL_COMPRESS_METHOD' => 'NULL',
+    'REDIRECT_SSL_PROTOCOL' => 'TLSv1.2',
+    'REDIRECT_SSL_SECURE_RENEG' => 'true',
+    'REDIRECT_SSL_SERVER_A_KEY' => 'rsaEncryption',
+    'REDIRECT_SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption',
+    'REDIRECT_SSL_SERVER_I_DN' => 'CN=Go Daddy Secure Certificate Authority - G2,OU=http://certs.godaddy.com/repository/,O=GoDaddy.com\\, Inc.,L=Scottsdale,ST=Arizona,C=US',
+    'REDIRECT_SSL_SERVER_I_DN_C' => 'US',
+    'REDIRECT_SSL_SERVER_I_DN_CN' => 'Go Daddy Secure Certificate Authority - G2',
+    'REDIRECT_SSL_SERVER_I_DN_L' => 'Scottsdale',
+    'REDIRECT_SSL_SERVER_I_DN_O' => 'GoDaddy.com, Inc.',
+    'REDIRECT_SSL_SERVER_I_DN_OU' => 'http://certs.godaddy.com/repository/',
+    'REDIRECT_SSL_SERVER_I_DN_ST' => 'Arizona',
+    'REDIRECT_SSL_SERVER_M_SERIAL' => '186779A34ED74935',
+    'REDIRECT_SSL_SERVER_M_VERSION' => '3',
+    'REDIRECT_SSL_SERVER_SAN_DNS_0' => 'shopify.cedcommerce.com',
+    'REDIRECT_SSL_SERVER_SAN_DNS_1' => 'www.shopify.cedcommerce.com',
+    'REDIRECT_SSL_SERVER_S_DN' => 'CN=shopify.cedcommerce.com,OU=Domain Control Validated',
+    'REDIRECT_SSL_SERVER_S_DN_CN' => 'shopify.cedcommerce.com',
+    'REDIRECT_SSL_SERVER_S_DN_OU' => 'Domain Control Validated',
+    'REDIRECT_SSL_SERVER_V_END' => 'Mar  3 12:48:38 2017 GMT',
+    'REDIRECT_SSL_SERVER_V_START' => 'Mar  3 12:48:38 2016 GMT',
+    'REDIRECT_SSL_SESSION_ID' => '25e1d4af1ffa802c790d61bd2c723a5c22e25183552c61e96ce9b819466751fa',
+    'REDIRECT_SSL_SESSION_RESUMED' => 'Resumed',
+    'REDIRECT_SSL_TLS_SNI' => 'shopify.cedcommerce.com',
+    'REDIRECT_SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.16',
+    'REDIRECT_SSL_VERSION_LIBRARY' => 'OpenSSL/1.0.1e-fips',
+    'REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'VvplBMYuVxsAAF28ZZUAAAFR',
+    'REDIRECT_URL' => '/frontend/sizzle.min.map',
+    'REMOTE_ADDR' => '122.160.111.71',
+    'REMOTE_PORT' => '14238',
+    'REQUEST_METHOD' => 'GET',
+    'REQUEST_SCHEME' => 'https',
+    'REQUEST_URI' => '/frontend/sizzle.min.map',
+    'SCRIPT_FILENAME' => '/home/cedcom5/public_html/shopify/frontend/index.php',
+    'SCRIPT_NAME' => '/frontend/index.php',
+    'SERVER_ADDR' => '198.46.87.27',
+    'SERVER_ADMIN' => 'webmaster@shopify.cedcommerce.com',
+    'SERVER_NAME' => 'shopify.cedcommerce.com',
+    'SERVER_PORT' => '443',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SSL_CIPHER' => 'ECDHE-RSA-AES128-GCM-SHA256',
+    'SSL_CIPHER_ALGKEYSIZE' => '128',
+    'SSL_CIPHER_EXPORT' => 'false',
+    'SSL_CIPHER_USEKEYSIZE' => '128',
+    'SSL_CLIENT_VERIFY' => 'NONE',
+    'SSL_COMPRESS_METHOD' => 'NULL',
+    'SSL_PROTOCOL' => 'TLSv1.2',
+    'SSL_SECURE_RENEG' => 'true',
+    'SSL_SERVER_A_KEY' => 'rsaEncryption',
+    'SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption',
+    'SSL_SERVER_I_DN' => 'CN=Go Daddy Secure Certificate Authority - G2,OU=http://certs.godaddy.com/repository/,O=GoDaddy.com\\, Inc.,L=Scottsdale,ST=Arizona,C=US',
+    'SSL_SERVER_I_DN_C' => 'US',
+    'SSL_SERVER_I_DN_CN' => 'Go Daddy Secure Certificate Authority - G2',
+    'SSL_SERVER_I_DN_L' => 'Scottsdale',
+    'SSL_SERVER_I_DN_O' => 'GoDaddy.com, Inc.',
+    'SSL_SERVER_I_DN_OU' => 'http://certs.godaddy.com/repository/',
+    'SSL_SERVER_I_DN_ST' => 'Arizona',
+    'SSL_SERVER_M_SERIAL' => '186779A34ED74935',
+    'SSL_SERVER_M_VERSION' => '3',
+    'SSL_SERVER_SAN_DNS_0' => 'shopify.cedcommerce.com',
+    'SSL_SERVER_SAN_DNS_1' => 'www.shopify.cedcommerce.com',
+    'SSL_SERVER_S_DN' => 'CN=shopify.cedcommerce.com,OU=Domain Control Validated',
+    'SSL_SERVER_S_DN_CN' => 'shopify.cedcommerce.com',
+    'SSL_SERVER_S_DN_OU' => 'Domain Control Validated',
+    'SSL_SERVER_V_END' => 'Mar  3 12:48:38 2017 GMT',
+    'SSL_SERVER_V_START' => 'Mar  3 12:48:38 2016 GMT',
+    'SSL_SESSION_ID' => '25e1d4af1ffa802c790d61bd2c723a5c22e25183552c61e96ce9b819466751fa',
+    'SSL_SESSION_RESUMED' => 'Resumed',
+    'SSL_TLS_SNI' => 'shopify.cedcommerce.com',
+    'SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.16',
+    'SSL_VERSION_LIBRARY' => 'OpenSSL/1.0.1e-fips',
+    'UNIQUE_ID' => 'VvplBMYuVxsAAF28ZZUAAAFR',
+    'PHP_SELF' => '/frontend/index.php',
+    'REQUEST_TIME_FLOAT' => 1459250436.9263069629669189453125,
+    'REQUEST_TIME' => 1459250436,
+    'argv' => [
+        'sizzle.min.map',
+    ],
+    'argc' => 1,
+]
+[30-Mar-2016 04:16:06 America/Los_Angeles] An Error occurred while handling another error:
+exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: yii\web\Application::action' in /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/base/Component.php:143
+Stack trace:
+#0 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/di/ServiceLocator.php(73): yii\base\Component->__get('action')
+#1 /home/cedcom5/public_html/shopify/frontend/views/layouts/main.php(38): yii\di\ServiceLocator->__get('action')
+#2 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/base/View.php(325): require('/home/cedcom5/p...')
+#3 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/home/cedcom5/p...', Array)
+#4 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/base/Controller.php(386): yii\base\View->renderFile('/home/cedcom5/p...', Array, Object(frontend\controllers\SiteController))
+#5 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/base/Controller.php(372): yii\base\Controller->renderContent('<style>\n.error{...')
+#6 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/web/ErrorAction.php(108): yii\base\Controller->render('error', Array)
+#7 [internal function]: yii\web\ErrorAction->run()
+#8 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/base/Action.php(92): call_user_func_array(Array, Array)
+#9 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\Action->runWithParams(Array)
+#10 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('error', Array)
+#11 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/web/ErrorHandler.php(80): yii\base\Module->runAction('site/error')
+#12 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/base/ErrorHandler.php(101): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#13 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#14 {main}
+Previous exception:
+exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: site/sizzle.min.map' in /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/base/Controller.php:122
+Stack trace:
+#0 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('sizzle.min.map', Array)
+#1 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('site/sizzle.min...', Array)
+#2 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 /home/cedcom5/public_html/shopify/frontend/index.php(37): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/web/Application.php:96
+Stack trace:
+#0 /home/cedcom5/public_html/shopify/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /home/cedcom5/public_html/shopify/frontend/index.php(37): yii\base\Application->run()
+#2 {main}
+$_SERVER = [
+    'CONTEXT_DOCUMENT_ROOT' => '/home/cedcom5/public_html/shopify',
+    'CONTEXT_PREFIX' => '',
+    'DOCUMENT_ROOT' => '/home/cedcom5/public_html/shopify',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTPS' => 'on',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5',
+    'HTTP_CACHE_CONTROL' => 'no-cache',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'HTTP_COOKIE' => '__cfduid=d213d9569488cc342299798caf218611b1459227135; _ga=GA1.2.1334670241.1459227256; __zlcmid=ZtfR3AtOHTdFJK; _backendUser=9f910d9c67c6214d0900558b4fee3ee91104b483b151a4f3fd692f077cfd2d27a%3A2%3A%7Bi%3A0%3Bs%3A12%3A%22_backendUser%22%3Bi%3A1%3Bs%3A46%3A%22%5B5%2C%221yZb0ARiycSE2xAzR463QvYmCRQqppT4%22%2C2592000%5D%22%3B%7D; PHPFRONTSESSID=22fe9db46e96bde1eb49ddcca39c23e5; _frontendCSRF=c5e7abc234957e262eefc3a8a93c715ede9ac3ac38107eea50d15bbbd633c169a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_frontendCSRF%22%3Bi%3A1%3Bs%3A32%3A%22XGXLZUDgR48FTwF4qlnN3_Iztk75bl3g%22%3B%7D; PHPBACKSESSID=11a6f3d47b315060148eb6c33094fce0; __zlcprivacy=1; _gat=1',
+    'HTTP_HOST' => 'shopify.cedcommerce.com',
+    'HTTP_PRAGMA' => 'no-cache',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/home/cedcom5/public_html',
+    'QUERY_STRING' => 'site/sizzle.min.map',
+    'REDIRECT_HTTPS' => 'on',
+    'REDIRECT_QUERY_STRING' => 'site/sizzle.min.map',
+    'REDIRECT_SSL_CIPHER' => 'ECDHE-RSA-AES128-GCM-SHA256',
+    'REDIRECT_SSL_CIPHER_ALGKEYSIZE' => '128',
+    'REDIRECT_SSL_CIPHER_EXPORT' => 'false',
+    'REDIRECT_SSL_CIPHER_USEKEYSIZE' => '128',
+    'REDIRECT_SSL_CLIENT_VERIFY' => 'NONE',
+    'REDIRECT_SSL_COMPRESS_METHOD' => 'NULL',
+    'REDIRECT_SSL_PROTOCOL' => 'TLSv1.2',
+    'REDIRECT_SSL_SECURE_RENEG' => 'true',
+    'REDIRECT_SSL_SERVER_A_KEY' => 'rsaEncryption',
+    'REDIRECT_SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption',
+    'REDIRECT_SSL_SERVER_I_DN' => 'CN=Go Daddy Secure Certificate Authority - G2,OU=http://certs.godaddy.com/repository/,O=GoDaddy.com\\, Inc.,L=Scottsdale,ST=Arizona,C=US',
+    'REDIRECT_SSL_SERVER_I_DN_C' => 'US',
+    'REDIRECT_SSL_SERVER_I_DN_CN' => 'Go Daddy Secure Certificate Authority - G2',
+    'REDIRECT_SSL_SERVER_I_DN_L' => 'Scottsdale',
+    'REDIRECT_SSL_SERVER_I_DN_O' => 'GoDaddy.com, Inc.',
+    'REDIRECT_SSL_SERVER_I_DN_OU' => 'http://certs.godaddy.com/repository/',
+    'REDIRECT_SSL_SERVER_I_DN_ST' => 'Arizona',
+    'REDIRECT_SSL_SERVER_M_SERIAL' => '186779A34ED74935',
+    'REDIRECT_SSL_SERVER_M_VERSION' => '3',
+    'REDIRECT_SSL_SERVER_SAN_DNS_0' => 'shopify.cedcommerce.com',
+    'REDIRECT_SSL_SERVER_SAN_DNS_1' => 'www.shopify.cedcommerce.com',
+    'REDIRECT_SSL_SERVER_S_DN' => 'CN=shopify.cedcommerce.com,OU=Domain Control Validated',
+    'REDIRECT_SSL_SERVER_S_DN_CN' => 'shopify.cedcommerce.com',
+    'REDIRECT_SSL_SERVER_S_DN_OU' => 'Domain Control Validated',
+    'REDIRECT_SSL_SERVER_V_END' => 'Mar  3 12:48:38 2017 GMT',
+    'REDIRECT_SSL_SERVER_V_START' => 'Mar  3 12:48:38 2016 GMT',
+    'REDIRECT_SSL_SESSION_RESUMED' => 'Initial',
+    'REDIRECT_SSL_TLS_SNI' => 'shopify.cedcommerce.com',
+    'REDIRECT_SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.16',
+    'REDIRECT_SSL_VERSION_LIBRARY' => 'OpenSSL/1.0.1e-fips',
+    'REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'Vvu1dsYuVxsAAHf0Om8AAABC',
+    'REDIRECT_URL' => '/frontend/site/sizzle.min.map',
+    'REMOTE_ADDR' => '122.160.111.71',
+    'REMOTE_PORT' => '10854',
+    'REQUEST_METHOD' => 'GET',
+    'REQUEST_SCHEME' => 'https',
+    'REQUEST_URI' => '/frontend/site/sizzle.min.map',
+    'SCRIPT_FILENAME' => '/home/cedcom5/public_html/shopify/frontend/index.php',
+    'SCRIPT_NAME' => '/frontend/index.php',
+    'SERVER_ADDR' => '198.46.87.27',
+    'SERVER_ADMIN' => 'webmaster@shopify.cedcommerce.com',
+    'SERVER_NAME' => 'shopify.cedcommerce.com',
+    'SERVER_PORT' => '443',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SSL_CIPHER' => 'ECDHE-RSA-AES128-GCM-SHA256',
+    'SSL_CIPHER_ALGKEYSIZE' => '128',
+    'SSL_CIPHER_EXPORT' => 'false',
+    'SSL_CIPHER_USEKEYSIZE' => '128',
+    'SSL_CLIENT_VERIFY' => 'NONE',
+    'SSL_COMPRESS_METHOD' => 'NULL',
+    'SSL_PROTOCOL' => 'TLSv1.2',
+    'SSL_SECURE_RENEG' => 'true',
+    'SSL_SERVER_A_KEY' => 'rsaEncryption',
+    'SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption',
+    'SSL_SERVER_I_DN' => 'CN=Go Daddy Secure Certificate Authority - G2,OU=http://certs.godaddy.com/repository/,O=GoDaddy.com\\, Inc.,L=Scottsdale,ST=Arizona,C=US',
+    'SSL_SERVER_I_DN_C' => 'US',
+    'SSL_SERVER_I_DN_CN' => 'Go Daddy Secure Certificate Authority - G2',
+    'SSL_SERVER_I_DN_L' => 'Scottsdale',
+    'SSL_SERVER_I_DN_O' => 'GoDaddy.com, Inc.',
+    'SSL_SERVER_I_DN_OU' => 'http://certs.godaddy.com/repository/',
+    'SSL_SERVER_I_DN_ST' => 'Arizona',
+    'SSL_SERVER_M_SERIAL' => '186779A34ED74935',
+    'SSL_SERVER_M_VERSION' => '3',
+    'SSL_SERVER_SAN_DNS_0' => 'shopify.cedcommerce.com',
+    'SSL_SERVER_SAN_DNS_1' => 'www.shopify.cedcommerce.com',
+    'SSL_SERVER_S_DN' => 'CN=shopify.cedcommerce.com,OU=Domain Control Validated',
+    'SSL_SERVER_S_DN_CN' => 'shopify.cedcommerce.com',
+    'SSL_SERVER_S_DN_OU' => 'Domain Control Validated',
+    'SSL_SERVER_V_END' => 'Mar  3 12:48:38 2017 GMT',
+    'SSL_SERVER_V_START' => 'Mar  3 12:48:38 2016 GMT',
+    'SSL_SESSION_RESUMED' => 'Initial',
+    'SSL_TLS_SNI' => 'shopify.cedcommerce.com',
+    'SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.16',
+    'SSL_VERSION_LIBRARY' => 'OpenSSL/1.0.1e-fips',
+    'UNIQUE_ID' => 'Vvu1dsYuVxsAAHf0Om8AAABC',
+    'PHP_SELF' => '/frontend/index.php',
+    'REQUEST_TIME_FLOAT' => 1459336566.747231006622314453125,
+    'REQUEST_TIME' => 1459336566,
+    'argv' => [
+        'site/sizzle.min.map',
+    ],
+    'argc' => 1,
+]

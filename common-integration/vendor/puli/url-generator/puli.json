@@ -1,0 +1,19 @@
+{
+    "version": "1.0",
+    "name": "puli/url-generator",
+    "binding-types": {
+        "puli/public-resource": {
+            "description": "A resource that can be accessed in a web browser",
+            "parameters": {
+                "path": {
+                    "description": "The path relative to the server's document root",
+                    "default": "/"
+                },
+                "server": {
+                    "description": "The name of the server that serves the resource",
+                    "required": true
+                }
+            }
+        }
+    }
+}

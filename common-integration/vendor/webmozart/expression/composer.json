@@ -1,0 +1,34 @@
+{
+    "name": "webmozart/expression",
+    "description": "Formulate expressions and search criteria using PHP objects.",
+    "keywords": ["criteria", "formula", "expression", "filter"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bernhard Schussek",
+            "email": "bschussek@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.9"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.6",
+        "sebastian/version": "^1.0.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Webmozart\\Expression\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Webmozart\\Expression\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}

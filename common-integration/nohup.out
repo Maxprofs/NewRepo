@@ -1,0 +1,38 @@
+Start
+PHP Warning 'yii\base\ErrorException' with message 'socket_bind(): unable to bind address [98]: Address already in use'
+
+in /opt/lampp/htdocs/integration/frontend/controllers/ChatServerController.php:35
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'socket_bind(): ...', '/opt/lampp/htdo...', 35, Array)
+#1 /opt/lampp/htdocs/integration/frontend/controllers/ChatServerController.php(35): socket_bind(Resource id #74, '0', '9002')
+#2 /opt/lampp/htdocs/integration/console/controllers/ChatServerController.php(18): frontend\controllers\ChatServerController->actionIndex()
+#3 [internal function]: console\controllers\ChatServerController->actionStart()
+#4 /opt/lampp/htdocs/integration/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#5 /opt/lampp/htdocs/integration/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#6 /opt/lampp/htdocs/integration/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('start', Array)
+#7 /opt/lampp/htdocs/integration/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('start', Array)
+#8 /opt/lampp/htdocs/integration/vendor/yiisoft/yii2/console/Application.php(161): yii\base\Module->runAction('chat-server/sta...', Array)
+#9 /opt/lampp/htdocs/integration/vendor/yiisoft/yii2/console/Application.php(137): yii\console\Application->runAction('chat-server/sta...', Array)
+#10 /opt/lampp/htdocs/integration/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#11 /opt/lampp/htdocs/integration/yii(31): yii\base\Application->run()
+#12 {main}
+Start
+PHP Warning 'yii\base\ErrorException' with message 'socket_bind(): unable to bind address [98]: Address already in use'
+
+in /opt/lampp/htdocs/integration/frontend/controllers/ChatServerController.php:35
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'socket_bind(): ...', '/opt/lampp/htdo...', 35, Array)
+#1 /opt/lampp/htdocs/integration/frontend/controllers/ChatServerController.php(35): socket_bind(Resource id #74, '0', '9002')
+#2 /opt/lampp/htdocs/integration/console/controllers/ChatServerController.php(18): frontend\controllers\ChatServerController->actionIndex()
+#3 [internal function]: console\controllers\ChatServerController->actionStart()
+#4 /opt/lampp/htdocs/integration/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#5 /opt/lampp/htdocs/integration/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#6 /opt/lampp/htdocs/integration/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('start', Array)
+#7 /opt/lampp/htdocs/integration/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('start', Array)
+#8 /opt/lampp/htdocs/integration/vendor/yiisoft/yii2/console/Application.php(161): yii\base\Module->runAction('chat-server/sta...', Array)
+#9 /opt/lampp/htdocs/integration/vendor/yiisoft/yii2/console/Application.php(137): yii\console\Application->runAction('chat-server/sta...', Array)
+#10 /opt/lampp/htdocs/integration/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#11 /opt/lampp/htdocs/integration/yii(31): yii\base\Application->run()
+#12 {main}

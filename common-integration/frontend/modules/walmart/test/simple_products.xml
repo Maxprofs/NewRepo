@@ -1,0 +1,458 @@
+<?xml version="1.0"?>
+<MPItemFeed xmlns="http://walmart.com/">
+  <MPItemFeedHeader>
+    <version>3.1</version>
+    <requestId>1501153674</requestId>
+    <requestBatchId>1501153674</requestBatchId>
+  </MPItemFeedHeader>
+  <MPItem>
+    <processMode>CREATE</processMode>
+    <sku>whey-3-Unfl</sku>
+    <productIdentifiers>
+      <productIdentifier>
+        <productIdType>UPC</productIdType>
+        <productId>638170969980</productId>
+      </productIdentifier>
+    </productIdentifiers>
+    <MPProduct>
+      <productName><![CDATA[UNFLAVORED 100% Whey Protein Isolate 3lbs]]></productName>
+      <category>
+        <HealthAndBeauty>
+          <MedicineAndSupplements>
+            <shortDescription><![CDATA[<p>Although there are other forms of protein derived from dairy processing such as caseinate, whey is the most commonly used protein in sports nutrition.&amp;nbsp; Whey is found in either concentrate or isolate form. The difference between the two consisting in the amount of protein by weight...&amp;nbsp; While whey concentrate contains only 48% - 89% protein by weight, whey isolate can contain 90%+ protein by weight depending on the extraction methods used, quality of livestock, etc.</p>
+
+<p>However, most whey isolates used in the big name brands are only 80% protein by weight, or are a blend of 80% and 90% to add to their bottom line.&amp;nbsp; I am sure you can figure out that the amount of 90% whey is minimal in such blends...</p>
+
+<p>New World Nutritionals is one of the biggest purchasers of whey protein in the USA and supplies most of the companies whose products you see on the shelves in stores.&amp;nbsp; This is why we don't need to sell anything but the best in order to turn a profit!&amp;nbsp; Our bulk whey protein is sourced from the highest quality livestock available before being put through a cross-flow micro filtration process.</p>
+
+<p>While this is technically a more expensive procedure, it yields the highest percentage of protein by weight as well as small particle peptides that are rapidly absorbed into the blood stream.&amp;nbsp; Given these facts, plus the fact that whey isolate has little-to-no cholesterol or carbs, our whey isolate is an excellent choice for getting shredded!</p>
+]]></shortDescription>
+            <brand>Whey Isolate</brand>
+            <hasIngredientList>No</hasIngredientList>
+            <mainImageUrl>http://bestbulkwheyprotein.com/image/catalog/products/whey/whey-box-new.jpg</mainImageUrl>
+            <productSecondaryImageURL>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/image/catalog/products/whey/whey-facts.jpg</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/image/catalog/products/whey/whey-label.jpg</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/image/catalog/products/whey/whey90_COA.jpg</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/image/catalog/products/whey/P1010384.JPG</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue/>
+            </productSecondaryImageURL>
+          </MedicineAndSupplements>
+        </HealthAndBeauty>
+      </category>
+    </MPProduct>
+    <MPOffer>
+      <price>29</price>
+      <ShippingWeight>
+        <measure>0.19</measure>
+        <unit>lb</unit>
+      </ShippingWeight>
+      <ProductTaxCode>2048154</ProductTaxCode>
+    </MPOffer>
+  </MPItem>
+  <MPItem>
+    <processMode>CREATE</processMode>
+    <sku>whey-5-Unfl</sku>
+    <productIdentifiers>
+      <productIdentifier>
+        <productIdType>UPC</productIdType>
+        <productId>638170969997</productId>
+      </productIdentifier>
+    </productIdentifiers>
+    <MPProduct>
+      <productName><![CDATA[UNFLAVORED 100% Whey Protein Isolate 5lbs]]></productName>
+      <category>
+        <HealthAndBeauty>
+          <MedicineAndSupplements>
+            <shortDescription><![CDATA[<p>Although there are other forms of protein derived from dairy processing such as caseinate, whey is the most commonly used protein in sports nutrition.&amp;nbsp; Whey is found in either concentrate or isolate form. The difference between the two consisting in the amount of protein by weight...&amp;nbsp; While whey concentrate contains only 48% - 89% protein by weight, whey isolate can contain 90%+ protein by weight depending on the extraction methods used, quality of livestock, etc.</p>
+
+<p>However, most whey isolates used in the big name brands are only 80% protein by weight, or are a blend of 80% and 90% to add to their bottom line.&amp;nbsp; I am sure you can figure out that the amount of 90% whey is minimal in such blends...</p>
+
+<p>New World Nutritionals is one of the biggest purchasers of whey protein in the USA and supplies most of the companies whose products you see on the shelves in stores.&amp;nbsp; This is why we don't need to sell anything but the best in order to turn a profit!&amp;nbsp; Our bulk whey protein is sourced from the highest quality livestock available before being put through a cross-flow micro filtration process.</p>
+
+<p>While this is technically a more expensive procedure, it yields the highest percentage of protein by weight as well as small particle peptides that are rapidly absorbed into the blood stream.&amp;nbsp; Given these facts, plus the fact that whey isolate has little-to-no cholesterol or carbs, our whey isolate is an excellent choice for getting shredded!</p>
+]]></shortDescription>
+            <brand>Whey Isolate</brand>
+            <hasIngredientList>No</hasIngredientList>
+            <mainImageUrl>http://bestbulkwheyprotein.com/image/catalog/products/whey/whey-box-new.jpg</mainImageUrl>
+            <productSecondaryImageURL>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/image/catalog/products/whey/whey-facts.jpg</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/image/catalog/products/whey/whey-label.jpg</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/image/catalog/products/whey/P1010384.JPG</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/image/catalog/products/whey/whey90_COA.jpg</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue/>
+            </productSecondaryImageURL>
+          </MedicineAndSupplements>
+        </HealthAndBeauty>
+      </category>
+    </MPProduct>
+    <MPOffer>
+      <price>52</price>
+      <ShippingWeight>
+        <measure>0.19</measure>
+        <unit>lb</unit>
+      </ShippingWeight>
+      <ProductTaxCode>2048154</ProductTaxCode>
+    </MPOffer>
+  </MPItem>
+  <MPItem>
+    <processMode>CREATE</processMode>
+    <sku>whey-7-Unfl</sku>
+    <productIdentifiers>
+      <productIdentifier>
+        <productIdType>UPC</productIdType>
+        <productId>638170970009</productId>
+      </productIdentifier>
+    </productIdentifiers>
+    <MPProduct>
+      <productName><![CDATA[UNFLAVORED 100% Whey Protein Isolate 7.5 lbs]]></productName>
+      <category>
+        <HealthAndBeauty>
+          <MedicineAndSupplements>
+            <shortDescription><![CDATA[<p>Although there are other forms of protein derived from dairy processing such as caseinate, whey is the most commonly used protein in sports nutrition.&amp;nbsp; Whey is found in either concentrate or isolate form. The difference between the two consisting in the amount of protein by weight...&amp;nbsp; While whey concentrate contains only 48% - 89% protein by weight, whey isolate can contain 90%+ protein by weight depending on the extraction methods used, quality of livestock, etc.</p>
+
+<p>However, most whey isolates used in the big name brands are only 80% protein by weight, or are a blend of 80% and 90% to add to their bottom line.&amp;nbsp; I am sure you can figure out that the amount of 90% whey is minimal in such blends...</p>
+
+<p>New World Nutritionals is one of the biggest purchasers of whey protein in the USA and supplies most of the companies whose products you see on the shelves in stores.&amp;nbsp; This is why we don't need to sell anything but the best in order to turn a profit!&amp;nbsp; Our bulk whey protein is sourced from the highest quality livestock available before being put through a cross-flow micro filtration process.</p>
+
+<p>While this is technically a more expensive procedure, it yields the highest percentage of protein by weight as well as small particle peptides that are rapidly absorbed into the blood stream.&amp;nbsp; Given these facts, plus the fact that whey isolate has little-to-no cholesterol or carbs, our whey isolate is an excellent choice for getting shredded!</p>
+]]></shortDescription>
+            <brand>Whey Isolate</brand>
+            <hasIngredientList>No</hasIngredientList>
+            <mainImageUrl>http://bestbulkwheyprotein.com/image/catalog/products/whey/whey-box-new.jpg</mainImageUrl>
+            <productSecondaryImageURL>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/image/catalog/products/whey/whey-facts.jpg</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/image/catalog/products/whey/whey-label.jpg</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/image/catalog/products/whey/P1010384.JPG</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/image/catalog/products/whey/whey90_COA.jpg</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue/>
+            </productSecondaryImageURL>
+          </MedicineAndSupplements>
+        </HealthAndBeauty>
+      </category>
+    </MPProduct>
+    <MPOffer>
+      <price>68</price>
+      <ShippingWeight>
+        <measure>0.19</measure>
+        <unit>lb</unit>
+      </ShippingWeight>
+      <ProductTaxCode>2048154</ProductTaxCode>
+    </MPOffer>
+  </MPItem>
+  <MPItem>
+    <processMode>CREATE</processMode>
+    <sku>whey-10-Unfl</sku>
+    <productIdentifiers>
+      <productIdentifier>
+        <productIdType>UPC</productIdType>
+        <productId>638170970016</productId>
+      </productIdentifier>
+    </productIdentifiers>
+    <MPProduct>
+      <productName><![CDATA[UNFLAVORED 100% Whey Protein Isolate 10lbs]]></productName>
+      <category>
+        <HealthAndBeauty>
+          <MedicineAndSupplements>
+            <shortDescription><![CDATA[<p>Although there are other forms of protein derived from dairy processing such as caseinate, whey is the most commonly used protein in sports nutrition.&amp;nbsp; Whey is found in either concentrate or isolate form. The difference between the two consisting in the amount of protein by weight...&amp;nbsp; While whey concentrate contains only 48% - 89% protein by weight, whey isolate can contain 90%+ protein by weight depending on the extraction methods used, quality of livestock, etc.</p>
+
+<p>However, most whey isolates used in the big name brands are only 80% protein by weight, or are a blend of 80% and 90% to add to their bottom line.&amp;nbsp; I am sure you can figure out that the amount of 90% whey is minimal in such blends...</p>
+
+<p>New World Nutritionals is one of the biggest purchasers of whey protein in the USA and supplies most of the companies whose products you see on the shelves in stores.&amp;nbsp; This is why we don't need to sell anything but the best in order to turn a profit!&amp;nbsp; Our bulk whey protein is sourced from the highest quality livestock available before being put through a cross-flow micro filtration process.</p>
+
+<p>While this is technically a more expensive procedure, it yields the highest percentage of protein by weight as well as small particle peptides that are rapidly absorbed into the blood stream.&amp;nbsp; Given these facts, plus the fact that whey isolate has little-to-no cholesterol or carbs, our whey isolate is an excellent choice for getting shredded!</p>
+]]></shortDescription>
+            <brand>Whey Isolate</brand>
+            <hasIngredientList>No</hasIngredientList>
+            <mainImageUrl>http://bestbulkwheyprotein.com/image/catalog/products/whey/whey-box-new.jpg</mainImageUrl>
+            <productSecondaryImageURL>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/image/catalog/products/whey/whey-facts.jpg</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/image/catalog/products/whey/whey-label.jpg</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/image/catalog/products/whey/whey90_COA.jpg</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/image/catalog/products/whey/P1010384.JPG</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue/>
+            </productSecondaryImageURL>
+          </MedicineAndSupplements>
+        </HealthAndBeauty>
+      </category>
+    </MPProduct>
+    <MPOffer>
+      <price>97</price>
+      <ShippingWeight>
+        <measure>0.19</measure>
+        <unit>lb</unit>
+      </ShippingWeight>
+      <ProductTaxCode>2048154</ProductTaxCode>
+    </MPOffer>
+  </MPItem>
+  <MPItem>
+    <processMode>CREATE</processMode>
+    <sku>whey-15-unflav</sku>
+    <productIdentifiers>
+      <productIdentifier>
+        <productIdType>UPC</productIdType>
+        <productId>638170970276</productId>
+      </productIdentifier>
+    </productIdentifiers>
+    <MPProduct>
+      <productName><![CDATA[UNFLAVORED 100% Whey Protein Isolate 15lbs]]></productName>
+      <category>
+        <HealthAndBeauty>
+          <MedicineAndSupplements>
+            <shortDescription><![CDATA[<p>Although there are other forms of protein derived from dairy processing such as caseinate, whey is the most commonly used protein in sports nutrition.&amp;nbsp; Whey is found in either concentrate or isolate form. The difference between the two consisting in the amount of protein by weight...&amp;nbsp; While whey concentrate contains only 48% - 89% protein by weight, whey isolate can contain 90%+ protein by weight depending on the extraction methods used, quality of livestock, etc.</p>
+
+<p>However, most whey isolates used in the big name brands are only 80% protein by weight, or are a blend of 80% and 90% to add to their bottom line.&amp;nbsp; I am sure you can figure out that the amount of 90% whey is minimal in such blends...</p>
+
+<p>New World Nutritionals is one of the biggest purchasers of whey protein in the USA and supplies most of the companies whose products you see on the shelves in stores.&amp;nbsp; This is why we don't need to sell anything but the best in order to turn a profit!&amp;nbsp; Our bulk whey protein is sourced from the highest quality livestock available before being put through a cross-flow micro filtration process.</p>
+
+<p>While this is technically a more expensive procedure, it yields the highest percentage of protein by weight as well as small particle peptides that are rapidly absorbed into the blood stream.&amp;nbsp; Given these facts, plus the fact that whey isolate has little-to-no cholesterol or carbs, our whey isolate is an excellent choice for getting shredded!</p>
+]]></shortDescription>
+            <brand>Whey Isolate</brand>
+            <hasIngredientList>No</hasIngredientList>
+            <mainImageUrl>http://bestbulkwheyprotein.com/image/catalog/products/whey/whey-box-new.jpg</mainImageUrl>
+            <productSecondaryImageURL>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/image/catalog/products/whey/whey-facts.jpg</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/image/catalog/products/whey/whey-label.jpg</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/image/catalog/products/whey/P1010384.JPG</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/image/catalog/products/whey/whey90_COA.jpg</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue/>
+            </productSecondaryImageURL>
+          </MedicineAndSupplements>
+        </HealthAndBeauty>
+      </category>
+    </MPProduct>
+    <MPOffer>
+      <price>119</price>
+      <ShippingWeight>
+        <measure>0.19</measure>
+        <unit>lb</unit>
+      </ShippingWeight>
+      <ProductTaxCode>2048154</ProductTaxCode>
+    </MPOffer>
+  </MPItem>
+  <MPItem>
+    <processMode>CREATE</processMode>
+    <sku>whey-10-Choc</sku>
+    <productIdentifiers>
+      <productIdentifier>
+        <productIdType>UPC</productIdType>
+        <productId>638170970139</productId>
+      </productIdentifier>
+    </productIdentifiers>
+    <MPProduct>
+      <productName><![CDATA[CHOCOLATE 100% Whey Protein Isolate 10lbs]]></productName>
+      <category>
+        <HealthAndBeauty>
+          <MedicineAndSupplements>
+            <shortDescription><![CDATA[<p>Although there are other forms of protein derived from dairy processing such as caseinate, whey is the most commonly used protein in sports nutrition.&amp;nbsp; Whey is found in either concentrate or isolate form. The difference between the two consisting in the amount of protein by weight...&amp;nbsp; While whey concentrate contains only 48% - 89% protein by weight, whey isolate can contain 90%+ protein by weight depending on the extraction methods used, quality of livestock, etc.</p>
+
+<p>However, most whey isolates used in the big name brands are only 80% protein by weight, or are a blend of 80% and 90% to add to their bottom line.&amp;nbsp; I am sure you can figure out that the amount of 90% whey is minimal in such blends...</p>
+
+<p>New World Nutritionals is one of the biggest purchasers of whey protein in the USA and supplies most of the companies whose products you see on the shelves in stores.&amp;nbsp; This is why we don't need to sell anything but the best in order to turn a profit!&amp;nbsp; Our bulk whey protein is sourced from the highest quality livestock available before being put through a cross-flow micro filtration process.</p>
+
+<p>While this is technically a more expensive procedure, it yields the highest percentage of protein by weight as well as small particle peptides that are rapidly absorbed into the blood stream.&amp;nbsp; Given these facts, plus the fact that whey isolate has little-to-no cholesterol or carbs, our whey isolate is an excellent choice for getting shredded!</p>
+]]></shortDescription>
+            <brand>Whey Isolate</brand>
+            <hasIngredientList>No</hasIngredientList>
+            <mainImageUrl>http://bestbulkwheyprotein.com/image/catalog/products/whey/whey-box-new.jpg</mainImageUrl>
+            <productSecondaryImageURL>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/image/catalog/products/whey/P1010384.JPG</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/image/catalog/products/whey/whey-label.jpg</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/image/catalog/products/whey/whey-facts.jpg</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/image/catalog/products/whey/whey90_COA.jpg</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue/>
+            </productSecondaryImageURL>
+          </MedicineAndSupplements>
+        </HealthAndBeauty>
+      </category>
+    </MPProduct>
+    <MPOffer>
+      <price>97</price>
+      <ShippingWeight>
+        <measure>0.19</measure>
+        <unit>lb</unit>
+      </ShippingWeight>
+      <ProductTaxCode>2048154</ProductTaxCode>
+    </MPOffer>
+  </MPItem>
+  <MPItem>
+    <processMode>CREATE</processMode>
+    <sku>whey-15-choc</sku>
+    <productIdentifiers>
+      <productIdentifier>
+        <productIdType>UPC</productIdType>
+        <productId>638170970283</productId>
+      </productIdentifier>
+    </productIdentifiers>
+    <MPProduct>
+      <productName><![CDATA[CHOCOLATE 100% Whey Protein Isolate 15lbs]]></productName>
+      <category>
+        <HealthAndBeauty>
+          <MedicineAndSupplements>
+            <shortDescription><![CDATA[<p>Although there are other forms of protein derived from dairy processing such as caseinate, whey is the most commonly used protein in sports nutrition.&amp;nbsp; Whey is found in either concentrate or isolate form. The difference between the two consisting in the amount of protein by weight...&amp;nbsp; While whey concentrate contains only 48% - 89% protein by weight, whey isolate can contain 90%+ protein by weight depending on the extraction methods used, quality of livestock, etc.</p>
+
+<p>However, most whey isolates used in the big name brands are only 80% protein by weight, or are a blend of 80% and 90% to add to their bottom line.&amp;nbsp; I am sure you can figure out that the amount of 90% whey is minimal in such blends...</p>
+
+<p>New World Nutritionals is one of the biggest purchasers of whey protein in the USA and supplies most of the companies whose products you see on the shelves in stores.&amp;nbsp; This is why we don't need to sell anything but the best in order to turn a profit!&amp;nbsp; Our bulk whey protein is sourced from the highest quality livestock available before being put through a cross-flow micro filtration process.</p>
+
+<p>While this is technically a more expensive procedure, it yields the highest percentage of protein by weight as well as small particle peptides that are rapidly absorbed into the blood stream.&amp;nbsp; Given these facts, plus the fact that whey isolate has little-to-no cholesterol or carbs, our whey isolate is an excellent choice for getting shredded!</p>
+]]></shortDescription>
+            <brand>Whey Isolate</brand>
+            <hasIngredientList>No</hasIngredientList>
+            <mainImageUrl>http://bestbulkwheyprotein.com/image/catalog/products/whey/whey-box-new.jpg</mainImageUrl>
+            <productSecondaryImageURL>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/image/catalog/products/whey/whey-facts.jpg</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/image/catalog/products/whey/whey-label.jpg</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/image/catalog/products/whey/whey90_COA.jpg</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/image/catalog/products/whey/P1010384.JPG</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue/>
+            </productSecondaryImageURL>
+          </MedicineAndSupplements>
+        </HealthAndBeauty>
+      </category>
+    </MPProduct>
+    <MPOffer>
+      <price>119</price>
+      <ShippingWeight>
+        <measure>0.19</measure>
+        <unit>lb</unit>
+      </ShippingWeight>
+      <ProductTaxCode>2048154</ProductTaxCode>
+    </MPOffer>
+  </MPItem>
+  <MPItem>
+    <processMode>CREATE</processMode>
+    <sku>whey-3-Choc</sku>
+    <productIdentifiers>
+      <productIdentifier>
+        <productIdType>UPC</productIdType>
+        <productId>638170970108</productId>
+      </productIdentifier>
+    </productIdentifiers>
+    <MPProduct>
+      <productName><![CDATA[CHOCOLATE 100% Whey Protein Isolate 3lbs]]></productName>
+      <category>
+        <HealthAndBeauty>
+          <MedicineAndSupplements>
+            <shortDescription><![CDATA[<p>Although there are other forms of protein derived from dairy processing such as caseinate, whey is the most commonly used protein in sports nutrition.&amp;nbsp; Whey is found in either concentrate or isolate form. The difference between the two consisting in the amount of protein by weight...&amp;nbsp; While whey concentrate contains only 48% - 89% protein by weight, whey isolate can contain 90%+ protein by weight depending on the extraction methods used, quality of livestock, etc.</p>
+
+<p>However, most whey isolates used in the big name brands are only 80% protein by weight, or are a blend of 80% and 90% to add to their bottom line.&amp;nbsp; I am sure you can figure out that the amount of 90% whey is minimal in such blends...</p>
+
+<p>New World Nutritionals is one of the biggest purchasers of whey protein in the USA and supplies most of the companies whose products you see on the shelves in stores.&amp;nbsp; This is why we don't need to sell anything but the best in order to turn a profit!&amp;nbsp; Our bulk whey protein is sourced from the highest quality livestock available before being put through a cross-flow micro filtration process.</p>
+
+<p>While this is technically a more expensive procedure, it yields the highest percentage of protein by weight as well as small particle peptides that are rapidly absorbed into the blood stream.&amp;nbsp; Given these facts, plus the fact that whey isolate has little-to-no cholesterol or carbs, our whey isolate is an excellent choice for getting shredded!</p>
+]]></shortDescription>
+            <brand>Whey Isolate</brand>
+            <hasIngredientList>No</hasIngredientList>
+            <mainImageUrl>http://bestbulkwheyprotein.com/image/catalog/products/whey/whey-box-new.jpg</mainImageUrl>
+            <productSecondaryImageURL>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/image/catalog/products/whey/whey-facts.jpg</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/image/catalog/products/whey/whey-label.jpg</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/image/catalog/products/whey/P1010384.JPG</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/image/catalog/products/whey/whey90_COA.jpg</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue/>
+            </productSecondaryImageURL>
+          </MedicineAndSupplements>
+        </HealthAndBeauty>
+      </category>
+    </MPProduct>
+    <MPOffer>
+      <price>29</price>
+      <ShippingWeight>
+        <measure>0.19</measure>
+        <unit>lb</unit>
+      </ShippingWeight>
+      <ProductTaxCode>2048154</ProductTaxCode>
+    </MPOffer>
+  </MPItem>
+  <MPItem>
+    <processMode>CREATE</processMode>
+    <sku>whey-5-Choc</sku>
+    <productIdentifiers>
+      <productIdentifier>
+        <productIdType>UPC</productIdType>
+        <productId>638170970115</productId>
+      </productIdentifier>
+    </productIdentifiers>
+    <MPProduct>
+      <productName><![CDATA[CHOCOLATE100% Whey Protein Isolate 5lbs]]></productName>
+      <category>
+        <HealthAndBeauty>
+          <MedicineAndSupplements>
+            <shortDescription><![CDATA[<p>Although there are other forms of protein derived from dairy processing such as caseinate, whey is the most commonly used protein in sports nutrition.&amp;nbsp; Whey is found in either concentrate or isolate form. The difference between the two consisting in the amount of protein by weight...&amp;nbsp; While whey concentrate contains only 48% - 89% protein by weight, whey isolate can contain 90%+ protein by weight depending on the extraction methods used, quality of livestock, etc.</p>
+
+<p>However, most whey isolates used in the big name brands are only 80% protein by weight, or are a blend of 80% and 90% to add to their bottom line.&amp;nbsp; I am sure you can figure out that the amount of 90% whey is minimal in such blends...</p>
+
+<p>New World Nutritionals is one of the biggest purchasers of whey protein in the USA and supplies most of the companies whose products you see on the shelves in stores.&amp;nbsp; This is why we don't need to sell anything but the best in order to turn a profit!&amp;nbsp; Our bulk whey protein is sourced from the highest quality livestock available before being put through a cross-flow micro filtration process.</p>
+
+<p>While this is technically a more expensive procedure, it yields the highest percentage of protein by weight as well as small particle peptides that are rapidly absorbed into the blood stream.&amp;nbsp; Given these facts, plus the fact that whey isolate has little-to-no cholesterol or carbs, our whey isolate is an excellent choice for getting shredded!</p>
+]]></shortDescription>
+            <brand>Whey Isolate</brand>
+            <hasIngredientList>No</hasIngredientList>
+            <mainImageUrl>http://bestbulkwheyprotein.com/image/catalog/products/whey/whey-box-new.jpg</mainImageUrl>
+            <productSecondaryImageURL>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/image/catalog/products/whey/whey-facts.jpg</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/image/catalog/products/whey/whey-label.jpg</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/image/catalog/products/whey/P1010384.JPG</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/image/catalog/products/whey/whey90_COA.jpg</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue/>
+            </productSecondaryImageURL>
+          </MedicineAndSupplements>
+        </HealthAndBeauty>
+      </category>
+    </MPProduct>
+    <MPOffer>
+      <price>52</price>
+      <ShippingWeight>
+        <measure>0.19</measure>
+        <unit>lb</unit>
+      </ShippingWeight>
+      <ProductTaxCode>2048154</ProductTaxCode>
+    </MPOffer>
+  </MPItem>
+  <MPItem>
+    <processMode>CREATE</processMode>
+    <sku>whey-7-Choc</sku>
+    <productIdentifiers>
+      <productIdentifier>
+        <productIdType>UPC</productIdType>
+        <productId>638170970122</productId>
+      </productIdentifier>
+    </productIdentifiers>
+    <MPProduct>
+      <productName><![CDATA[CHOCOLATE 100% Whey Protein Isolate 7.5 lbs]]></productName>
+      <category>
+        <HealthAndBeauty>
+          <MedicineAndSupplements>
+            <shortDescription><![CDATA[<p>Although there are other forms of protein derived from dairy processing such as caseinate, whey is the most commonly used protein in sports nutrition.&amp;nbsp; Whey is found in either concentrate or isolate form. The difference between the two consisting in the amount of protein by weight...&amp;nbsp; While whey concentrate contains only 48% - 89% protein by weight, whey isolate can contain 90%+ protein by weight depending on the extraction methods used, quality of livestock, etc.</p>
+
+<p>However, most whey isolates used in the big name brands are only 80% protein by weight, or are a blend of 80% and 90% to add to their bottom line.&amp;nbsp; I am sure you can figure out that the amount of 90% whey is minimal in such blends...</p>
+
+<p>New World Nutritionals is one of the biggest purchasers of whey protein in the USA and supplies most of the companies whose products you see on the shelves in stores.&amp;nbsp; This is why we don't need to sell anything but the best in order to turn a profit!&amp;nbsp; Our bulk whey protein is sourced from the highest quality livestock available before being put through a cross-flow micro filtration process.</p>
+
+<p>While this is technically a more expensive procedure, it yields the highest percentage of protein by weight as well as small particle peptides that are rapidly absorbed into the blood stream.&amp;nbsp; Given these facts, plus the fact that whey isolate has little-to-no cholesterol or carbs, our whey isolate is an excellent choice for getting shredded!</p>
+]]></shortDescription>
+            <brand>Whey Isolate</brand>
+            <hasIngredientList>No</hasIngredientList>
+            <mainImageUrl>http://bestbulkwheyprotein.com/image/catalog/products/whey/whey-box-new.jpg</mainImageUrl>
+            <productSecondaryImageURL>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/image/catalog/products/whey/whey-facts.jpg</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/image/catalog/products/whey/whey-label.jpg</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/image/catalog/products/whey/P1010384.JPG</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>http://bestbulkwheyprotein.com/image/catalog/products/whey/whey90_COA.jpg</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue/>
+            </productSecondaryImageURL>
+          </MedicineAndSupplements>
+        </HealthAndBeauty>
+      </category>
+    </MPProduct>
+    <MPOffer>
+      <price>68</price>
+      <ShippingWeight>
+        <measure>0.19</measure>
+        <unit>lb</unit>
+      </ShippingWeight>
+      <ProductTaxCode>2048154</ProductTaxCode>
+    </MPOffer>
+  </MPItem>
+</MPItemFeed>

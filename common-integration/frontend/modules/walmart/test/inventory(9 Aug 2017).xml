@@ -1,0 +1,366 @@
+<?xml version="1.0"?>
+<InventoryFeed xmlns="http://walmart.com/">
+  <InventoryHeader>
+    <version>1.4</version>
+  </InventoryHeader>
+  <inventory>
+    <sku>SKU-55-3 lbs~unflavored</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>500</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-55-5 lbs~unflavored</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>500</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-58-3 lbs~unflavored</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>0</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-58-3 lbs~vanilla</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>0</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-58-3 lbs~chocolate</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>0</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-58-3 lbs~strawberry</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>0</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-58-5 lbs~unflavored</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>0</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-58-5 lbs~vanilla</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>0</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-58-5 lbs~chocolate</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>0</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-58-5 lbs~strawberry</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>0</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-58-7.5 lbs~unflavored</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>0</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-58-7.5 lbs~vanilla</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>0</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-58-7.5 lbs~chocolate</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>0</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-58-7.5 lbs~strawberry</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>0</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-58-10 lbs~unflavored</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>0</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-58-10 lbs~vanilla</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>0</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-58-10 lbs~chocolate</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>0</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-58-10 lbs~strawberry</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>0</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-58-15 lbs~unflavored</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>0</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-58-15 lbs~vanilla</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>0</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-58-15 lbs~chocolate</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>0</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-58-15 lbs~strawberry</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>0</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-53-3 lbs~unflavored</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>1</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-53-3 lbs~vanilla</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>1</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-53-3 lbs~chocolate</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>1</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-53-3 lbs~strawberry</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>0</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-53-5 lbs~unflavored</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>0</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-53-5 lbs~vanilla</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>0</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-53-5 lbs~chocolate</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>0</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-53-5 lbs~strawberry</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>0</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-53-7.5 lbs~unflavored</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>0</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-53-7.5 lbs~vanilla</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>0</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-53-7.5 lbs~chocolate</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>0</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-53-7.5 lbs~strawberry</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>0</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-53-10 lbs~unflavored</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>0</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-53-10 lbs~vanilla</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>0</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-53-10 lbs~chocolate</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>0</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-53-10 lbs~strawberry</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>0</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-53-15 lbs~unflavored</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>1</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-53-15 lbs~vanilla</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>1</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-53-15 lbs~chocolate</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>1</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-53-15 lbs~strawberry</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>0</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-77-3 lbs~unflavored</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>0</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-77-3 lbs~vanilla</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>0</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+  <inventory>
+    <sku>SKU-77-3 lbs~chocolate</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>0</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+</InventoryFeed>

@@ -1,0 +1,193 @@
+*{
+	margin: 0;
+}
+
+@font-face {
+    font-family: 'ralewaylight';
+    src: url('../fonts/raleway-light_0-webfont.woff2') format('woff2'),
+         url('../fonts/raleway-light_0-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'ralewaymedium';
+    src: url('../fonts/raleway-medium_0-webfont.woff2') format('woff2'),
+         url('../fonts/raleway-medium_0-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'ralewayregular';
+    src: url('../fonts/raleway-regular_0-webfont.woff2') format('woff2'),
+         url('../fonts/raleway-regular_0-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'ralewaybold';
+    src: url('../fonts/raleway-bold_0-webfont.woff2') format('woff2'),
+         url('../fonts/raleway-bold_0-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+.shopify-integration{
+    padding: 80px 0 0;
+    font-family: 'ralewaylight';
+	background: radial-gradient(circle farthest-side at 395px 483px, rgb(34, 0, 207) 0%, rgb(172, 0, 215) 74.2%, rgb(130, 6, 255) 83.3%);
+    background: -webkit-radial-gradient(circle farthest-side at 395px 483px, rgb(34, 0, 207) 0%, rgb(172, 0, 215) 74.2%, rgb(130, 6, 255) 83.3%);
+    background: -o-radial-gradient(circle farthest-side at 395px 483px, rgb(34, 0, 207) 0%, rgb(172, 0, 215) 74.2%, rgb(130, 6, 255) 83.3%);
+    background: -moz-radial-gradient(circle farthest-side at 395px 483px, rgb(34, 0, 207) 0%, rgb(172, 0, 215) 74.2%, rgb(130, 6, 255) 83.3%);
+}
+.shopify-integration .common-info {
+    left: 40px;
+    margin-top: 50px;
+    position: relative;
+    top: 70px;
+}
+.shopify-integration .Integrations {
+    background-image: url("../images/11-2.png");
+    background-repeat: no-repeat;
+    padding-top: 25px;
+    padding-bottom: 75px;
+    background-size: 240px auto;
+}
+.logo-section .logo-img {
+    display: block;
+    margin: 20px 20px 20px 0;
+    width: 100%;
+}
+.intro-section {
+    display: block;
+    min-height: 250px;
+    padding: 20px;
+}
+.intro-section .intro-section-inner {
+    margin-top: 30px;
+}
+.shopify-heading{
+	color: #fff;
+	font-size: 26px;
+	font-family: 'ralewaymedium';
+}
+.info{
+	color: #fff;
+	font-size: 16px;
+	margin-top: 30px;
+	font-weight: normal;
+}
+.common-info .shopify-heading{
+	font-size: 28px;
+}
+.common-info .info{
+	font-size: 18px;
+    padding-right: 15px;
+}
+.Integrations .boxes{
+	border-radius: 8px;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    height: 125px;
+    margin-left: 12px;
+    padding: 10px;
+    text-align: center;
+    width: 125px;
+   -webkit-transition: all .3s ease-out;
+   -moz-transition: all .3s ease-out;
+   -o-transition: all .3s ease-out;
+   transition: all .3s ease-out;
+}
+.Integrations .boxes:hover{
+	-moz-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=2, M12=-0, M21=0, M22=2);
+}
+.Integrations .boxes.jet{
+	background: #8200FF;
+}
+.Integrations .boxes.walmart{
+	background: #007DC6;
+}
+.Integrations .boxes.newegg{
+	background: #F9B400;
+}
+.Integrations .boxes .image {
+    margin-top: 25px;
+    min-height: 55px;
+}
+.Integrations .boxes .button {
+    background: #fff none repeat scroll 0 0;
+    display: inline-block;
+    width: 80px;
+    text-align: center;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+.Integrations .boxes .image img {
+    width: 80%;
+}
+figure figcaption span {
+    display: block;
+    margin-top: 35px !important;
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+}
+.shopify-integration .footer {
+  left: 40px;
+  margin-bottom: 0;
+  margin-top: 60px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  position: relative;
+}
+.shopify-integration .footer .footer-links .links {
+    text-decoration: none;
+}
+.shopify-integration .footer .footer-links .links span {
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-right: 20px;
+    text-transform: uppercase;
+}
+
+
+
+@media screen and (max-width: 991px) {
+    .shopify-integration .footer {
+        left: 0;
+        top: 0;
+    }
+    .shopify-integration .common-info{
+        left: 0;
+        top: 0;
+    }
+}
+@media screen and (max-width: 767px) {
+    .shopify-integration .footer{
+        margin-top: 50px;
+    }
+}
+@media screen and (max-width: 504px) {
+    .shopify-integration .Integrations{
+        padding-bottom: 0;
+    }
+    .shopify-integration .footer .footer-links .links span {
+        font-size: 10px;
+        margin-right: 10px;
+    }
+}

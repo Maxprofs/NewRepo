@@ -1,0 +1,509 @@
+<?xml version="1.0"?>
+<MPItemFeed xmlns="http://walmart.com/">
+  <MPItemFeedHeader>
+    <version>3.1</version>
+    <requestId>1505800689</requestId>
+    <requestBatchId>1505800689</requestBatchId>
+  </MPItemFeedHeader>
+  <MPItem>
+    <processMode>CREATE</processMode>
+    <sku>inspection-camera</sku>
+    <productIdentifiers>
+      <productIdentifier>
+        <productIdType>UPC</productIdType>
+        <productId>716417851134</productId>
+      </productIdentifier>
+    </productIdentifiers>
+    <MPProduct>
+      <productName><![CDATA[Wireless Gutter Inspection Camera &amp; Monitor (w/ pole mounting brackets) Kiam by Maxxus]]></productName>
+      <category>
+        <ToolsAndHardware>
+          <ToolsAndHardwareOther>
+            <shortDescription><![CDATA[<p style="text-align: left;">Instantly view inside the gutter from the ground with this 5 inch HD screen (800x480px) Record videos and take pictures for your clients to show them the 'before / after'.High-quality<span></span>video is ensured by the 300DE camera which provides high resolutions of 720x480 px (NTSC). DVR memory supports up to 32GB with a micro SD card (not included). High capacity Li-battery provides a long operating time of up to 9.5 hours.<span> Range distance from camera to monitor is 300ft</span><br><br>Included in the box:<span></span><br>1 x Wireless Inspection Camera<br>1 x Wireless HD DVR with 5" screen<br>2 x Chargers (1 for camera and 1 for DVR)1 x Car Charger</p><p style="text-align: left;">1 x Car Charger<br>1 x USB lead<br>1 x AV lead<br>1 x Stereo Headphones</p><p style="text-align: left;">2x Mounting Brackets (Camera mount and Monitor mount)</p><br><div id="tab-1"><p></p><p></p></div><div id="tab-2"></div>]]></shortDescription>
+            <brand>Maxxus industries</brand>
+            <mainImageUrl>https://cdn.shopify.com/s/files/1/1907/3303/products/Hero_2_image_of_camera.jpg?v=1505746359</mainImageUrl>
+            <productSecondaryImageURL>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/inspection-camera-04.jpg?v=1505746359</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/Hero_1_image_of_camera_monitor.jpg?v=1505746359</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/DSC_5588.JPG?v=1505746359</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/DSC_5605.JPG?v=1505746359</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/DSC_5598.JPG?v=1505746359</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/DSC_5597.JPG?v=1505746359</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/DSC_5606.JPG?v=1505746359</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/Monitor_Holder_and_Bracket_1.jpg?v=1505746359</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/IMG_6994.JPG?v=1505746359</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/IMG_6997.JPG?v=1505746359</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/IMG_7001.JPG?v=1505746359</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/DSC_5607.JPG?v=1505746359</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/IMG_6982.JPG?v=1505746359</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/IMG_6979.JPG?v=1505746359</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/IMG_6992.JPG?v=1505746359</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/IMG_6977.JPG?v=1505746359</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/IMG_6990.JPG?v=1505746359</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/IMG_6984.JPG?v=1505746359</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/inspection-camera-02.jpg?v=1505746359</productSecondaryImageURLValue>
+            </productSecondaryImageURL>
+          </ToolsAndHardwareOther>
+        </ToolsAndHardware>
+      </category>
+    </MPProduct>
+    <MPOffer>
+      <price>260.00</price>
+      <EndDate>2022-09-18</EndDate>
+      <ShippingWeight>
+        <measure>0.00</measure>
+        <unit>lb</unit>
+      </ShippingWeight>
+      <ProductTaxCode>2043815</ProductTaxCode>
+      <ShippingOverrides>
+        <ShippingOverrideAction>DELETE_ALL</ShippingOverrideAction>
+      </ShippingOverrides>
+    </MPOffer>
+  </MPItem>
+  <MPItem>
+    <processMode>REPLACE_ALL</processMode>
+    <sku>40ftpoleskit</sku>
+    <productIdentifiers>
+      <productIdentifier>
+        <productIdType>UPC</productIdType>
+        <productId>759740892320</productId>
+      </productIdentifier>
+    </productIdentifiers>
+    <MPProduct>
+      <productName><![CDATA[40ft (4 Story) Commercial Gutter Cleaning Pole Kit (2&quot; Diameter) Kiam by Maxxus]]></productName>
+      <additionalProductAttributes>
+        <additionalProductAttribute>
+          <productAttributeName>finish</productAttributeName>
+          <productAttributeValue>40</productAttributeValue>
+        </additionalProductAttribute>
+      </additionalProductAttributes>
+      <category>
+        <ToolsAndHardware>
+          <ToolsAndHardwareOther>
+            <isPrimaryVariant>Yes</isPrimaryVariant>
+            <variantAttributeNames>
+              <variantAttributeName>countPerPack</variantAttributeName>
+            </variantAttributeNames>
+            <variantGroupId>84711208431505800689</variantGroupId>
+            <shortDescription><![CDATA[<div>This lightweightGutter Cleaning Pole Kit allows you to safely work off the ground without the need for ladders. Will fit most wet & dry vacuum cleaners as it comes supplied with 3 conversion hoseadapters too. Used widely by Professional Gutter cleaners, window cleaners & gutter cleaning professionals. The pole system is manufactured from Lightweight Aerospace grade aluminum.</div><div>A 4' pole length weighs just 1lbs 6oz</div><div id="tab-1"><p><iframe src="https://www.youtube.com/embed/Bpj_WQYzLck" allowfullscreen="" frameborder="0" height="499" width="842"></iframe></p><p>The traditional method of gutter cleaning was using a ladder and to scoop the debris from the gutters using one hand while standing on the ladder holding on with the other also trying to hold a bag or bucket. With this pole set combined with your wet and dry<span></span>vacuum<span>, </span>you can now access areas that were previously inaccessible and clean gutters safely and effectively.</p><p>INCLUDES:<span></span><br>10 x 4 ft Aerospace AluminumPoles<br>1 x Silicone U-Bend<br>1 x Circlip</p><div id="tab-1"><p>4 x Clamp Connectors<br>1 x Wide Nozzle Attachment<br>1 x Narrow Nozzle Attachment<br>1 x Reducer Connection</p><p>The pole system is manufactured from Lightweight Aerospace grade aluminum. A 4' pole length weighs just 1lbs 6oz.</p><p>Blocked gutters will reduce or even stop water flow the water will build up and it will usually find<span></span>its<span></span>way into the property causing extensive damage, blockages can build up in gutters usually in inaccessible places where people have been unable to clean like above conservatories, extensions, areas where the ground is unsuitable to place a ladder, this problem is eliminated with Kiams gutter vacuum pole systems with our pole sets combined with your wet and dry vacuum access is gained with ease and offers a cost-effective solution to gutter cleaning. Works well when used with the recommended Maxxus Dual GPV2000 motor vacuum cleaner (not included)</p></div><div id="tab-2"><ul><li>Max. Length: 40ft</li><li>Length Per Pole: 4ft</li><li>Diameter: 2"</li><li>Weight: 1.6 lbs per pole with quick release clamp</li></ul></div></div><div id="tab-2"><ul></ul></div>]]></shortDescription>
+            <brand>Maxxus industries</brand>
+            <mainImageUrl>https://cdn.shopify.com/s/files/1/1907/3303/products/40ft-pole_34ad94a1-d942-4864-929d-01a42a6fdc7e.JPG?v=1505496401</mainImageUrl>
+            <productSecondaryImageURL>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/gutter_pole_image_1_7.jpg?v=1505496401</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/3000w_gutter_vacuum_system_1024x1024_4.jpg?v=1505496401</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/gutter-pole-07_1_1_1_1.jpg?v=1505496401</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/gutter-pole-06_1_1_1_1.jpg?v=1505496401</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/couplingbend-01_5.jpg?v=1505496401</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/couplingreducer-01_5.jpg?v=1505496401</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/couplingy-01_5.jpg?v=1505496401</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/gutter-pole-02_1_1_1_1.jpg?v=1505496401</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/gutter-pole-03_1_1_1_1.jpg?v=1505496401</productSecondaryImageURLValue>
+            </productSecondaryImageURL>
+          </ToolsAndHardwareOther>
+        </ToolsAndHardware>
+      </category>
+    </MPProduct>
+    <MPOffer>
+      <price>449.00</price>
+      <EndDate>2022-09-18</EndDate>
+      <ShippingWeight>
+        <measure>0.00</measure>
+        <unit>lb</unit>
+      </ShippingWeight>
+      <ProductTaxCode>2044150</ProductTaxCode>
+      <ShippingOverrides>
+        <ShippingOverrideAction>DELETE_ALL</ShippingOverrideAction>
+      </ShippingOverrides>
+    </MPOffer>
+  </MPItem>
+  <MPItem>
+    <processMode>REPLACE_ALL</processMode>
+    <sku>40ftpoles-GPV2000kit</sku>
+    <productIdentifiers>
+      <productIdentifier>
+        <productIdType>UPC</productIdType>
+        <productId>716417851158</productId>
+      </productIdentifier>
+    </productIdentifiers>
+    <MPProduct>
+      <productName><![CDATA[40ft (4 Story) Commercial Gutter Cleaning Pole Kit (2&quot; Diameter) Kiam by Maxxus]]></productName>
+      <additionalProductAttributes>
+        <additionalProductAttribute>
+          <productAttributeName>finish</productAttributeName>
+          <productAttributeValue>40</productAttributeValue>
+        </additionalProductAttribute>
+      </additionalProductAttributes>
+      <category>
+        <ToolsAndHardware>
+          <ToolsAndHardwareOther>
+            <variantAttributeNames>
+              <variantAttributeName>countPerPack</variantAttributeName>
+            </variantAttributeNames>
+            <variantGroupId>84711208431505800689</variantGroupId>
+            <shortDescription><![CDATA[<div>This lightweightGutter Cleaning Pole Kit allows you to safely work off the ground without the need for ladders. Will fit most wet & dry vacuum cleaners as it comes supplied with 3 conversion hoseadapters too. Used widely by Professional Gutter cleaners, window cleaners & gutter cleaning professionals. The pole system is manufactured from Lightweight Aerospace grade aluminum.</div><div>A 4' pole length weighs just 1lbs 6oz</div><div id="tab-1"><p><iframe src="https://www.youtube.com/embed/Bpj_WQYzLck" allowfullscreen="" frameborder="0" height="499" width="842"></iframe></p><p>The traditional method of gutter cleaning was using a ladder and to scoop the debris from the gutters using one hand while standing on the ladder holding on with the other also trying to hold a bag or bucket. With this pole set combined with your wet and dry<span></span>vacuum<span>, </span>you can now access areas that were previously inaccessible and clean gutters safely and effectively.</p><p>INCLUDES:<span></span><br>10 x 4 ft Aerospace AluminumPoles<br>1 x Silicone U-Bend<br>1 x Circlip</p><div id="tab-1"><p>4 x Clamp Connectors<br>1 x Wide Nozzle Attachment<br>1 x Narrow Nozzle Attachment<br>1 x Reducer Connection</p><p>The pole system is manufactured from Lightweight Aerospace grade aluminum. A 4' pole length weighs just 1lbs 6oz.</p><p>Blocked gutters will reduce or even stop water flow the water will build up and it will usually find<span></span>its<span></span>way into the property causing extensive damage, blockages can build up in gutters usually in inaccessible places where people have been unable to clean like above conservatories, extensions, areas where the ground is unsuitable to place a ladder, this problem is eliminated with Kiams gutter vacuum pole systems with our pole sets combined with your wet and dry vacuum access is gained with ease and offers a cost-effective solution to gutter cleaning. Works well when used with the recommended Maxxus Dual GPV2000 motor vacuum cleaner (not included)</p></div><div id="tab-2"><ul><li>Max. Length: 40ft</li><li>Length Per Pole: 4ft</li><li>Diameter: 2"</li><li>Weight: 1.6 lbs per pole with quick release clamp</li></ul></div></div><div id="tab-2"><ul></ul></div>]]></shortDescription>
+            <brand>Maxxus industries</brand>
+            <mainImageUrl>https://cdn.shopify.com/s/files/1/1907/3303/products/40ft-pole_34ad94a1-d942-4864-929d-01a42a6fdc7e.JPG?v=1505496401</mainImageUrl>
+            <productSecondaryImageURL>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/gutter_pole_image_1_7.jpg?v=1505496401</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/3000w_gutter_vacuum_system_1024x1024_4.jpg?v=1505496401</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/gutter-pole-07_1_1_1_1.jpg?v=1505496401</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/gutter-pole-06_1_1_1_1.jpg?v=1505496401</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/couplingbend-01_5.jpg?v=1505496401</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/couplingreducer-01_5.jpg?v=1505496401</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/couplingy-01_5.jpg?v=1505496401</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/gutter-pole-02_1_1_1_1.jpg?v=1505496401</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/gutter-pole-03_1_1_1_1.jpg?v=1505496401</productSecondaryImageURLValue>
+            </productSecondaryImageURL>
+          </ToolsAndHardwareOther>
+        </ToolsAndHardware>
+      </category>
+    </MPProduct>
+    <MPOffer>
+      <price>799.00</price>
+      <EndDate>2022-09-18</EndDate>
+      <ShippingWeight>
+        <measure>0.00</measure>
+        <unit>lb</unit>
+      </ShippingWeight>
+      <ProductTaxCode>2044150</ProductTaxCode>
+      <ShippingOverrides>
+        <ShippingOverrideAction>DELETE_ALL</ShippingOverrideAction>
+      </ShippingOverrides>
+    </MPOffer>
+  </MPItem>
+  <MPItem>
+    <processMode>REPLACE_ALL</processMode>
+    <sku>20ftpoleskit</sku>
+    <productIdentifiers>
+      <productIdentifier>
+        <productIdType>UPC</productIdType>
+        <productId>759740892313</productId>
+      </productIdentifier>
+    </productIdentifiers>
+    <MPProduct>
+      <productName><![CDATA[20ft (2 Story) Commercial Gutter Cleaning Pole Kit (2&quot; Diameter) Kiam by Maxxus]]></productName>
+      <additionalProductAttributes>
+        <additionalProductAttribute>
+          <productAttributeName>finish</productAttributeName>
+          <productAttributeValue>20ft (6M), TWO STORY KIT</productAttributeValue>
+        </additionalProductAttribute>
+      </additionalProductAttributes>
+      <category>
+        <ToolsAndHardware>
+          <ToolsAndHardwareOther>
+            <isPrimaryVariant>Yes</isPrimaryVariant>
+            <variantAttributeNames>
+              <variantAttributeName>countPerPack</variantAttributeName>
+            </variantAttributeNames>
+            <variantGroupId>84711210351505800689</variantGroupId>
+            <shortDescription><![CDATA[<div>This lightweight gutter cleaning pole kit allows you to safely work off the ground, without the need for ladders. Will fit most wet & dry vacuum cleaners; as it comes supplied with three conversion hose adapters too to fit most Wet/Dry Vacuums. Used widely by Professional Gutter cleaners, window cleaners & Handymen across the UK & Europe. The pole system is manufactured from Lightweight Aerospace grade aluminum. A 4' pole length weighs just 1 lbs 6oz.</div><div>A 4' pole length weighs just 1 lbs 6oz.</div><div id="tab-1"><p><iframe width="842" height="499" src="https://www.youtube.com/embed/Bpj_WQYzLck" frameborder="0" allowfullscreen=""></iframe></p><p><strong>Gutter Pole Kit</strong></p><p><strong>Includes:</strong></p><p><span>-5 x 4ft Aerospace Aluminum Gutter Poles</span><br><span>- 4 x Quick Release Clamps</span><br><span>- 1 x Circlip</span><br><span>- 1 x 135 Degrees Silicone Angled Head</span><br><span>- 3 x Connection Silicone Adapters (various standard sizes)</span><br><span>- 1 x Narrow Cleaning Head / Nozzle<br>- 1 x Wide Cleaning Head / Nozzle</span></p><p>The traditional method of gutter cleaning was using a ladder and to scoop the debris from the gutters using one hand while standing on the ladder holding on with the other also trying to hold a bag or bucket. With this pole set combined with your wet and dry vacuum, you can now access areas that were previously inaccessible and clean gutters safely and effectively.</p><p>Blocked gutters will reduce or even stop water flow the water will build up and it will usually find its way into the property causing extensive damage, blockages can build up in gutters usually in inaccessible places where people have been unable to clean like above conservatories, extensions, areas where the ground is unsuitable to place a ladder, this problem is eliminated with Maxxus gutter vacuum pole systems with our pole sets combined with your wet and dry vacuum access is gained with ease and offers a cost-effective solution to gutter cleaning.</p><p>A 4' pole length weighs just 1.6 lbs.</p><div id="tab-2"><ul></ul></div></div><div id="tab-2"><ul></ul></div>]]></shortDescription>
+            <brand>Maxxus industries</brand>
+            <mainImageUrl>https://cdn.shopify.com/s/files/1/1907/3303/products/20ft-poles_fa1821c8-a6c1-49de-865e-b26d69a26c3f.jpg?v=1505496413</mainImageUrl>
+            <productSecondaryImageURL>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/gutter_pole_image_1_11.jpg?v=1505496413</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/3000w_gutter_vacuum_system_1024x1024_8.jpg?v=1505496413</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/gutter-pole-07.jpg?v=1505496413</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/gutter-pole-06.jpg?v=1505496413</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/couplingbend-01_1.jpg?v=1505496413</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/couplingreducer-01_1.jpg?v=1505496413</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/couplingy-01_1.jpg?v=1505496413</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/gutter-pole-02.jpg?v=1505496413</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/gutter-pole-03.jpg?v=1505496413</productSecondaryImageURLValue>
+            </productSecondaryImageURL>
+          </ToolsAndHardwareOther>
+        </ToolsAndHardware>
+      </category>
+    </MPProduct>
+    <MPOffer>
+      <price>299.00</price>
+      <EndDate>2022-09-18</EndDate>
+      <ShippingWeight>
+        <measure>0.00</measure>
+        <unit>lb</unit>
+      </ShippingWeight>
+      <ProductTaxCode>2044147</ProductTaxCode>
+      <ShippingOverrides>
+        <ShippingOverrideAction>DELETE_ALL</ShippingOverrideAction>
+      </ShippingOverrides>
+    </MPOffer>
+  </MPItem>
+  <MPItem>
+    <processMode>REPLACE_ALL</processMode>
+    <sku>GPV2000</sku>
+    <productIdentifiers>
+      <productIdentifier>
+        <productIdType>UPC</productIdType>
+        <productId>759740892306</productId>
+      </productIdentifier>
+    </productIdentifiers>
+    <MPProduct>
+      <productName><![CDATA[GutterProVac Commercial Gutter Cleaning Vacuum Machine 2 Motors - Model GPV2000 Kiam by Maxxus]]></productName>
+      <additionalProductAttributes>
+        <additionalProductAttribute>
+          <productAttributeName>finish</productAttributeName>
+          <productAttributeValue>GUTTER PRO VAC - GPV2000</productAttributeValue>
+        </additionalProductAttribute>
+      </additionalProductAttributes>
+      <category>
+        <ToolsAndHardware>
+          <ToolsAndHardwareOther>
+            <isPrimaryVariant>Yes</isPrimaryVariant>
+            <variantAttributeNames>
+              <variantAttributeName>finish</variantAttributeName>
+            </variantAttributeNames>
+            <variantGroupId>84929318511505800689</variantGroupId>
+            <shortDescription><![CDATA[<p><span>2000 Watt Dual</span>Motor<span> Professionalvacuum cleaner - 120volt - </span><span>The Ultimate vacuum for Gutter Cleaning from the ground, Auto Detailing, Flood Restoration, large volume recovery and picking up flood sludge.</span><span>Fantastic on vehicles, plant & machinery, around the workshop & warehouse. </span></p><ul><li>Two High-quality motors producingmassive suction</li><li>Tip-and-Pour waste disposal and cleanup</li><li>Sound insulated vacuum head lowers decibel</li><li>Comes complete with 25' swivel hose, 2-piece wand, crevice and dusting tools, and 14" floor/rug tool and 14" squeegee tools</li></ul><p><span>Includes:-</span></p><ul><li>Heavy Duty Steel Trolley With Cushion Wheels & Castors.</li><li>Dual 1000 Watt Motors 110-120 Volt</li><li>Tank: Stainless Steel - 20 Gallons</li><li>Tank Diameter 16.5"</li><li>Airflow Rate:<span>456 FPM</span></li><li>Cable Length: 16ft</li></ul><p><span>Accessories:-</span></p><ul><li>Removable Washable Easyclean Dust Filter (Dry use)</li><li>Suction Hose - 16 Feet</li><li>Dry Floor Nozzle</li><li>Wet Floor Nozzle</li><li>Crevice Tool</li><li>Dust Brush</li><li>12 Month Warranty</li></ul><p><a href="https://drive.google.com/a/maxxusindustries.com/file/d/0B4TrRZ_H8hZhcTRGSTJfLU85VDhOSjktdEdQUnlHb2gtN0xB/view?usp=sharing" title="Download GPV2000 Manual"><span>Download Manual</span></a></p><p></p>]]></shortDescription>
+            <brand>Maxxus industries</brand>
+            <mainImageUrl>https://cdn.shopify.com/s/files/1/1907/3303/products/3.jpg?v=1505757820</mainImageUrl>
+            <productSecondaryImageURL>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/5.jpg?v=1505757820</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/2.JPG?v=1505757820</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/4.JPG?v=1505757820</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/7.JPG?v=1505757820</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/11.JPG?v=1505757820</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/9.jpg?v=1505757820</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/13.JPG?v=1505757820</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/6.jpg?v=1505757820</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/1.jpg?v=1505757820</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/14.JPG?v=1505757820</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/kv3-03.jpg?v=1505757820</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/kv3-04.jpg?v=1505757820</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/kv3-05.jpg?v=1505757820</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/kv3-06.jpg?v=1505757820</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/12.JPG?v=1505757820</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/8.jpg?v=1505757820</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/kv803-06.jpg?v=1505757820</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/kv803-07.jpg?v=1505757820</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/kv803-08.jpg?v=1505757820</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/kv803-09.jpg?v=1505757820</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/kv803-10.jpg?v=1505757820</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/kv803-11.jpg?v=1505757820</productSecondaryImageURLValue>
+            </productSecondaryImageURL>
+          </ToolsAndHardwareOther>
+        </ToolsAndHardware>
+      </category>
+    </MPProduct>
+    <MPOffer>
+      <price>430.00</price>
+      <EndDate>2022-09-18</EndDate>
+      <ShippingWeight>
+        <measure>0.00</measure>
+        <unit>lb</unit>
+      </ShippingWeight>
+      <ProductTaxCode>2044147</ProductTaxCode>
+      <ShippingOverrides>
+        <ShippingOverrideAction>DELETE_ALL</ShippingOverrideAction>
+      </ShippingOverrides>
+    </MPOffer>
+  </MPItem>
+  <MPItem>
+    <processMode>CREATE</processMode>
+    <sku><![CDATA[Kit-GPV&POLES-40]]></sku>
+    <productIdentifiers>
+      <productIdentifier>
+        <productIdType>UPC</productIdType>
+        <productId>716417851165</productId>
+      </productIdentifier>
+    </productIdentifiers>
+    <MPProduct>
+      <productName><![CDATA[40ft (4 Story) Commercial Gutter Pole Cleaning System w/ Gutter Pro Vacuum (Bundle Discount) Kiam by Maxxus]]></productName>
+      <category>
+        <ToolsAndHardware>
+          <ToolsAndHardwareOther>
+            <shortDescription><![CDATA[Buy the complete kit including the wet/dry vacuum and the gutter cleaning poles.&#xD;
+&#xD;
+Wet/Dry Vacuum Product Description&#xD;
+&#xD;
+Professional vacuum cleaner - 120 volt&#xD;
+The ultimate vacuum for gutter cleaning, featuring two motors producing a massive 2000W of suction allowing effortless extraction of debris, sludge, etc. All units come with a full 12 months guarantee.&#xD;
+&#xD;
+Product Features&#xD;
+&#xD;
+- Heavy Duty Steel Trolley With Cushion Wheels & Castors&#xD;
+- Power: 2x 1000W Bypass Motors (120V)&#xD;
+- Tank: Stainless Steel (80 Gal )&#xD;
+- Air Flow: 457 FPM&#xD;
+- Power Cable Length:15ft&#xD;
+&#xD;
+Accessories Included&#xD;
+&#xD;
+- Removable Washable Easyclean Dust Filter (Dry Use)&#xD;
+- Suction Hose&#xD;
+- Chrome Plated Metal Tube&#xD;
+- Dry Floor Nozzle&#xD;
+- Wet Floor Nozzle&#xD;
+- Crevice Tool&#xD;
+- Dust Brush&#xD;
+&#xD;
+Gutter Pole Kit&#xD;
+&#xD;
+Includes:&#xD;
+&#xD;
+- 10 x 4ft Aerospace Aluminum Gutter Poles&#xD;
+- 9x Quick Release Clamps&#xD;
+- 1 x Circlip&#xD;
+- 1 x 135 Degrees Silicone Angled Head&#xD;
+- 3 x Connection Silicone Adapters (various standard sizes)&#xD;
+- 1 x Narrow Cleaning Head / Nozzle&#xD;
+- 1 x Wide Cleaning Head / Nozzle&#xD;
+&#xD;
+&#xD;
+&#xD;
+The pole system is manufactured from Lightweight Aerospace grade aluminum. This light weight gutter cleaning kit allows you to safely work off the ground without the need for ladders. Will fit most wet & dry vacuum cleaners as it comes supplied with 2 hose adapters. Used widely by Professional Gutter cleaners, window cleaners & Handymen across the Europe.&#xD;
+&#xD;
+The traditional method of gutter cleaning was using a ladder and to scoop the debris from the gutters using one hand while standing on the ladder holding on with the other also trying to hold a bag or bucket. With this pole set combined with your wet and dry vacuum, you can now access areas that were previously inaccessible and clean gutters safely and effectively.&#xD;
+&#xD;
+Blocked gutters will reduce or even stop water flow the water will build up and it will usually find its way into the property causing extensive damage, blockages can build up in gutters usually in inaccessible places where people have been unable to clean like above conservatories, extensions, areas where the ground is unsuitable to place a ladder, this problem is eliminated with Maxxus gutter vacuum pole systems with our pole sets combined with your wet and dry vacuum access is gained with ease and offers a cost-effective solution to gutter cleaning.&#xD;
+&#xD;
+A 4' pole length weighs just 1.6 lbs.]]></shortDescription>
+            <brand>Maxxus industries</brand>
+            <mainImageUrl>https://cdn.shopify.com/s/files/1/1907/3303/products/40ft-and-vac-closer.JPG?v=1505420923</mainImageUrl>
+            <productSecondaryImageURL>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/40ft-pole.JPG?v=1505420923</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/gutter_pole_image_1_6_aa8ebc8a-9013-4e43-ab87-68c924d79210.jpg?v=1505420923</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/3000w_gutter_vacuum_system_1024x1024_3_3c69e74f-f2c5-4b17-b0ec-dec1b25b1bf8.jpg?v=1505420923</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/vac-solo-2.JPG?v=1505420923</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/couplingbend-01_7_2b4082a5-fcab-4be3-861c-6b7e1c78e052.jpg?v=1505420923</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/couplingreducer-01_7_b18c1421-baa1-4a4b-b5ce-e9a0f7c95599.jpg?v=1505420923</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/couplingy-01_7_e6f29251-d577-4a04-bc2b-6940f4512dae.jpg?v=1505420923</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/gutter-pole-02_2_1_89d9af64-3c85-463e-8226-763c34828d77.jpg?v=1505420923</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/gutter-pole-03_2_1_226e382c-5044-47c9-aa82-0c8d0a54044e.jpg?v=1505420923</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/gutter-pole-06_2_1_3256fe50-3784-4039-8a40-80939248d431.jpg?v=1505420923</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/gutter-pole-07_2_1_9695da26-47a9-4176-a20f-90fb2f1be818.jpg?v=1505420923</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/vac-in-3pcs.jpg?v=1505420923</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/vac-head.JPG?v=1505420923</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/vac-top-view.JPG?v=1505420923</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/vac-underside.JPG?v=1505420923</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/tilting_mechanism_7_6c0e2da5-9816-4a55-856f-80a634ca09c4.jpg?v=1505420923</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/tiltedvac.jpg?v=1505420923</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/kv100_tilting_mechanism_7_d4f83ae4-44fc-4c71-8053-c1a3c014488a.jpg?v=1505420923</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/vac-filter.JPG?v=1505420923</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/robust_stainless_steel_tub_and_clips_7_c57e0e7e-b219-4d4c-9d86-2f4db48dadbe.jpg?v=1505420923</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/washable_fabric_filter_7_4362b8ab-8388-4c6e-9927-2b066789fb63.jpg?v=1505420923</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/cac-titl-2.JPG?v=1505420923</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/vac-accessories.jpg?v=1505420923</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/kv803-06_2_1_84a82687-d71b-40fc-86df-4599d33a2345.jpg?v=1505420923</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/kv803-07_2_1_d69bcd4b-8bc2-46e2-8ec3-9b7f5b6784e7.jpg?v=1505420923</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/kv803-08_2_1_98062b19-97ac-4140-98ee-9baec569c594.jpg?v=1505420923</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/kv803-09_2_1_0f6995c4-c046-41d6-bae2-da70cdb5ac69.jpg?v=1505420923</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/kv803-10_2_1_e88195d4-6079-4d8d-945a-9fcab18ed490.jpg?v=1505420923</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/kv803-11_2_1_79efc199-2e1b-4203-8ec0-83aa72799522.jpg?v=1505420923</productSecondaryImageURLValue>
+            </productSecondaryImageURL>
+          </ToolsAndHardwareOther>
+        </ToolsAndHardware>
+      </category>
+    </MPProduct>
+    <MPOffer>
+      <price>799.00</price>
+      <EndDate>2022-09-18</EndDate>
+      <ShippingWeight>
+        <measure>0.00</measure>
+        <unit>lb</unit>
+      </ShippingWeight>
+      <ProductTaxCode>2044147</ProductTaxCode>
+      <ShippingOverrides>
+        <ShippingOverrideAction>DELETE_ALL</ShippingOverrideAction>
+      </ShippingOverrides>
+    </MPOffer>
+  </MPItem>
+  <MPItem>
+    <processMode>CREATE</processMode>
+    <sku><![CDATA[Kit-GPV&POLES-20]]></sku>
+    <productIdentifiers>
+      <productIdentifier>
+        <productIdType>UPC</productIdType>
+        <productId>716417851141</productId>
+      </productIdentifier>
+    </productIdentifiers>
+    <MPProduct>
+      <productName><![CDATA[20ft (2 Story) Commercial Gutter Pole Cleaning System w/ Gutter Pro Vacuum (Bundle Discount) Kiam by Maxxus]]></productName>
+      <category>
+        <ToolsAndHardware>
+          <ToolsAndHardwareOther>
+            <shortDescription><![CDATA[<p>Buy the complete kit including the wet/dry vacuum and the gutter cleaning poles.</p>&#xD;
+<p><strong>GutterProVac Wet/Dry Vacuum Description</strong></p>&#xD;
+<p>Professional vacuum cleaner - 120 volt<br>&#xD;
+The ultimate vacuum for gutter cleaning, featuring two motors producing a massive 2000W of suction allowing effortless extraction of debris, sludge, etc. All units come with a full 12 months guarantee.</p>&#xD;
+<p><strong>Product Features</strong></p>&#xD;
+<p>- Heavy Duty Steel Trolley With Cushion Wheels & Castors<br>&#xD;
+- Power: 2x 1000W Bypass Motors (120V)<br>&#xD;
+- Tank: Stainless Steel (80 Gal)<br>&#xD;
+- Air Flow:457 FPM<br>&#xD;
+- Power Cable Length:15ft</p>&#xD;
+<p><strong>Accessories Included</strong></p>&#xD;
+<p>- Removable Washable Easyclean Dust Filter (Dry Use)<br>&#xD;
+- Suction Hose<br>&#xD;
+- Chrome Plated Metal Tube<br>&#xD;
+- Dry Floor Nozzle<br>&#xD;
+- Wet Floor Nozzle<br>&#xD;
+- Crevice Tool<br>&#xD;
+- Dust Brush</p>&#xD;
+<p><strong>Gutter Pole Kit</strong></p>&#xD;
+<p><strong>Includes:</strong></p>&#xD;
+<p><span>- 10 x 4ft Aerospace Aluminum Gutter Poles</span><br>&#xD;
+<span>- 9x Quick Release Clamps</span><br>&#xD;
+<span>- 1 x Circlip</span><br>&#xD;
+<span>- 1 x 135 Degrees Silicone Angled Head</span><br>&#xD;
+<span>- 3 x Connection Silicone Adapters (various standard sizes)</span><br>&#xD;
+<span>- 1 x Narrow Cleaning Head / Nozzle<br>&#xD;
+- 1 x Wide Cleaning Head / Nozzle</span></p>&#xD;
+<p></p>&#xD;
+<p><br>&#xD;
+</p>&#xD;
+<p><strong>Gutter Pole Kit</strong></p>&#xD;
+<p><strong>Includes:</strong></p>&#xD;
+<p>The pole system is manufactured from Lightweight Aerospace grade aluminum. This lightweight gutter cleaning kit allows you to safely work off the ground without the need for ladders. Will fit most wet & dry vacuum cleaners as it comes supplied with 2 hose adapters. Used widely by Professional Gutter cleaners, window cleaners & Handymen across the Europe.</p>&#xD;
+<p>The traditional method of gutter cleaning was using a ladder and to scoop the debris from the gutters using one hand while standing on the ladder holding on with the other also trying to hold a bag or bucket. With this pole set combined with your wet and dry vacuum, you can now access areas that were previously inaccessible and clean gutters safely and effectively.</p>&#xD;
+<p>Blocked gutters will reduce or even stop water flow the water will build up and it will usually find its way into the property causing extensive damage, blockages can build up in gutters usually in inaccessible places where people have been unable to clean like above conservatories, extensions, areas where the ground is unsuitable to place a ladder, this problem is eliminated with Maxxus gutter vacuum pole systems with our pole sets combined with your wet and dry vacuum access is gained with ease and offers a cost-effective solution to gutter cleaning.</p>&#xD;
+<p>A 4' pole length weighs just 1.6 lbs.</p>]]></shortDescription>
+            <brand>Maxxus industries</brand>
+            <mainImageUrl>https://cdn.shopify.com/s/files/1/1907/3303/products/vac-and-20ft-poles-closer.jpg?v=1505420420</mainImageUrl>
+            <productSecondaryImageURL>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/20ft-poles_6306b28a-f7af-41fe-b379-9acfd552196e.jpg?v=1505420420</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/gutter_pole_image_1_6_786ddd59-21b6-47fc-a221-cad524106c85.jpg?v=1505420420</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/3000w_gutter_vacuum_system_1024x1024_3_2bf4e8eb-c7fe-43c0-94c0-d08c103746a0.jpg?v=1505420420</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/couplingbend-01_7_65322fde-1a6a-4468-8337-84c5540af618.jpg?v=1505420420</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/couplingreducer-01_7_68e24dac-4538-44ff-bd4e-5bc4f7ad6cea.jpg?v=1505420420</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/couplingy-01_7_06779b8c-d4aa-4824-875d-8bb79b213b48.jpg?v=1505420420</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/gutter-pole-02_2_1_0cab11ca-7f84-48c9-9b10-5f77d30e785b.jpg?v=1505420420</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/gutter-pole-03_2_1_0a83c76f-328b-44b9-9743-686e13ba200b.jpg?v=1505510156</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/gutter-pole-06_2_1_65705539-e192-4eb8-877c-c74ac4a1a9bd.jpg?v=1505420420</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/gutter-pole-07_2_1_becc778d-df17-4263-a605-f61238fcb1bf.jpg?v=1505420420</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/vac-solo-2_8187d963-c978-4a15-b885-c1a31f8d4e3d.JPG?v=1505420420</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/vac-in-3pcs_a396301d-b053-4271-8cf5-b40484fad738.jpg?v=1505420420</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/vac-top-view_0d57f031-5c27-4631-b7d1-41952ad2e415.JPG?v=1505420420</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/robust_stainless_steel_tub_and_clips_7_4350558d-7ecd-4fcf-83ab-7b339f749d2d.jpg?v=1505420420</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/vac-underside_30385a46-cf75-42d7-b1e7-456dca1a1cba.JPG?v=1505420420</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/tilting_mechanism_7_8f91b9eb-293b-4dc2-b9c8-ac5e84911c4b.jpg?v=1505420420</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/cac-titl-2_f30cb58d-2929-4d3e-985c-6ab3f4b04f49.JPG?v=1505420420</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/kv100_tilting_mechanism_7_22b1323a-c2f2-4fb5-b9db-ebf2e3f603ab.jpg?v=1505420420</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/tiltedvac_d9324ca9-34fa-477a-9724-cffbe99a1178.jpg?v=1505420420</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/kv803-06_2_1_f32818f8-bc33-4a8e-9c6d-f8ff68dccde6.jpg?v=1505420420</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/washable_fabric_filter_7_9e4cfc8e-8d5b-4a3b-b88f-4661c331ce03.jpg?v=1505420420</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/vac-filter_3c548585-1159-4fc2-88cf-2dc133e0a1bb.JPG?v=1505420420</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/kv803-07_2_1_66d7b35d-bcdd-42d4-988e-6c888414c0df.jpg?v=1505510217</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/vac-head_42b50c41-2b86-4761-9e2e-2738c3fcf9a9.JPG?v=1505420420</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/vac-accessories_0c10a711-eb82-4aed-89fa-6407569d2203.jpg?v=1505420420</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/kv803-08_2_1_2a9d3d54-b57f-4a64-8bef-b776e9c6f94f.jpg?v=1505420420</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/kv803-09_2_1_d913a763-88d8-42e5-9cf7-05127be5fe97.jpg?v=1505420420</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/kv803-10_2_1_2042601b-bfd0-450e-b3ba-f0db51d1cb01.jpg?v=1505420420</productSecondaryImageURLValue>
+              <productSecondaryImageURLValue>https://cdn.shopify.com/s/files/1/1907/3303/products/kv803-11_2_1_1f14c40a-a35f-431b-84bb-62d8885d9787.jpg?v=1505420420</productSecondaryImageURLValue>
+            </productSecondaryImageURL>
+          </ToolsAndHardwareOther>
+        </ToolsAndHardware>
+      </category>
+    </MPProduct>
+    <MPOffer>
+      <price>650.00</price>
+      <EndDate>2022-09-18</EndDate>
+      <ShippingWeight>
+        <measure>0.00</measure>
+        <unit>lb</unit>
+      </ShippingWeight>
+      <ProductTaxCode>2044147</ProductTaxCode>
+      <ShippingOverrides>
+        <ShippingOverrideAction>DELETE_ALL</ShippingOverrideAction>
+      </ShippingOverrides>
+    </MPOffer>
+  </MPItem>
+</MPItemFeed>
